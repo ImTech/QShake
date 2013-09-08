@@ -32,8 +32,20 @@ static AVAudioPlayer* _player;
 
 + (void) playShakeSound:(ShakeSoundStyle) style
 {
-    NSString *name = (style == ShakeSoundStyleBegin ? @"shake_begin" : @"shake_match");
-    NSString *audioPath = [[NSBundle mainBundle] pathForResource:name ofType:@"mp3"];
+    NSString *name = nil;
+    NSString *ext = @"mp3";
+    if (style == ShakeSoundStyleBegin) {
+        name = @"shake_begin";
+    } else if (style == ShakeSoundStyleEnd) {
+        name = @"shake_match";
+    } else if (style == ShakeSoundStyleFailed) {
+        name = @"failed";
+        ext = @"wav";
+    }
+    if (name == nil) {
+        return;
+    }
+    NSString *audioPath = [[NSBundle mainBundle] pathForResource:name ofType:ext];
     [SoundUtil playSound:audioPath];
 }
 

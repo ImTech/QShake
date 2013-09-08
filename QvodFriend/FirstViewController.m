@@ -104,6 +104,7 @@ enum {
         if(JSON == nil) {
             // failed
             [self setDisplayType:DisplayTypeShake];
+            [SoundUtil playShakeSound:ShakeSoundStyleFailed];
             return;
         }
         // play sucess music

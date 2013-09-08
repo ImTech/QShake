@@ -13,6 +13,7 @@ typedef NSUInteger ShakeSoundStyle;
 enum{
     ShakeSoundStyleBegin,
     ShakeSoundStyleEnd,
+    ShakeSoundStyleFailed,
 };
 
 @interface SoundUtil : NSObject
