@@ -40,6 +40,7 @@ enum {
     self.imgShake.delegate = self;
     [self shakeImage:_imgShake withRepeatCount:ANIM_SHAKE_COUNT];
     [self setDisplayType:DisplayTypeShake];
+    [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"a_02"] forBarMetrics:UIBarMetricsDefault];
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -134,4 +135,5 @@ enum {
          [self.dataTableController.tableView reloadData];
      }];
 }
+
 @end

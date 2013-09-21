@@ -36,8 +36,6 @@
 		<dict>
 			<key>Style</key>
 			<string>UIBarStyleDefault</string>
-			<key>Translucent</key>
-			<false/>
 		</dict>
 	</dict>
 	<key>UISupportedInterfaceOrientations</key>

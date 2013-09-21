@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>6E2B2882-727A-489C-96F6-CA63A970E817</string>
+	<key>IDESourceControlProjectName</key>
+	<string>QShake</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>9E5720ED-CE29-40A2-821F-693549A38564</key>
+		<string>ssh://github.com/douzifly/QShake.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>QShake.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>9E5720ED-CE29-40A2-821F-693549A38564</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/douzifly/QShake.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>9E5720ED-CE29-40A2-821F-693549A38564</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9E5720ED-CE29-40A2-821F-693549A38564</string>
+			<key>IDESourceControlWCCName</key>
+			<string>QvodFriend</string>
+		</dict>
+	</array>
+</dict>
+</plist>

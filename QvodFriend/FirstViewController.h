@@ -13,5 +13,6 @@
 - (IBAction)Click:(id)sender;
 @property (weak, nonatomic) IBOutlet UITableView *dataTable;
 @property (weak, nonatomic) IBOutlet ShakeImageView *imgShake;
+@property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
 
 @end
