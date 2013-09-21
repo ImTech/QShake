@@ -9,6 +9,7 @@
 #import "DataTableContrller.h"
 #import "QVODHelper.h"
 #import "UIUtil.h"
+#import "UIColor+Hex.h"
 
 @interface DataTableContrller ()
 @end
@@ -44,7 +45,6 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-   
 }
 - (void)didReceiveMemoryWarning
 {

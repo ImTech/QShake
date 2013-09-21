@@ -11,6 +11,7 @@
 #import "SBJson.h"
 #import "DataTableContrller.h"
 #import "SoundUtil.h"
+#import "UIColor+Hex.h"
 
 #define ANIM_SHAKE_COUNT 5
 #define ANIM_SHAKE_KEY  @"ICON_SHAKE"
@@ -34,13 +35,19 @@ enum {
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    [self.dataTable setBackgroundColor:[UIColor colorWithHex:@"#E4E7EB"]];
     self.dataTableController = [[DataTableContrller alloc] init];
     self.dataTableController.tableView = self.dataTable;
-    [self.imgShake setImage:[UIImage imageNamed:@"shake.png"]];
+    [self.imgShake setImage:[UIImage imageNamed:@"a_05"]];
     self.imgShake.delegate = self;
     [self shakeImage:_imgShake withRepeatCount:ANIM_SHAKE_COUNT];
     [self setDisplayType:DisplayTypeShake];
     [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"a_02"] forBarMetrics:UIBarMetricsDefault];
+    [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"a_11"] withFinishedUnselectedImage:[UIImage imageNamed:@"a_11"]];
+    [self.tabBarItem setImage:[UIImage imageNamed:@"a_11"]];
+   
+    [self.tabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor colorWithHex:@"#929292"], UITextAttributeTextColor, nil] forState:UIControlStateNormal];
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -134,6 +141,10 @@ enum {
          NSLog(@"reload Data");
          [self.dataTableController.tableView reloadData];
      }];
+}
+
+-(BOOL)shouldAutorotate {
+    return NO;
 }
 
 @end

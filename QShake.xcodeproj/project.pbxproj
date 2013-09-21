@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		7D20C5887CD54DC3956F6B6C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8866C6072864FEAA24A4DB2 /* libPods.a */; };
 		9612235D17DB847300D27793 /* QVODHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9612235C17DB847300D27793 /* QVODHelper.m */; };
-		9612236217DB8BCB00D27793 /* shake.png in Resources */ = {isa = PBXBuildFile; fileRef = 9612236117DB8BCB00D27793 /* shake.png */; };
 		9612236417DB903F00D27793 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9612236317DB903F00D27793 /* QuartzCore.framework */; };
 		9612236717DB923D00D27793 /* ShakeImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9612236617DB923D00D27793 /* ShakeImageView.m */; };
 		9612236C17DB99DD00D27793 /* shake_match.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9612236B17DB99DD00D27793 /* shake_match.mp3 */; };
@@ -42,6 +41,9 @@
 		967080E517BBE46E00147FD5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 967080E417BBE46E00147FD5 /* Default-568h@2x.png */; };
 		967080E817BBE46E00147FD5 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 967080E617BBE46E00147FD5 /* MainStoryboard.storyboard */; };
 		967080EB17BBE46E00147FD5 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 967080EA17BBE46E00147FD5 /* FirstViewController.m */; };
+		969833FA17EDEA81007FDB02 /* TabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 969833F917EDEA81007FDB02 /* TabViewController.m */; };
+		969833FD17EDF7BC007FDB02 /* BrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 969833FC17EDF7BC007FDB02 /* BrowserViewController.m */; };
+		9698340017EDF98C007FDB02 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 969833FF17EDF98C007FDB02 /* UIColor+Hex.m */; };
 		96F7B6F817BBF6C90098A18E /* ResouceApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F7B6F717BBF6C90098A18E /* ResouceApi.m */; };
 /* End PBXBuildFile section */
 
@@ -49,7 +51,6 @@
 		547ACAEA37E7448A845B8D91 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		9612235B17DB847300D27793 /* QVODHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QVODHelper.h; sourceTree = "<group>"; };
 		9612235C17DB847300D27793 /* QVODHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QVODHelper.m; sourceTree = "<group>"; };
-		9612236117DB8BCB00D27793 /* shake.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shake.png; sourceTree = "<group>"; };
 		9612236317DB903F00D27793 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		9612236517DB923D00D27793 /* ShakeImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShakeImageView.h; sourceTree = "<group>"; };
 		9612236617DB923D00D27793 /* ShakeImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShakeImageView.m; sourceTree = "<group>"; };
@@ -92,6 +93,12 @@
 		967080E717BBE46E00147FD5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		967080E917BBE46E00147FD5 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		967080EA17BBE46E00147FD5 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		969833F817EDEA81007FDB02 /* TabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabViewController.h; sourceTree = "<group>"; };
+		969833F917EDEA81007FDB02 /* TabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabViewController.m; sourceTree = "<group>"; };
+		969833FB17EDF7BC007FDB02 /* BrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowserViewController.h; sourceTree = "<group>"; };
+		969833FC17EDF7BC007FDB02 /* BrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowserViewController.m; sourceTree = "<group>"; };
+		969833FE17EDF98C007FDB02 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
+		969833FF17EDF98C007FDB02 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
 		96F7B6F617BBF6C90098A18E /* ResouceApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResouceApi.h; path = Download/ResouceApi.h; sourceTree = "<group>"; };
 		96F7B6F717BBF6C90098A18E /* ResouceApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResouceApi.m; path = Download/ResouceApi.m; sourceTree = "<group>"; };
 		B8866C6072864FEAA24A4DB2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +132,12 @@
 				961C626017DA2A4900982CF7 /* DataTableContrller.m */,
 				9612236517DB923D00D27793 /* ShakeImageView.h */,
 				9612236617DB923D00D27793 /* ShakeImageView.m */,
+				969833F817EDEA81007FDB02 /* TabViewController.h */,
+				969833F917EDEA81007FDB02 /* TabViewController.m */,
+				969833FB17EDF7BC007FDB02 /* BrowserViewController.h */,
+				969833FC17EDF7BC007FDB02 /* BrowserViewController.m */,
+				969833FE17EDF98C007FDB02 /* UIColor+Hex.h */,
+				969833FF17EDF98C007FDB02 /* UIColor+Hex.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -148,7 +161,6 @@
 				9654A66917ED1E9D006E60E4 /* Pic */,
 				961EF84617DC1F3C00B74015 /* failed.wav */,
 				9612237417DC118800D27793 /* shake_begin.mp3 */,
-				9612236117DB8BCB00D27793 /* shake.png */,
 				9612236B17DB99DD00D27793 /* shake_match.mp3 */,
 			);
 			name = Resource;
@@ -318,7 +330,6 @@
 				9612237517DC118800D27793 /* shake_begin.mp3 in Resources */,
 				9654A67B17ED1EC3006E60E4 /* a_09@2x.png in Resources */,
 				9654A67C17ED1EC3006E60E4 /* a_11.png in Resources */,
-				9612236217DB8BCB00D27793 /* shake.png in Resources */,
 				9654A68117ED1EC3006E60E4 /* a_16@2x.png in Resources */,
 				967080E817BBE46E00147FD5 /* MainStoryboard.storyboard in Resources */,
 			);
@@ -365,9 +376,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				967080DB17BBE46E00147FD5 /* main.m in Sources */,
+				9698340017EDF98C007FDB02 /* UIColor+Hex.m in Sources */,
 				9612236717DB923D00D27793 /* ShakeImageView.m in Sources */,
 				9612237817DC15F000D27793 /* UIUtil.m in Sources */,
 				961C626117DA2A4900982CF7 /* DataTableContrller.m in Sources */,
+				969833FA17EDEA81007FDB02 /* TabViewController.m in Sources */,
+				969833FD17EDF7BC007FDB02 /* BrowserViewController.m in Sources */,
 				967080DF17BBE46E00147FD5 /* AppDelegate.m in Sources */,
 				967080EB17BBE46E00147FD5 /* FirstViewController.m in Sources */,
 				9612236F17DB9A7700D27793 /* SoundUtil.m in Sources */,
