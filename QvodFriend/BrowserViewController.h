@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface BrowserViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (weak, nonatomic) IBOutlet UIToolbar *toolBar;
 
 @end

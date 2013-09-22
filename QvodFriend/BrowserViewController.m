@@ -34,8 +34,9 @@
     
     [self.view setBackgroundColor:[UIColor colorWithHex:@"#E4E7EB"]];
     
-    [self.navigationBar setBarTintColor:[UIColor colorWithHex:@"#19759c"]];
-    self.navigationBar.translucent = NO;
+//    [self.toolBar setBarTintColor:[UIColor colorWithHex:@"#19759c"]];
+    self.toolBar.translucent = NO;
+    self.toolBar.backgroundColor = [UIColor colorWithHex:@"#19759c"];
     [self loadHomePage];
 }
 
