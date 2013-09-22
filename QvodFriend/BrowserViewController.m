@@ -30,10 +30,12 @@
 	// Do any additional setup after loading the view.
     [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"a_09"] withFinishedUnselectedImage:[UIImage imageNamed:@"a_09"]];
     [self.tabBarItem setImage:[UIImage imageNamed:@"a_09"]];
-    
     [self.tabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor colorWithHex:@"#929292"], UITextAttributeTextColor, nil] forState:UIControlStateNormal];
+    
     [self.view setBackgroundColor:[UIColor colorWithHex:@"#E4E7EB"]];
-    [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"a_02"] forBarMetrics:UIBarMetricsDefault];
+    
+    [self.navigationBar setBarTintColor:[UIColor colorWithHex:@"#19759c"]];
+    self.navigationBar.translucent = NO;
     [self loadHomePage];
 }
 

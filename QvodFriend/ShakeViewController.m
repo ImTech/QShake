@@ -42,7 +42,7 @@ enum {
     [self shakeImage:_imgShake withRepeatCount:ANIM_SHAKE_COUNT];
     [self setDisplayType:DisplayTypeShake];
     [self.view setBackgroundColor:[UIColor colorWithHex:@"#E4E7EB"]];
-    [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"a_02"] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationBar setBarTintColor:[UIColor colorWithHex:@"#19759c"]];
     [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"a_11"] withFinishedUnselectedImage:[UIImage imageNamed:@"a_11"]];
     [self.tabBarItem setImage:[UIImage imageNamed:@"a_11"]];
    
