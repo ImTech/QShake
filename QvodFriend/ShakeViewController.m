@@ -6,7 +6,7 @@
 //  Copyright (c) 2013年 douzifly. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "ShakeViewController.h"
 #import "Download/ResouceApi.h"
 #import "SBJson.h"
 #import "DataTableContrller.h"
@@ -23,19 +23,19 @@ enum {
     DisplayTypeDataList
 };
 
-@interface FirstViewController ()
+@interface ShakeViewController ()
 {
     BOOL _isLodingData;
 }
 @property(strong, nonatomic) DataTableContrller *dataTableController;
 @end
-@implementation FirstViewController
+@implementation ShakeViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    [self.dataTable setBackgroundColor:[UIColor colorWithHex:@"#E4E7EB"]];
+    [self.view setBackgroundColor:[UIColor colorWithHex:@"#E4E7EB"]];
     self.dataTableController = [[DataTableContrller alloc] init];
     self.dataTableController.tableView = self.dataTable;
     [self.imgShake setImage:[UIImage imageNamed:@"a_05"]];
@@ -48,6 +48,15 @@ enum {
    
     [self.tabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor colorWithHex:@"#929292"], UITextAttributeTextColor, nil] forState:UIControlStateNormal];
     
+    NSLog(@"tableView height:%f", self.dataTable.frame.size.height);
+    [self calcImagePos];
+}
+
+-(void) calcImagePos{
+    float height = [[UIScreen mainScreen] bounds].size.height;
+    float width = [[UIScreen mainScreen] bounds].size.width;
+    NSLog(@"y:%f", height / 2);
+    self.imgShake.center = CGPointMake(width / 2, height / 2);
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -106,7 +115,7 @@ enum {
 - (void) beginLoadData
 {
     _isLodingData = YES;
-    [ResouceApi RequestJson:@"http://dzsvr.sinaapp.com/" Path:@"rand_land" result:^(id JSON) {
+    [ResouceApi RequestJson:@"http://dzsvr.sinaapp.com/" Path:@"rand_ios" result:^(id JSON) {
         _isLodingData = NO;
         [[_imgShake layer] removeAnimationForKey:ANIM_SHAKE_KEY];
         if(JSON == nil) {

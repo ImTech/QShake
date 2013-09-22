@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ShakeImageView.h"
 
-@interface FirstViewController : UIViewController <ShakeImageViewDelegate>
+@interface ShakeViewController : UIViewController <ShakeImageViewDelegate>
 - (IBAction)Click:(id)sender;
 @property (weak, nonatomic) IBOutlet UITableView *dataTable;
 @property (weak, nonatomic) IBOutlet ShakeImageView *imgShake;
