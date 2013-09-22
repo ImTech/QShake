@@ -35,13 +35,13 @@ enum {
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    [self.view setBackgroundColor:[UIColor colorWithHex:@"#E4E7EB"]];
     self.dataTableController = [[DataTableContrller alloc] init];
     self.dataTableController.tableView = self.dataTable;
     [self.imgShake setImage:[UIImage imageNamed:@"a_05"]];
     self.imgShake.delegate = self;
     [self shakeImage:_imgShake withRepeatCount:ANIM_SHAKE_COUNT];
     [self setDisplayType:DisplayTypeShake];
+    [self.view setBackgroundColor:[UIColor colorWithHex:@"#E4E7EB"]];
     [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"a_02"] forBarMetrics:UIBarMetricsDefault];
     [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"a_11"] withFinishedUnselectedImage:[UIImage imageNamed:@"a_11"]];
     [self.tabBarItem setImage:[UIImage imageNamed:@"a_11"]];

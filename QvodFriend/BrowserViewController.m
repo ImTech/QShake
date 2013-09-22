@@ -31,7 +31,17 @@
     [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"a_09"] withFinishedUnselectedImage:[UIImage imageNamed:@"a_09"]];
     [self.tabBarItem setImage:[UIImage imageNamed:@"a_09"]];
     
-        [self.tabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor colorWithHex:@"#929292"], UITextAttributeTextColor, nil] forState:UIControlStateNormal];
+    [self.tabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor colorWithHex:@"#929292"], UITextAttributeTextColor, nil] forState:UIControlStateNormal];
+    [self.view setBackgroundColor:[UIColor colorWithHex:@"#E4E7EB"]];
+    [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"a_02"] forBarMetrics:UIBarMetricsDefault];
+    [self loadHomePage];
+}
+
+-(void) loadHomePage {
+    NSString *urlStr = @"http://m.tv.sohu.com/";
+    NSURL *url = [NSURL URLWithString:urlStr];
+    NSURLRequest *req = [NSURLRequest requestWithURL:url];
+    [self.webView loadRequest:req];
 }
 
 - (void)didReceiveMemoryWarning

@@ -30,8 +30,8 @@
     // image height 49px
     self.tabBar.backgroundImage = [UIImage imageNamed:@"a_16"];
     self.tabBar.selectionIndicatorImage = [UIImage imageNamed:@"a_15"];
-    self.tabBar.tintColor = nil;
-    self.tabBar.shadowImage = nil;
+//    self.tabBar.tintColor = nil;
+//    self.tabBar.shadowImage = nil;
 //    NSLog(@"tabBar height:%f, scale:%f", self.tabBar.frame.size.height, [[UIScreen mainScreen] scale]);
 }
 
