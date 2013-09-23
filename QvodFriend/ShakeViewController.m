@@ -50,15 +50,27 @@ enum {
     [self.tabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor colorWithHex:@"#929292"], UITextAttributeTextColor, nil] forState:UIControlStateNormal];
     
     NSLog(@"tableView height:%f", self.dataTable.frame.size.height);
-    [self calcImagePos];
     [self calcTableHeight];
+    [self calcImagePos];
 }
 
 -(void) calcImagePos{
-    float height = [[UIScreen mainScreen] bounds].size.height;
-    float width = [[UIScreen mainScreen] bounds].size.width;
-    NSLog(@"y:%f", height / 2);
-    self.imgShake.center = CGPointMake(width / 2, height / 2);
+//    float height = [[UIScreen mainScreen] bounds].size.height;
+//    float width = [[UIScreen mainScreen] bounds].size.width;
+//    NSLog(@"calcImagePos y:%f", height / 2);
+//    self.imgShake.center = CGPointMake(width / 2, height);
+    float tableHeight = self.dataTable.frame.size.height;
+    float tableWidth = self.dataTable.frame.size.width;
+    float tablex = self.dataTable.frame.origin.x;
+    float tabley = self.dataTable.frame.origin.y;
+    CGRect imgRect = self.imgShake.frame;
+    NSLog(@"tablex:%f, tabley:%f, tableH:%f, tableW:%f", tablex, tabley, tableHeight, tableWidth);
+    float x = tableWidth / 2 - imgRect.size.width / 2;
+    float y = tabley + tableHeight / 2 - imgRect.size.height;
+    NSLog(@"x:%f, y:%f", x, y);
+    CGRect rect = CGRectMake( x, y, imgRect.size
+                             .width, imgRect.size.height);
+    self.imgShake.frame = rect;
 }
 
 -(void) calcTableHeight {
