@@ -75,10 +75,18 @@ enum {
 
 -(void) calcTableHeight {
     float screenHeight = [[UIScreen mainScreen] bounds].size.height;
-    float tableHeight = screenHeight - 20 - 44 - 49;
-    NSLog(@"tableHeight:%f screenHeight:%f", tableHeight, screenHeight);
+    BOOL ios7 = [[UIDevice currentDevice].systemVersion floatValue] >= 7.0;
+    float tableHeight = 0;
+    if(ios7) {
+        tableHeight = screenHeight - 20 - 44 - 49;
+    } else {
+        tableHeight = screenHeight - 44 - 49;
+    }
+    NSLog(@"tableHeight:%f screenHeight:%f ios7:%d", tableHeight, screenHeight, ios7);
     CGRect rect = self.dataTable.frame;
-    self.dataTable.frame = CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, tableHeight);
+//    self.dataTable.backgroundColor = [UIColor redColor];
+    NSLog(@"yyyy:%f", self.dataTable.frame.origin.y);
+    self.dataTable.frame = CGRectMake(0, self.dataTable.frame.origin.y, rect.size.width, tableHeight);
     [self.dataTable layoutIfNeeded];
 }
 
