@@ -43,6 +43,7 @@ enum {
     [self setDisplayType:DisplayTypeShake];
     [self.view setBackgroundColor:[UIColor colorWithHex:@"#E4E7EB"]];
     [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"a_02"] forBarMetrics:UIBarMetricsDefault];
+    
     [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"a_11"] withFinishedUnselectedImage:[UIImage imageNamed:@"a_11"]];
     [self.tabBarItem setImage:[UIImage imageNamed:@"a_11"]];
    
@@ -50,6 +51,7 @@ enum {
     
     NSLog(@"tableView height:%f", self.dataTable.frame.size.height);
     [self calcImagePos];
+    [self calcTableHeight];
 }
 
 -(void) calcImagePos{
@@ -57,6 +59,15 @@ enum {
     float width = [[UIScreen mainScreen] bounds].size.width;
     NSLog(@"y:%f", height / 2);
     self.imgShake.center = CGPointMake(width / 2, height / 2);
+}
+
+-(void) calcTableHeight {
+    float screenHeight = [[UIScreen mainScreen] bounds].size.height;
+    float tableHeight = screenHeight - 20 - 44 - 49;
+    NSLog(@"tableHeight:%f screenHeight:%f", tableHeight, screenHeight);
+    CGRect rect = self.dataTable.frame;
+    self.dataTable.frame = CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, tableHeight);
+    [self.dataTable layoutIfNeeded];
 }
 
 -(void)viewWillAppear:(BOOL)animated

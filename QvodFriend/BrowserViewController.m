@@ -34,10 +34,18 @@
     
     [self.view setBackgroundColor:[UIColor colorWithHex:@"#E4E7EB"]];
     
-//    [self.toolBar setBarTintColor:[UIColor colorWithHex:@"#19759c"]];
-    self.toolBar.translucent = NO;
-    self.toolBar.backgroundColor = [UIColor colorWithHex:@"#19759c"];
+    [self.toolBar setBackgroundColor:[UIColor colorWithHex:@"#19759c"]];
+    [self calcWebViewHeight];
     [self loadHomePage];
+}
+
+-(void) calcWebViewHeight {
+    float screenHeight = [[UIScreen mainScreen] bounds].size.height;
+    float tableHeight = screenHeight - 20 - 44 - 49;
+    NSLog(@"webViewHeight:%f screenHeight:%f", tableHeight, screenHeight);
+    CGRect rect = self.webView.frame;
+    self.webView.frame = CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, tableHeight);
+    [self.webView layoutIfNeeded];
 }
 
 -(void) loadHomePage {

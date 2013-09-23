@@ -37,6 +37,7 @@
 		967080E517BBE46E00147FD5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 967080E417BBE46E00147FD5 /* Default-568h@2x.png */; };
 		967080E817BBE46E00147FD5 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 967080E617BBE46E00147FD5 /* MainStoryboard.storyboard */; };
 		967080EB17BBE46E00147FD5 /* ShakeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 967080EA17BBE46E00147FD5 /* ShakeViewController.m */; };
+		9687E24217EFC01200642E2F /* QBroswerBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9687E24117EFC01200642E2F /* QBroswerBar.m */; };
 		969833FA17EDEA81007FDB02 /* TabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 969833F917EDEA81007FDB02 /* TabViewController.m */; };
 		969833FD17EDF7BC007FDB02 /* BrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 969833FC17EDF7BC007FDB02 /* BrowserViewController.m */; };
 		9698340017EDF98C007FDB02 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 969833FF17EDF98C007FDB02 /* UIColor+Hex.m */; };
@@ -89,6 +90,8 @@
 		967080E717BBE46E00147FD5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		967080E917BBE46E00147FD5 /* ShakeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShakeViewController.h; sourceTree = "<group>"; };
 		967080EA17BBE46E00147FD5 /* ShakeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShakeViewController.m; sourceTree = "<group>"; };
+		9687E24017EFC01200642E2F /* QBroswerBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBroswerBar.h; sourceTree = "<group>"; };
+		9687E24117EFC01200642E2F /* QBroswerBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBroswerBar.m; sourceTree = "<group>"; };
 		969833F817EDEA81007FDB02 /* TabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabViewController.h; sourceTree = "<group>"; };
 		969833F917EDEA81007FDB02 /* TabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabViewController.m; sourceTree = "<group>"; };
 		969833FB17EDF7BC007FDB02 /* BrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowserViewController.h; sourceTree = "<group>"; };
@@ -138,6 +141,8 @@
 				969833FC17EDF7BC007FDB02 /* BrowserViewController.m */,
 				969833FE17EDF98C007FDB02 /* UIColor+Hex.h */,
 				969833FF17EDF98C007FDB02 /* UIColor+Hex.m */,
+				9687E24017EFC01200642E2F /* QBroswerBar.h */,
+				9687E24117EFC01200642E2F /* QBroswerBar.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -378,6 +383,7 @@
 				967080DB17BBE46E00147FD5 /* main.m in Sources */,
 				9698340017EDF98C007FDB02 /* UIColor+Hex.m in Sources */,
 				9612236717DB923D00D27793 /* ShakeImageView.m in Sources */,
+				9687E24217EFC01200642E2F /* QBroswerBar.m in Sources */,
 				9612237817DC15F000D27793 /* UIUtil.m in Sources */,
 				961C626117DA2A4900982CF7 /* DataTableContrller.m in Sources */,
 				969833FA17EDEA81007FDB02 /* TabViewController.m in Sources */,
