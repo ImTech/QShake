@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface QBroswerBar : UIView
-
+@property(strong, nonatomic, setter = setBackgroundImage:) UIImage *backgroundImage;
+- (void) setBackgroundImage:(UIImage *)backgroundImage;
 @end

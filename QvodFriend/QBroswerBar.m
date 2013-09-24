@@ -10,14 +10,35 @@
 #import "UIColor+Hex.h"
 
 @implementation QBroswerBar
+{
+    UIImageView *_backgroundImageView;
+}
 
 - (id)initWithFrame:(CGRect)frame
 {
+    NSLog(@"initWithFrame");
+    NSLog(@"frame:%f, %f", frame.size.width, frame.size.height);
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        [self initViews:frame];
     }
     return self;
+}
+
+- (void) initViews:(CGRect) frame
+{
+    _backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 22, 320, 44)];
+}
+
+- (void)setBackgroundImage:(UIImage *)image
+{
+    NSLog(@"setBackgroundImage:%@", image);
+    if(image != nil) {
+        _backgroundImageView.image = image;
+        CGRect rect = _backgroundImageView.frame;
+        NSLog(@"frame:%f, %f", rect.size.width, rect.size.height);
+    }
 }
 
 

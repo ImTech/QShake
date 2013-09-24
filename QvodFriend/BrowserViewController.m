@@ -34,7 +34,8 @@
     
     [self.view setBackgroundColor:[UIColor colorWithHex:@"#E4E7EB"]];
     
-    [self.toolBar setBackgroundColor:[UIColor colorWithHex:@"#19759c"]];
+//    [self.toolBar setBackgroundColor:[UIColor colorWithHex:@"#19759c"]];
+    [self.toolBar setBackgroundImage:[UIImage imageNamed:@"a_02"]];
     [self calcWebViewHeight];
     [self loadHomePage];
 }

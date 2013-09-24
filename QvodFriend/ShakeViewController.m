@@ -78,9 +78,10 @@ enum {
     BOOL ios7 = [[UIDevice currentDevice].systemVersion floatValue] >= 7.0;
     float tableHeight = 0;
     if(ios7) {
+        // ios 7 计算要加上statusbar和tabbar
         tableHeight = screenHeight - 20 - 44 - 49;
     } else {
-        tableHeight = screenHeight - 44 - 49;
+        tableHeight = self.view.frame.size.height - 44;
     }
     NSLog(@"tableHeight:%f screenHeight:%f ios7:%d", tableHeight, screenHeight, ios7);
     CGRect rect = self.dataTable.frame;
