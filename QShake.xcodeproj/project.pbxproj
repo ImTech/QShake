@@ -16,6 +16,10 @@
 		9612237117DB9B6700D27793 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9612237017DB9B6700D27793 /* AVFoundation.framework */; };
 		9612237517DC118800D27793 /* shake_begin.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9612237417DC118800D27793 /* shake_begin.mp3 */; };
 		9612237817DC15F000D27793 /* UIUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 9612237717DC15F000D27793 /* UIUtil.m */; };
+		961705BE17F1F5C90074E6BB /* bgTxtUrl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 961705BD17F1F5C90074E6BB /* bgTxtUrl@2x.png */; };
+		961705C017F1F7280074E6BB /* bg_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 961705BF17F1F7280074E6BB /* bg_back@2x.png */; };
+		961705C217F1F7DB0074E6BB /* bg_home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 961705C117F1F7DB0074E6BB /* bg_home@2x.png */; };
+		961705C517F1FC190074E6BB /* UITextField+Padding.m in Sources */ = {isa = PBXBuildFile; fileRef = 961705C417F1FC190074E6BB /* UITextField+Padding.m */; };
 		961C626117DA2A4900982CF7 /* DataTableContrller.m in Sources */ = {isa = PBXBuildFile; fileRef = 961C626017DA2A4900982CF7 /* DataTableContrller.m */; };
 		961EF84717DC1F3C00B74015 /* failed.wav in Resources */ = {isa = PBXBuildFile; fileRef = 961EF84617DC1F3C00B74015 /* failed.wav */; };
 		9654A67617ED1EC3006E60E4 /* a_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 9654A66A17ED1EC3006E60E4 /* a_02.png */; };
@@ -63,6 +67,12 @@
 		9612237417DC118800D27793 /* shake_begin.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = shake_begin.mp3; sourceTree = "<group>"; };
 		9612237617DC15F000D27793 /* UIUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIUtil.h; sourceTree = "<group>"; };
 		9612237717DC15F000D27793 /* UIUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIUtil.m; sourceTree = "<group>"; };
+		961705BD17F1F5C90074E6BB /* bgTxtUrl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bgTxtUrl@2x.png"; sourceTree = "<group>"; };
+		961705BF17F1F7280074E6BB /* bg_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_back@2x.png"; sourceTree = "<group>"; };
+		961705C117F1F7DB0074E6BB /* bg_home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_home@2x.png"; sourceTree = "<group>"; };
+		961705C317F1FC190074E6BB /* UITextField+Padding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Padding.h"; sourceTree = "<group>"; };
+		961705C417F1FC190074E6BB /* UITextField+Padding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Padding.m"; sourceTree = "<group>"; };
+		961705C617F201000074E6BB /* QBroswerBarDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QBroswerBarDelegate.h; sourceTree = "<group>"; };
 		961C625F17DA2A4900982CF7 /* DataTableContrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataTableContrller.h; sourceTree = "<group>"; };
 		961C626017DA2A4900982CF7 /* DataTableContrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataTableContrller.m; sourceTree = "<group>"; };
 		961EF84617DC1F3C00B74015 /* failed.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = failed.wav; sourceTree = "<group>"; };
@@ -143,6 +153,9 @@
 				969833FF17EDF98C007FDB02 /* UIColor+Hex.m */,
 				9687E24017EFC01200642E2F /* QBroswerBar.h */,
 				9687E24117EFC01200642E2F /* QBroswerBar.m */,
+				961705C317F1FC190074E6BB /* UITextField+Padding.h */,
+				961705C417F1FC190074E6BB /* UITextField+Padding.m */,
+				961705C617F201000074E6BB /* QBroswerBarDelegate.h */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -174,6 +187,9 @@
 		9654A66917ED1E9D006E60E4 /* Pic */ = {
 			isa = PBXGroup;
 			children = (
+				961705C117F1F7DB0074E6BB /* bg_home@2x.png */,
+				961705BF17F1F7280074E6BB /* bg_back@2x.png */,
+				961705BD17F1F5C90074E6BB /* bgTxtUrl@2x.png */,
 				96E2A52517EF5E02005DD9C2 /* bg_tabbar_indi.png */,
 				96E2A52617EF5E02005DD9C2 /* bg_tabbar.png */,
 				96E2A52117EF55F3005DD9C2 /* bg_tabbar_indi@2x.png */,
@@ -322,13 +338,16 @@
 				9654A67D17ED1EC3006E60E4 /* a_11@2x.png in Resources */,
 				9654A67A17ED1EC3006E60E4 /* a_09.png in Resources */,
 				9654A67617ED1EC3006E60E4 /* a_02.png in Resources */,
+				961705C217F1F7DB0074E6BB /* bg_home@2x.png in Resources */,
 				967080D917BBE46E00147FD5 /* InfoPlist.strings in Resources */,
 				967080E117BBE46E00147FD5 /* Default.png in Resources */,
+				961705BE17F1F5C90074E6BB /* bgTxtUrl@2x.png in Resources */,
 				967080E317BBE46E00147FD5 /* Default@2x.png in Resources */,
 				967080E517BBE46E00147FD5 /* Default-568h@2x.png in Resources */,
 				961EF84717DC1F3C00B74015 /* failed.wav in Resources */,
 				9654A67817ED1EC3006E60E4 /* a_05.png in Resources */,
 				9654A67917ED1EC3006E60E4 /* a_05@2x.png in Resources */,
+				961705C017F1F7280074E6BB /* bg_back@2x.png in Resources */,
 				96E2A52817EF5E02005DD9C2 /* bg_tabbar.png in Resources */,
 				96E2A52317EF55F3005DD9C2 /* bg_tabbar_indi@2x.png in Resources */,
 				9612237517DC118800D27793 /* shake_begin.mp3 in Resources */,
@@ -381,6 +400,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				967080DB17BBE46E00147FD5 /* main.m in Sources */,
+				961705C517F1FC190074E6BB /* UITextField+Padding.m in Sources */,
 				9698340017EDF98C007FDB02 /* UIColor+Hex.m in Sources */,
 				9612236717DB923D00D27793 /* ShakeImageView.m in Sources */,
 				9687E24217EFC01200642E2F /* QBroswerBar.m in Sources */,

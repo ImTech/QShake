@@ -36,7 +36,11 @@
     
 //    [self.toolBar setBackgroundColor:[UIColor colorWithHex:@"#19759c"]];
     self.toolBar.backgroundImage = [UIImage imageNamed:@"a_02"];
+    self.toolBar.delegate = self;
+    self.webView.delegate = self;
+    
     [self calcWebViewHeight];
+    
     [self loadHomePage];
 }
 
@@ -51,9 +55,44 @@
 
 -(void) loadHomePage {
     NSString *urlStr = @"http://m.tv.sohu.com/";
+    [self loadUrl:urlStr];
+}
+
+- (void) loadUrl:(NSString *) urlStr
+{
+    if(![urlStr hasPrefix:@"http://"]) {
+        urlStr = [NSString stringWithFormat:@"http://%@", urlStr];
+    }
     NSURL *url = [NSURL URLWithString:urlStr];
     NSURLRequest *req = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:req];
+    self.toolBar.url = urlStr;
+}
+
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+{
+    self.toolBar.url = [request.URL absoluteString];
+    return YES;
+}
+
+- (BOOL) textFieldShouldReturn:(UITextField *)textField {
+    NSString *url = self.toolBar.url;
+    NSLog(@"Controller textReturn url:%@", url);
+    [self loadUrl:url];
+    // hide keyboard
+    [self.webView resignFirstResponder];
+    return YES;
+}
+
+- (void) backClicked {
+    NSLog(@"Controller backClicked");
+    [self.webView goBack];
+}
+
+- (void) homeClicked
+{
+    NSLog(@"Contrller homeClicked");
+    [self loadHomePage];
 }
 
 - (void)didReceiveMemoryWarning
