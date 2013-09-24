@@ -14,9 +14,18 @@
     UIImageView *_backgroundImageView;
 }
 
+- (id) initWithCoder:(NSCoder *)aDecoder
+{
+    NSLog(@"initWithCoder");
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        [self initViews:self.frame];
+    }
+    return self;
+}
+
 - (id)initWithFrame:(CGRect)frame
 {
-    NSLog(@"initWithFrame");
     NSLog(@"frame:%f, %f", frame.size.width, frame.size.height);
     self = [super initWithFrame:frame];
     if (self) {
@@ -28,16 +37,17 @@
 
 - (void) initViews:(CGRect) frame
 {
-    _backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 22, 320, 44)];
+    _backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+    [self addSubview:_backgroundImageView];
 }
 
 - (void)setBackgroundImage:(UIImage *)image
 {
-    NSLog(@"setBackgroundImage:%@", image);
+    NSLog(@"QBroswerBar setBackgroundImage:%@", image);
     if(image != nil) {
         _backgroundImageView.image = image;
         CGRect rect = _backgroundImageView.frame;
-        NSLog(@"frame:%f, %f", rect.size.width, rect.size.height);
+        NSLog(@"QBroswerBar frame:%f, %f", rect.size.width, rect.size.height);
     }
 }
 
