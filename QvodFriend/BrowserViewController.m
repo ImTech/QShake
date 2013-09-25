@@ -80,6 +80,7 @@
     NSLog(@"Controller textReturn url:%@", url);
     [self loadUrl:url];
     // hide keyboard
+    [self.view endEditing:YES];
     [self.webView resignFirstResponder];
     return YES;
 }
