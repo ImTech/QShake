@@ -9,10 +9,25 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>Pods-ISMethodSwizzling.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+		<key>Pods-NJKWebViewProgress.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
 		<key>Pods-SBJson.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>3</integer>
+		</dict>
+		<key>Pods-UIWebView+Progress.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
 		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
@@ -27,6 +42,26 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>20D0DD521E404EE6B34F4390</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4D0D8CFE919C486E98E0F9A8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>501C458400B241B6AC4B61F7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6DA04351A9EA40579F29089E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>721D66B112814109ABC8C431</key>
 		<dict>
 			<key>primary</key>
@@ -37,12 +72,47 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>92D6BED9FCEC43889EED4091</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>A507180FFBC04EE09BBC957B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>A59633BDDB5E43A2BB65DE5C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BCE977EB518544AB8DAC35E6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>C4C8BD33D7B24EA995745562</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D565255D9D4E43E385AC5FF2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D6D043EC8E124F4A9C86D7AA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E058B7EC4EBC42779949ACB8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E6EC02B51DF3450B93750C23</key>
 		<dict>
 			<key>primary</key>
 			<true/>

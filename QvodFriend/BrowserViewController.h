@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "QBroswerBar.h"
+#import "UIWebView+Progress.h"
 
-@interface BrowserViewController : UIViewController <UITextFieldDelegate, QBroswerBarDelegate, UIWebViewDelegate>
+@interface BrowserViewController : UIViewController <UITextFieldDelegate, QBroswerBarDelegate, UIWebViewDelegate
+    , NJKWebViewProgressDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet QBroswerBar *toolBar;
+@property (weak, nonatomic) IBOutlet UIProgressView *progressBar;
 
 @end

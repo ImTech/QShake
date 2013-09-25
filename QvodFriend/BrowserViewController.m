@@ -38,9 +38,11 @@
     self.toolBar.backgroundImage = [UIImage imageNamed:@"a_02"];
     self.toolBar.delegate = self;
     self.webView.delegate = self;
+    self.webView.progressDelegate = self;
+    
+    self.progressBar.hidden = YES;
     
     [self calcWebViewHeight];
-    
     [self loadHomePage];
 }
 
@@ -73,6 +75,27 @@
 {
     self.toolBar.url = [request.URL absoluteString];
     return YES;
+}
+
+- (void)webViewDidStartLoad:(UIWebView *)webView
+{
+    self.progressBar.hidden = NO;
+    self.progressBar.progress = 0;
+}
+
+- (void)webViewProgress:(NJKWebViewProgress *)webViewProgress updateProgress:(float)progress
+{
+    self.progressBar.progress = progress;
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    self.progressBar.hidden = YES;
+}
+
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+{
+    self.progressBar.hidden = YES;
 }
 
 - (BOOL) textFieldShouldReturn:(UITextField *)textField {

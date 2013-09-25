@@ -44,10 +44,16 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="-20"/>
                             </view>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" id="1ex-wD-1XE">
+                                <rect key="frame" x="0.0" y="62" width="320" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="-20"/>
+                            </progressView>
                         </subviews>
                     </view>
                     <tabBarItem key="tabBarItem" title="浏览" image="a_09.png" id="1uG-fN-R6V"/>
                     <connections>
+                        <outlet property="progressBar" destination="1ex-wD-1XE" id="6Dc-R9-5GR"/>
                         <outlet property="toolBar" destination="pyq-Oc-oR5" id="jnk-jZ-bLk"/>
                         <outlet property="webView" destination="26k-Ti-vbg" id="Utz-8X-erE"/>
                     </connections>

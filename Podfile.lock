@@ -1,13 +1,32 @@
 PODS:
   - AFNetworking (1.3.2)
+  - ISMethodSwizzling (0.0.2)
+  - NJKWebViewProgress (0.1.7)
   - SBJson (3.2)
+  - UIWebView+Progress (0.0.2):
+    - ISMethodSwizzling (~> 0.0.2)
+    - NJKWebViewProgress (~> 0.1.6)
 
 DEPENDENCIES:
   - AFNetworking (~> 1.3.2)
+  - ISMethodSwizzling (from `https://github.com/ishkawa/ISMethodSwizzling.git`)
+  - NJKWebViewProgress (from `https://github.com/ninjinkun/NJKWebViewProgress.git`)
   - SBJson (~> 3.2.0)
+  - UIWebView+Progress (from `git@github.com:ishkawa/UIWebView-Progress.git`)
+
+EXTERNAL SOURCES:
+  ISMethodSwizzling:
+    :git: https://github.com/ishkawa/ISMethodSwizzling.git
+  NJKWebViewProgress:
+    :git: https://github.com/ninjinkun/NJKWebViewProgress.git
+  UIWebView+Progress:
+    :git: git@github.com:ishkawa/UIWebView-Progress.git
 
 SPEC CHECKSUMS:
   AFNetworking: 7f9bcd7c287a75476cd5c61e82fd3380e93e4c54
+  ISMethodSwizzling: b15160740386cff53b168583017b3e7162530022
+  NJKWebViewProgress: 8632421f78aa22f1f2b3e96edd2fd825478ca735
   SBJson: e60b4dc22448c2ae1e754b523a4ab53408e85c8d
+  UIWebView+Progress: 8ad1678e92db8e806fcf790628fbcee03dc1176c
 
 COCOAPODS: 0.23.0
