@@ -38,7 +38,6 @@
     self.toolBar.backgroundImage = [UIImage imageNamed:@"a_02"];
     self.toolBar.delegate = self;
     self.webView.delegate = self;
-    self.webView.progressDelegate = self;
     
     self.progressBar.hidden = YES;
     
@@ -56,7 +55,8 @@
 }
 
 -(void) loadHomePage {
-    NSString *urlStr = @"http://m.tv.sohu.com/";
+//    NSString *urlStr = @"http://m.tv.sohu.com/";
+    NSString *urlStr = @"http://dzvideo1.sinaapp.com";
     [self loadUrl:urlStr];
 }
 
@@ -83,10 +83,6 @@
     self.progressBar.progress = 0;
 }
 
-- (void)webViewProgress:(NJKWebViewProgress *)webViewProgress updateProgress:(float)progress
-{
-    self.progressBar.progress = progress;
-}
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {

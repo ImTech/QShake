@@ -30,9 +30,3 @@
 #define COCOAPODS_VERSION_MINOR_SBJson 2
 #define COCOAPODS_VERSION_PATCH_SBJson 0
 
-// UIWebView+Progress
-#define COCOAPODS_POD_AVAILABLE_UIWebView_Progress
-#define COCOAPODS_VERSION_MAJOR_UIWebView_Progress 0
-#define COCOAPODS_VERSION_MINOR_UIWebView_Progress 0
-#define COCOAPODS_VERSION_PATCH_UIWebView_Progress 2
-
