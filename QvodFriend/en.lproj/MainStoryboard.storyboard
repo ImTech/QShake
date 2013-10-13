@@ -70,6 +70,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="QSx-S8-vkO" customClass="ShakeImageView">
+                                <rect key="frame" x="90" y="214" width="140" height="140"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" id="yhO-tb-hyo" customClass="HandleTableView">
+                                <rect key="frame" x="0.0" y="64" width="320" height="453"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="-20"/>
+                            </view>
                             <navigationBar contentMode="scaleToFill" translucent="NO" id="NvJ-Iy-hl5">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -84,22 +94,12 @@
                                     <navigationItem title="摇一摇看片" id="3Fz-MR-H2h"/>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="pwO-nB-aMO">
-                                <rect key="frame" x="0.0" y="64" width="320" height="453"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="-20"/>
-                            </tableView>
-                            <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="QSx-S8-vkO" customClass="ShakeImageView">
-                                <rect key="frame" x="90" y="214" width="140" height="140"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                     </view>
                     <tabBarItem key="tabBarItem" title="摇一摇" image="a_11.png" id="7"/>
                     <connections>
                         <outlet property="ImgShake" destination="QSx-S8-vkO" id="Oq6-34-cuJ"/>
-                        <outlet property="dataTable" destination="pwO-nB-aMO" id="Dfq-sK-9g2"/>
+                        <outlet property="dataTable" destination="yhO-tb-hyo" id="uXv-wm-XEc"/>
                         <outlet property="navigationBar" destination="NvJ-Iy-hl5" id="V64-ed-KEN"/>
                     </connections>
                 </viewController>

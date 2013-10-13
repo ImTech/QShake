@@ -33,7 +33,7 @@
     [self.tabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor colorWithHex:@"#929292"], UITextAttributeTextColor, nil] forState:UIControlStateNormal];
     
     [self.view setBackgroundColor:[UIColor colorWithHex:@"#E4E7EB"]];
-    
+//    self.view.backgroundColor = [UIColor colorWithHex:@"#19759c"];
 //    [self.toolBar setBackgroundColor:[UIColor colorWithHex:@"#19759c"]];
     self.toolBar.backgroundImage = [UIImage imageNamed:@"a_02"];
     self.toolBar.delegate = self;
@@ -43,6 +43,8 @@
     
     [self calcWebViewHeight];
     [self loadHomePage];
+    
+    NSLog(@"bb bg%@", self.toolBar.backgroundImage);
 }
 
 -(void) calcWebViewHeight {
@@ -119,6 +121,14 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (BOOL)prefersStatusBarHidden {
+    return NO;
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleDefault;
 }
 
 @end

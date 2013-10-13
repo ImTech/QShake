@@ -111,6 +111,11 @@
     }
 }
 
+- (UIImage *)getBackgroundImage
+{
+    return _backgroundImageView.image;
+}
+
 - (void)setUrl:(NSString *)url
 {
     _textFieldUrl.text = url;

@@ -16,16 +16,13 @@
 #define ANIM_SHAKE_COUNT 5
 #define ANIM_SHAKE_KEY  @"ICON_SHAKE"
 
-typedef NSUInteger DiaplayType;
-
-enum {
-    DisplayTypeShake,
-    DisplayTypeDataList
-};
-
 @interface ShakeViewController ()
 {
     BOOL _isLodingData;
+    UIImageView *_handleView;
+    BOOL _isShowTable;
+    CGFloat _tableShowY;
+    CGFloat _tableHideY;
 }
 @property(strong, nonatomic) DataTableContrller *dataTableController;
 @end
@@ -34,13 +31,19 @@ enum {
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
 	// Do any additional setup after loading the view, typically from a nib.
     self.dataTableController = [[DataTableContrller alloc] init];
-    self.dataTableController.tableView = self.dataTable;
+    self.dataTableController.tableView = self.dataTable.tableView;
+    self.dataTable.delegate = self;
+    _dataTable.tableView.backgroundColor = [UIColor whiteColor];
+    [_dataTable setHandleBackgourndColor:[UIColor colorWithHex:@"#E4E7EB"]];
+    
     [self.imgShake setImage:[UIImage imageNamed:@"a_05"]];
     self.imgShake.delegate = self;
     [self shakeImage:_imgShake withRepeatCount:ANIM_SHAKE_COUNT];
-    [self setDisplayType:DisplayTypeShake];
+//    [self.imgShake setBackgroundColor:[UIColor colorWithHex:@"#E4E7EB"]];
+//    self.view.backgroundColor = [UIColor colorWithHex:@"#19759c"];
     [self.view setBackgroundColor:[UIColor colorWithHex:@"#E4E7EB"]];
     [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"a_02"] forBarMetrics:UIBarMetricsDefault];
     [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"a_11"] withFinishedUnselectedImage:[UIImage imageNamed:@"a_11"]];
@@ -48,9 +51,11 @@ enum {
    
     [self.tabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor colorWithHex:@"#929292"], UITextAttributeTextColor, nil] forState:UIControlStateNormal];
     
-    NSLog(@"tableView height:%f", self.dataTable.frame.size.height);
+    NSLog(@"tableView height:%@", self.dataTable.tableView);
+    
     [self calcTableHeight];
     [self calcImagePos];
+    [self hideTable:NO];
 }
 
 -(void) calcImagePos{
@@ -88,6 +93,35 @@ enum {
     NSLog(@"yyyy:%f", self.dataTable.frame.origin.y);
     self.dataTable.frame = CGRectMake(0, self.dataTable.frame.origin.y, rect.size.width, tableHeight);
     [self.dataTable layoutIfNeeded];
+    _tableShowY = _dataTable.frame.origin.y;
+    
+}
+
+- (void) hideTable:(BOOL) anim
+{
+    _isShowTable = NO;
+    if(_tableHideY == 0) {
+        CGFloat handleHeight = self.dataTable.handleHeight;
+        _tableHideY = _dataTable.frame.origin.y -_dataTable.frame.size.height + handleHeight;
+    }
+   CGRect rect = _dataTable.frame;
+    _dataTable.frame = CGRectMake(rect.origin.x, _tableHideY, rect.size.width, rect.size.height);
+}
+
+- (void) showTable:(BOOL) anim
+{
+    _isShowTable = YES;
+    CGRect rect = _dataTable.frame;
+    _dataTable.frame = CGRectMake(rect.origin.x, _tableShowY, rect.size.width, rect.size.height);
+}
+
+- (void) toggleShowTable:(BOOL) anim
+{
+    if (_isShowTable) {
+        [self hideTable:anim];
+    } else {
+        [self showTable:anim];
+    }
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -102,7 +136,6 @@ enum {
         NSLog(@"loading");
         return;
     }
-    [self setDisplayType:DisplayTypeShake];
     [self shakeImage:imageView withRepeatCount:NSUIntegerMax];
     [SoundUtil playShakeSound:ShakeSoundStyleBegin];
     [self beginLoadData];
@@ -132,31 +165,21 @@ enum {
     // Dispose of any resources that can be recreated.
 }
 
-- (void) setDisplayType: (DiaplayType) type
-{
-    if (type == DisplayTypeShake) {
-        _imgShake.hidden = NO;
-        _dataTable.hidden = YES;
-    } else if (type == DisplayTypeDataList) {
-        _imgShake.hidden = YES;
-        _dataTable.hidden = NO;
-    }
-}
 
 - (void) beginLoadData
 {
     _isLodingData = YES;
+    [self hideTable:YES];
     [ResouceApi RequestJson:@"http://dzsvr.sinaapp.com/" Path:@"rand_ios" result:^(id JSON) {
         _isLodingData = NO;
         [[_imgShake layer] removeAnimationForKey:ANIM_SHAKE_KEY];
         if(JSON == nil) {
             // failed
-            [self setDisplayType:DisplayTypeShake];
             [SoundUtil playShakeSound:ShakeSoundStyleFailed];
             return;
         }
         // play sucess music
-        [self setDisplayType:DisplayTypeDataList];
+        [self showTable:YES];
         [SoundUtil playShakeSound:ShakeSoundStyleEnd];
         SBJsonParser *parser = [[SBJsonParser alloc] init];
         NSMutableArray *array = [parser objectWithString:JSON];
@@ -185,6 +208,15 @@ enum {
 
 -(BOOL)shouldAutorotate {
     return NO;
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleDefault;
+}
+
+- (void)handleClicked
+{
+    [self toggleShowTable:YES];
 }
 
 @end

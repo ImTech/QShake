@@ -10,10 +10,11 @@
 #import "QBroswerBarDelegate.h"
 
 @interface QBroswerBar : UIView <UITextFieldDelegate>
-@property(strong, nonatomic, setter = setBackgroundImage:) UIImage *backgroundImage;
+@property(strong, nonatomic, getter = getBackgroundImage, setter = setBackgroundImage:) UIImage *backgroundImage;
 @property(strong, nonatomic, setter = setUrl:, getter = getUrl) NSString *url;
 @property(strong, nonatomic) id<UITextFieldDelegate, QBroswerBarDelegate> delegate;
 - (void) setBackgroundImage:(UIImage *)backgroundImage;
+- (UIImage*) getBackgroundImage;
 - (void) setUrl:(NSString *) url;
 - (NSString*) getUrl;
 @end

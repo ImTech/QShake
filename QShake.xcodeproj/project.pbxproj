@@ -22,6 +22,9 @@
 		961705C517F1FC190074E6BB /* UITextField+Padding.m in Sources */ = {isa = PBXBuildFile; fileRef = 961705C417F1FC190074E6BB /* UITextField+Padding.m */; };
 		961C626117DA2A4900982CF7 /* DataTableContrller.m in Sources */ = {isa = PBXBuildFile; fileRef = 961C626017DA2A4900982CF7 /* DataTableContrller.m */; };
 		961EF84717DC1F3C00B74015 /* failed.wav in Resources */ = {isa = PBXBuildFile; fileRef = 961EF84617DC1F3C00B74015 /* failed.wav */; };
+		96492B08180A6FDB00356886 /* handle_arrow_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96492B06180A6FDB00356886 /* handle_arrow_down@2x.png */; };
+		96492B09180A6FDB00356886 /* handle_body@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96492B07180A6FDB00356886 /* handle_body@2x.png */; };
+		96492B0C180A747B00356886 /* HandleTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96492B0B180A747B00356886 /* HandleTableView.m */; };
 		9654A67617ED1EC3006E60E4 /* a_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 9654A66A17ED1EC3006E60E4 /* a_02.png */; };
 		9654A67717ED1EC3006E60E4 /* a_02@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9654A66B17ED1EC3006E60E4 /* a_02@2x.png */; };
 		9654A67817ED1EC3006E60E4 /* a_05.png in Resources */ = {isa = PBXBuildFile; fileRef = 9654A66C17ED1EC3006E60E4 /* a_05.png */; };
@@ -76,6 +79,10 @@
 		961C625F17DA2A4900982CF7 /* DataTableContrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataTableContrller.h; sourceTree = "<group>"; };
 		961C626017DA2A4900982CF7 /* DataTableContrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataTableContrller.m; sourceTree = "<group>"; };
 		961EF84617DC1F3C00B74015 /* failed.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = failed.wav; sourceTree = "<group>"; };
+		96492B06180A6FDB00356886 /* handle_arrow_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "handle_arrow_down@2x.png"; sourceTree = "<group>"; };
+		96492B07180A6FDB00356886 /* handle_body@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "handle_body@2x.png"; sourceTree = "<group>"; };
+		96492B0A180A747B00356886 /* HandleTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HandleTableView.h; sourceTree = "<group>"; };
+		96492B0B180A747B00356886 /* HandleTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HandleTableView.m; sourceTree = "<group>"; };
 		9654A66A17ED1EC3006E60E4 /* a_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = a_02.png; sourceTree = "<group>"; };
 		9654A66B17ED1EC3006E60E4 /* a_02@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "a_02@2x.png"; sourceTree = "<group>"; };
 		9654A66C17ED1EC3006E60E4 /* a_05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = a_05.png; sourceTree = "<group>"; };
@@ -156,6 +163,8 @@
 				961705C317F1FC190074E6BB /* UITextField+Padding.h */,
 				961705C417F1FC190074E6BB /* UITextField+Padding.m */,
 				961705C617F201000074E6BB /* QBroswerBarDelegate.h */,
+				96492B0A180A747B00356886 /* HandleTableView.h */,
+				96492B0B180A747B00356886 /* HandleTableView.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -187,6 +196,8 @@
 		9654A66917ED1E9D006E60E4 /* Pic */ = {
 			isa = PBXGroup;
 			children = (
+				96492B06180A6FDB00356886 /* handle_arrow_down@2x.png */,
+				96492B07180A6FDB00356886 /* handle_body@2x.png */,
 				961705C117F1F7DB0074E6BB /* bg_home@2x.png */,
 				961705BF17F1F7280074E6BB /* bg_back@2x.png */,
 				961705BD17F1F5C90074E6BB /* bgTxtUrl@2x.png */,
@@ -335,6 +346,8 @@
 			files = (
 				9654A67717ED1EC3006E60E4 /* a_02@2x.png in Resources */,
 				9612236C17DB99DD00D27793 /* shake_match.mp3 in Resources */,
+				96492B08180A6FDB00356886 /* handle_arrow_down@2x.png in Resources */,
+				96492B09180A6FDB00356886 /* handle_body@2x.png in Resources */,
 				9654A67D17ED1EC3006E60E4 /* a_11@2x.png in Resources */,
 				9654A67A17ED1EC3006E60E4 /* a_09.png in Resources */,
 				9654A67617ED1EC3006E60E4 /* a_02.png in Resources */,
@@ -405,6 +418,7 @@
 				9612236717DB923D00D27793 /* ShakeImageView.m in Sources */,
 				9687E24217EFC01200642E2F /* QBroswerBar.m in Sources */,
 				9612237817DC15F000D27793 /* UIUtil.m in Sources */,
+				96492B0C180A747B00356886 /* HandleTableView.m in Sources */,
 				961C626117DA2A4900982CF7 /* DataTableContrller.m in Sources */,
 				969833FA17EDEA81007FDB02 /* TabViewController.m in Sources */,
 				969833FD17EDF7BC007FDB02 /* BrowserViewController.m in Sources */,
