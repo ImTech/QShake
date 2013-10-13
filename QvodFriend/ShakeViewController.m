@@ -67,13 +67,16 @@
 //    CGRect rect = CGRectMake( x, y, imgRect.size
 //                             .width, imgRect.size.height);
 //    self.imgShake.frame = rect;
-    _imgShake.center = self.view.center;
+    BOOL ios7 = [[UIDevice currentDevice].systemVersion floatValue] >= 7.0;
+    if (ios7) {
+        _imgShake.center = self.view.center;
+    } else {
+        _imgShake.center = CGPointMake(self.view.center.x, self.view.center.y - 26);
+    }
 }
 
 -(void) calcTableHeight {
-    
-    
-//    float screenHeight = [[UIScreen mainScreen] bounds].size.height;
+    //    float screenHeight = [[UIScreen mainScreen] bounds].size.height;
     BOOL ios7 = [[UIDevice currentDevice].systemVersion floatValue] >= 7.0;
     CGRect naviFrame = self.navigationBar.frame;
     CGRect tabFrame = self.tabBarController.tabBar.frame;
@@ -84,7 +87,7 @@
         height = tabFrame.origin.y - naviFrame.origin.y - naviFrame.size.height - 22;
     }
 //    NSLog(@"calcTableHeight height:%f", height);
-    _dataTable.frame = CGRectMake(0, naviFrame.origin.y + naviFrame.size.height + 1, naviFrame.size.width, height);
+    _dataTable.frame = CGRectMake(0, naviFrame.origin.y + naviFrame.size.height + 1, naviFrame.size.width, height - 16);
     // make hide
     _isShowTable = NO;
     CGRect rect = _dataTable.frame;
@@ -188,6 +191,7 @@
     _isLodingData = YES;
     [self hideTable];
     [ResouceApi RequestJson:@"http://dzsvr.sinaapp.com/" Path:@"rand_ios" result:^(id JSON) {
+        [NSThread sleepForTimeInterval:1];
         _isLodingData = NO;
         [[_imgShake layer] removeAnimationForKey:ANIM_SHAKE_KEY];
         if(JSON == nil) {
@@ -205,7 +209,7 @@
         }
         self.dataTableController.datas = array;
         NSLog(@"reload Data");
-        [self.dataTableController.tableView reloadData];
+//        [self.dataTableController.tableView reloadData];
     }];
  
 }
