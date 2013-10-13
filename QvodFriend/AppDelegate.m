@@ -14,6 +14,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7) {
+        [application setStatusBarStyle:UIStatusBarStyleLightContent];
+        self.window.clipsToBounds =YES;
+        self.window.frame =  CGRectMake(0,20,self.window.frame.size.width,self.window.frame.size.height-20);
+        
+        //Added on 19th Sep 2013
+        self.window.bounds = CGRectMake(0, 20, self.window.frame.size.width, self.window.frame.size.height);
+    }
     return YES;
 }
 
