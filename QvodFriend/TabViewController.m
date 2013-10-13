@@ -31,14 +31,16 @@
     // image height 49px
     self.tabBar.backgroundImage = [UIImage imageNamed:@"bg_tabbar"];
     self.tabBar.selectionIndicatorImage = [UIImage imageNamed:@"bg_tabbar_indi"];
-//    self.tabBar.barTintColor = [UIColor greenColor];
-//    NSLog(@"tabBar height:%f, scale:%f", self.tabBar.frame.size.height, [[UIScreen mainScreen] scale]);
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleBlackOpaque;
 }
 
 - (BOOL)shouldAutorotate {

@@ -63,6 +63,11 @@
 - (void)setDirection:(NSUInteger)handleDriction
 {
     _direction = handleDriction;
+    if(_direction == HandleArrowDirectionDown) {
+        _imageHandlerArrow.image = [UIImage imageNamed:@"handle_arrow_down"];
+    }else {
+        _imageHandlerArrow.image = [UIImage imageNamed:@"handle_arrow_up"];
+    }
 }
 
 - (CGFloat)getHandleHeight
@@ -81,7 +86,6 @@
 }
 - (void) handleButtonClicked:(UIImageView*) imageView
 {
-    NSLog(@"handle clicked");
     if([self.delegate respondsToSelector:@selector(handleClicked)]) {
         [self.delegate handleClicked];
     }

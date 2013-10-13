@@ -21,8 +21,6 @@
     BOOL _isLodingData;
     UIImageView *_handleView;
     BOOL _isShowTable;
-    CGFloat _tableShowY;
-    CGFloat _tableHideY;
 }
 @property(strong, nonatomic) DataTableContrller *dataTableController;
 @end
@@ -41,9 +39,7 @@
     
     [self.imgShake setImage:[UIImage imageNamed:@"a_05"]];
     self.imgShake.delegate = self;
-    [self shakeImage:_imgShake withRepeatCount:ANIM_SHAKE_COUNT];
-//    [self.imgShake setBackgroundColor:[UIColor colorWithHex:@"#E4E7EB"]];
-//    self.view.backgroundColor = [UIColor colorWithHex:@"#19759c"];
+//    [self shakeImage:_imgShake withRepeatCount:ANIM_SHAKE_COUNT];
     [self.view setBackgroundColor:[UIColor colorWithHex:@"#E4E7EB"]];
     [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"a_02"] forBarMetrics:UIBarMetricsDefault];
     [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"a_11"] withFinishedUnselectedImage:[UIImage imageNamed:@"a_11"]];
@@ -55,72 +51,93 @@
     
     [self calcTableHeight];
     [self calcImagePos];
-    [self hideTable:NO];
+//    [self setNeedsStatusBarAppearanceUpdate];
 }
 
 -(void) calcImagePos{
-//    float height = [[UIScreen mainScreen] bounds].size.height;
-//    float width = [[UIScreen mainScreen] bounds].size.width;
-//    NSLog(@"calcImagePos y:%f", height / 2);
-//    self.imgShake.center = CGPointMake(width / 2, height);
-    float tableHeight = self.dataTable.frame.size.height;
-    float tableWidth = self.dataTable.frame.size.width;
-    float tablex = self.dataTable.frame.origin.x;
-    float tabley = self.dataTable.frame.origin.y;
-    CGRect imgRect = self.imgShake.frame;
-    NSLog(@"tablex:%f, tabley:%f, tableH:%f, tableW:%f", tablex, tabley, tableHeight, tableWidth);
-    float x = tableWidth / 2 - imgRect.size.width / 2;
-    float y = tabley + tableHeight / 2 - imgRect.size.height;
-    NSLog(@"x:%f, y:%f", x, y);
-    CGRect rect = CGRectMake( x, y, imgRect.size
-                             .width, imgRect.size.height);
-    self.imgShake.frame = rect;
+//    float tableHeight = self.dataTable.frame.size.height;
+//    float tableWidth = self.dataTable.frame.size.width;
+//    float tablex = self.dataTable.frame.origin.x;
+//    float tabley = self.dataTable.frame.origin.y;
+//    CGRect imgRect = self.imgShake.frame;
+//    NSLog(@"tablex:%f, tabley:%f, tableH:%f, tableW:%f", tablex, tabley, tableHeight, tableWidth);
+//    float x = tableWidth / 2 - imgRect.size.width / 2;
+//    float y = tabley + tableHeight / 2 - imgRect.size.height;
+//    NSLog(@"x:%f, y:%f", x, y);
+//    CGRect rect = CGRectMake( x, y, imgRect.size
+//                             .width, imgRect.size.height);
+//    self.imgShake.frame = rect;
+    _imgShake.center = self.view.center;
 }
 
 -(void) calcTableHeight {
-    float screenHeight = [[UIScreen mainScreen] bounds].size.height;
+    
+    
+//    float screenHeight = [[UIScreen mainScreen] bounds].size.height;
     BOOL ios7 = [[UIDevice currentDevice].systemVersion floatValue] >= 7.0;
-    float tableHeight = 0;
-    if(ios7) {
-        // ios 7 计算要加上statusbar和tabbar
-        tableHeight = screenHeight - 20 - 44 - 49;
+    CGRect naviFrame = self.navigationBar.frame;
+    CGRect tabFrame = self.tabBarController.tabBar.frame;
+    CGFloat height = 0;
+    if (ios7) {
+        height = tabFrame.origin.y - naviFrame.origin.y - naviFrame.size.height;
     } else {
-        tableHeight = self.view.frame.size.height - 44;
+        height = tabFrame.origin.y - naviFrame.origin.y - naviFrame.size.height - 22;
     }
-    NSLog(@"tableHeight:%f screenHeight:%f ios7:%d", tableHeight, screenHeight, ios7);
-    CGRect rect = self.dataTable.frame;
-//    self.dataTable.backgroundColor = [UIColor redColor];
-    NSLog(@"yyyy:%f", self.dataTable.frame.origin.y);
-    self.dataTable.frame = CGRectMake(0, self.dataTable.frame.origin.y, rect.size.width, tableHeight);
-    [self.dataTable layoutIfNeeded];
-    _tableShowY = _dataTable.frame.origin.y;
+//    NSLog(@"calcTableHeight height:%f", height);
+    _dataTable.frame = CGRectMake(0, naviFrame.origin.y + naviFrame.size.height + 1, naviFrame.size.width, height);
+    // make hide
+    _isShowTable = NO;
+    CGRect rect = _dataTable.frame;
+   _dataTable.frame = CGRectMake(rect.origin.x, rect.origin.y - rect.size.height + [_dataTable getHandleHeight], rect.size.width, rect.size.height);
+}
+
+- (void) hideTable
+{
+//    if(YES) return;
+    _isShowTable = NO;
+    [UIView animateWithDuration:0.8
+                              delay:0.0
+                            options: UIViewAnimationOptionCurveEaseInOut
+                         animations:^{
+                             _dataTable.transform = CGAffineTransformMakeTranslation(0, 0);
+                         }
+                        completion: ^(BOOL finished){
+                            if(finished) {
+                                _dataTable.handleDriction = HandleArrowDirectionDown;
+                            }
+                        }
+     ];
     
 }
 
-- (void) hideTable:(BOOL) anim
+- (void) showTable
 {
-    _isShowTable = NO;
-    if(_tableHideY == 0) {
-        CGFloat handleHeight = self.dataTable.handleHeight;
-        _tableHideY = _dataTable.frame.origin.y -_dataTable.frame.size.height + handleHeight;
-    }
-   CGRect rect = _dataTable.frame;
-    _dataTable.frame = CGRectMake(rect.origin.x, _tableHideY, rect.size.width, rect.size.height);
-}
-
-- (void) showTable:(BOOL) anim
-{
+//    if(YES) return;
+    NSLog(@"showTable");
     _isShowTable = YES;
-    CGRect rect = _dataTable.frame;
-    _dataTable.frame = CGRectMake(rect.origin.x, _tableShowY, rect.size.width, rect.size.height);
+    CGFloat tableHeight = _dataTable.frame.size.height;
+    NSLog(@"table height:%f", tableHeight);
+    [UIView animateWithDuration:0.8
+                          delay:0.0
+                        options: UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         _dataTable.transform = CGAffineTransformMakeTranslation(0, _dataTable.frame.size.height - [_dataTable getHandleHeight]);
+                     }
+                     completion:^(BOOL fininshed){
+                         if(fininshed) {
+                             _dataTable.handleDriction = HandleArrowDirectionUp;
+                         }
+                     }
+     
+     ];
 }
 
-- (void) toggleShowTable:(BOOL) anim
+- (void) toggleShowTable
 {
     if (_isShowTable) {
-        [self hideTable:anim];
+        [self hideTable];
     } else {
-        [self showTable:anim];
+        [self showTable];
     }
 }
 
@@ -169,7 +186,7 @@
 - (void) beginLoadData
 {
     _isLodingData = YES;
-    [self hideTable:YES];
+    [self hideTable];
     [ResouceApi RequestJson:@"http://dzsvr.sinaapp.com/" Path:@"rand_ios" result:^(id JSON) {
         _isLodingData = NO;
         [[_imgShake layer] removeAnimationForKey:ANIM_SHAKE_KEY];
@@ -179,7 +196,7 @@
             return;
         }
         // play sucess music
-        [self showTable:YES];
+        [self showTable];
         [SoundUtil playShakeSound:ShakeSoundStyleEnd];
         SBJsonParser *parser = [[SBJsonParser alloc] init];
         NSMutableArray *array = [parser objectWithString:JSON];
@@ -210,13 +227,9 @@
     return NO;
 }
 
-- (UIStatusBarStyle)preferredStatusBarStyle {
-    return UIStatusBarStyleDefault;
-}
-
 - (void)handleClicked
 {
-    [self toggleShowTable:YES];
+    [self toggleShowTable];
 }
 
 @end
