@@ -42,6 +42,14 @@
 //    [self shakeImage:_imgShake withRepeatCount:ANIM_SHAKE_COUNT];
     [self.view setBackgroundColor:[UIColor colorWithHex:@"#E4E7EB"]];
     [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"a_02"] forBarMetrics:UIBarMetricsDefault];
+    @try {
+        _navigationBar.barTintColor = [UIColor blackColor];
+    }
+    @catch (NSException *exception) {
+    }
+    @finally {
+    }
+    
     [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"a_11"] withFinishedUnselectedImage:[UIImage imageNamed:@"a_11"]];
     [self.tabBarItem setImage:[UIImage imageNamed:@"a_11"]];
    
