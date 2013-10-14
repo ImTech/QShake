@@ -19,7 +19,9 @@
     NSString* currentHash;
     int numbers[numberCount];
     int numberIndex;
+    NSMutableDictionary *video_data;
 }
+
 @synthesize datas = _datas;
 
 - (void) clearNumber
@@ -64,6 +66,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -93,6 +96,19 @@
 
 - (void)setDatas:(NSMutableArray *)d{
     _datas = d;
+ 
+    if (video_data == nil) {
+        NSString *pathlist = [[NSBundle mainBundle] pathForResource:@"video_data" ofType:@"plist"];
+        video_data = [[NSMutableDictionary alloc] initWithContentsOfFile:pathlist];
+//        NSLog(@"+++++%@", [[video_data objectForKey:@"froms"] objectForKey:[NSString stringWithFormat:@"%d", 1]]);
+    }
+    
+    for (int i = 0; i < _datas.count; i++) {
+        NSMutableDictionary *dictionary = [_datas objectAtIndex:i];
+        [dictionary setObject:[self randomHead] forKey:@"head"];
+//        NSLog(@"++++,%d", i);
+        [dictionary setObject:[[video_data objectForKey:@"froms"] objectForKey:[NSString stringWithFormat:@"%d", i]] forKey:@"from"];
+    }
     [self clearNumber];
     [self.tableView reloadData];
 //    [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionBottom];
@@ -122,7 +138,7 @@
 //        NSLog(@"new cell for index path:%d", indexPath.row);
         cell = [[MyUITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
 //        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.detailTextLabel.tintColor = [UIColor lightGrayColor];
+//        cell.detailTextLabel.tintColor = [UIColor lightGrayColor];
         cell.detailTextLabel.font = [cell.detailTextLabel.font fontWithSize:10];
         cell.textLabel.font = [cell.textLabel.font fontWithSize:16];
     }
@@ -133,11 +149,11 @@
         return nil;
     }
 //    [cell.imageView setFrame:CGRectMake(0, 0, 20, 20)];
-    cell.imageView.image = [UIImage imageNamed:[self randomHead]];
+    cell.imageView.image = [UIImage imageNamed:[[_datas objectAtIndex:indexPath.row] valueForKey:@"head"]];
     cell.textLabel.text = [[_datas objectAtIndex:indexPath.row] valueForKey:@"title"];
     cell.backgroundColor = indexPath.row % 2 == 0 ? [UIColor colorWithHex:@"#EBEFF0"] : [UIColor colorWithHex:@"#F2F2F2"];
-    NSString *from = indexPath.row % 2 == 0 ? @"来自：豆子哥(郫县)" : @"来自：冷大爷(峨眉山)";
-    cell.detailTextLabel.text = from;
+//    NSString *from = indexPath.row % 2 == 0 ? @"来自：豆子哥(郫县)" : @"来自：冷大爷(峨眉山)";
+    cell.detailTextLabel.text = [[_datas objectAtIndex:indexPath.row] valueForKey:@"from"];
     return cell;
 }
 
