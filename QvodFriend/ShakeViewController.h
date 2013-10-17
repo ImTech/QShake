@@ -10,10 +10,11 @@
 #import "ShakeImageView.h"
 #import "HandleTableView.h"
 
-@interface ShakeViewController : UIViewController <ShakeImageViewDelegate, HandleTableViewDelgate>
+@interface ShakeViewController : UIViewController <ShakeImageViewDelegate, HandleTableViewDelgate, UISearchBarDelegate>
 - (IBAction)Click:(id)sender;
 @property (weak, nonatomic) IBOutlet HandleTableView *dataTable;
 @property (weak, nonatomic) IBOutlet ShakeImageView *imgShake;
 @property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @end

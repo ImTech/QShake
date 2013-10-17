@@ -60,7 +60,15 @@
     [self calcTableHeight];
     [self calcImagePos];
 //    [self setNeedsStatusBarAppearanceUpdate];
+    _searchBar.delegate = self;
 }
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    NSLog(@"search:%@", searchBar.text);
+    [self beginSearchData:searchBar.text];
+}
+
 
 -(void) calcImagePos{
 //    float tableHeight = self.dataTable.frame.size.height;
@@ -191,6 +199,35 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) beginSearchData:(NSString *) text
+{
+    [self shakeImage:_imgShake withRepeatCount:NSUIntegerMax];
+    _isLodingData = YES;
+    [self hideTable];
+    NSString *path = [NSString stringWithFormat:@"search?kw=%@", text];
+    [ResouceApi RequestJson:@"http://dzsvr.sinaapp.com/" Path:path result:^(id JSON) {
+        [NSThread sleepForTimeInterval:1];
+        _isLodingData = NO;
+        [[_imgShake layer] removeAnimationForKey:ANIM_SHAKE_KEY];
+        if(JSON == nil) {
+            // failed
+            [SoundUtil playShakeSound:ShakeSoundStyleFailed];
+            return;
+        }
+        // play sucess music
+        [self showTable];
+        SBJsonParser *parser = [[SBJsonParser alloc] init];
+        NSMutableArray *array = [parser objectWithString:JSON];
+        for(NSMutableDictionary *dict in array) {
+            NSLog(@"item:%@", [dict valueForKey:@"title"]);
+        }
+        self.dataTableController.datas = array;
+        NSLog(@"reload Data");
+        //        [self.dataTableController.tableView reloadData];
+    }];
+    
 }
 
 

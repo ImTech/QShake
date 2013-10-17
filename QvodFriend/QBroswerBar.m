@@ -28,21 +28,12 @@
     return self;
 }
 
-- (id)initWithFrame:(CGRect)frame
-{
-    NSLog(@"frame:%f, %f", frame.size.width, frame.size.height);
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-        [self initViews:frame];
-    }
-    return self;
-}
 
 - (void) initViews:(CGRect) frame
 {
     // backgournd
-    _backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+    NSLog(@"initView frame:%f, %f", frame.size.width, frame.size.height);
+    _backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, 44)];
     [self addSubview:_backgroundImageView];
     
     // button back

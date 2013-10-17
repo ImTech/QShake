@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>QShake copy.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
 		<key>QvodFriend.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -13,6 +18,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>967080CA17BBE46E00147FD5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>96734774181040D70008EC46</key>
 		<dict>
 			<key>primary</key>
 			<true/>
