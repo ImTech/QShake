@@ -50,7 +50,7 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if(buttonIndex == 0) {
         //play
-        [QVODHelper playWithHash:currentHash];
+        [QVODHelper playWithHash:currentHash handleNoQvod:YES];
     }
 }
 

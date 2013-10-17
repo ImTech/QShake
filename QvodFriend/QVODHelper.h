@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface QVODHelper : NSObject
-+ (BOOL) playWithHash:(NSString*) hash;
+@interface QVODHelper : NSObject <UIAlertViewDelegate>
++ (BOOL) playWithHash:(NSString*) hash handleNoQvod:(BOOL) handle;
 + (NSString *)urlEncoded:(NSString*)url;
 @end
