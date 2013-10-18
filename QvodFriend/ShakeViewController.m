@@ -12,6 +12,7 @@
 #import "DataTableContrller.h"
 #import "SoundUtil.h"
 #import "UIColor+Hex.h"
+#import "QVODHelper.h"
 
 #define ANIM_SHAKE_COUNT 5
 #define ANIM_SHAKE_KEY  @"ICON_SHAKE"
@@ -61,6 +62,7 @@
     [self calcImagePos];
 //    [self setNeedsStatusBarAppearanceUpdate];
     _searchBar.delegate = self;
+    _searchBar.searchTextPositionAdjustment = UIOffsetMake(14.f, 0);
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
@@ -206,14 +208,15 @@
     [self shakeImage:_imgShake withRepeatCount:NSUIntegerMax];
     _isLodingData = YES;
     [self hideTable];
-    NSString *path = [NSString stringWithFormat:@"search?kw=%@", text];
+    NSString *path = [NSString stringWithFormat:@"search?kw=%@", [QVODHelper urlEncoded:text]];
+    NSLog(@"path:%@", path);
     [ResouceApi RequestJson:@"http://dzsvr.sinaapp.com/" Path:path result:^(id JSON) {
         [NSThread sleepForTimeInterval:1];
         _isLodingData = NO;
+        [_searchBar resignFirstResponder];
         [[_imgShake layer] removeAnimationForKey:ANIM_SHAKE_KEY];
         if(JSON == nil) {
             // failed
-            [SoundUtil playShakeSound:ShakeSoundStyleFailed];
             return;
         }
         // play sucess music

@@ -103,13 +103,13 @@
 //        NSLog(@"+++++%@", [[video_data objectForKey:@"froms"] objectForKey:[NSString stringWithFormat:@"%d", 1]]);
     }
     
-    for (int i = 0; i < _datas.count; i++) {
-        NSMutableDictionary *dictionary = [_datas objectAtIndex:i];
-        [dictionary setObject:[self randomHead] forKey:@"head"];
-//        NSLog(@"++++,%d", i);
-        [dictionary setObject:[[video_data objectForKey:@"froms"] objectForKey:[NSString stringWithFormat:@"%d", i]] forKey:@"from"];
-    }
-    [self clearNumber];
+//    for (int i = 0; i < _datas.count; i++) {
+//        NSMutableDictionary *dictionary = [_datas objectAtIndex:i];
+//        [dictionary setObject:[self randomHead] forKey:@"head"];
+////        NSLog(@"++++,%d", i);
+//        [dictionary setObject:[[video_data objectForKey:@"froms"] objectForKey:[NSString stringWithFormat:@"%d", i]] forKey:@"from"];
+//    }
+//    [self clearNumber];
     [self.tableView reloadData];
 //    [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionBottom];
     [self.tableView setContentOffset:CGPointZero animated:NO];
@@ -148,12 +148,10 @@
         NSLog(@"cell is nil at row:%d", indexPath.row);
         return nil;
     }
-//    [cell.imageView setFrame:CGRectMake(0, 0, 20, 20)];
-    cell.imageView.image = [UIImage imageNamed:[[_datas objectAtIndex:indexPath.row] valueForKey:@"head"]];
+//    cell.imageView.image = [UIImage imageNamed:[[_datas objectAtIndex:indexPath.row] valueForKey:@"head"]];
     cell.textLabel.text = [[_datas objectAtIndex:indexPath.row] valueForKey:@"title"];
     cell.backgroundColor = indexPath.row % 2 == 0 ? [UIColor colorWithHex:@"#EBEFF0"] : [UIColor colorWithHex:@"#F2F2F2"];
-//    NSString *from = indexPath.row % 2 == 0 ? @"来自：豆子哥(郫县)" : @"来自：冷大爷(峨眉山)";
-    cell.detailTextLabel.text = [[_datas objectAtIndex:indexPath.row] valueForKey:@"from"];
+//    cell.detailTextLabel.text = [[_datas objectAtIndex:indexPath.row] valueForKey:@"from"];
     return cell;
 }
 
