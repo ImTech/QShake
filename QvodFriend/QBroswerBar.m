@@ -23,7 +23,8 @@
     NSLog(@"initWithCoder");
     self = [super initWithCoder:aDecoder];
     if (self) {
-        [self initViews:self.frame];
+        CGRect f = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, self.frame.size.height );
+        [self initViews:f];
     }
     return self;
 }
@@ -45,10 +46,22 @@
     [self addSubview:_btnBack];
     [_btnBack addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
     
+    
+    // button home
+    _btnHome = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_btnHome imageView].contentMode = UIViewContentModeScaleAspectFit;
+    [_btnHome setImage:[UIImage imageNamed:@"bg_home"] forState:UIControlStateNormal];
+    _btnHome.frame = CGRectMake(0, 0, 40, 40);
+    _btnHome.center = CGPointMake(frame.size.width - 20, 22);
+    [_btnHome addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:_btnHome];
+    
     // text url
-    _textFieldUrl = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, 232, 29)];
-    _textFieldUrl.center = CGPointMake(160, 22);
-    _textFieldUrl.background = [UIImage imageNamed:@"bgTxtUrl"];
+    _textFieldUrl = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, frame.size.width - 100, 29)];
+    _textFieldUrl.center = CGPointMake(frame.size.width / 2, 22);
+//    _textFieldUrl.background = [UIImage imageNamed:@"bgTxtUrl"];
+//    _textFieldUrl.backgroundColor = [UIColor whiteColor];
+    _textFieldUrl.borderStyle = UITextBorderStyleRoundedRect;
     _textFieldUrl.text = @"douzifly";
     _textFieldUrl.textColor = [UIColor colorWithHex:@"#6F6F6f"];
     _textFieldUrl.returnKeyType = UIReturnKeyGo;
@@ -58,14 +71,7 @@
     
     [self addSubview:_textFieldUrl];
     
-    // button home
-    _btnHome = [UIButton buttonWithType:UIButtonTypeCustom];
-    [_btnHome imageView].contentMode = UIViewContentModeScaleAspectFit;
-    [_btnHome setImage:[UIImage imageNamed:@"bg_home"] forState:UIControlStateNormal];
-    _btnHome.frame = CGRectMake(0, 0, 40, 40);
-    _btnHome.center = CGPointMake(300, 22);
-    [_btnHome addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:_btnHome];
+  
 }
 
 - (void) buttonClicked:(UIButton *) button

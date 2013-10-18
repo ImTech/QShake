@@ -15,15 +15,6 @@
 
 @implementation BrowserViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -35,8 +26,8 @@
     [self.view setBackgroundColor:[UIColor colorWithHex:@"#E4E7EB"]];
 //    self.view.backgroundColor = [UIColor colorWithHex:@"#19759c"];
 //    [self.toolBar setBackgroundColor:[UIColor colorWithHex:@"#19759c"]];
-    self.toolBar.backgroundImage = [UIImage imageNamed:@"a_02"];
-    _toolBar.backgroundColor = [UIColor blackColor];
+    self.toolBar.backgroundImage = [[UIImage imageNamed:@"a_02"] stretchableImageWithLeftCapWidth:10 topCapHeight:10];
+//    _toolBar.backgroundColor = [UIColor blackColor];
     self.toolBar.delegate = self;
     self.webView.delegate = self;
     
@@ -44,8 +35,6 @@
     
     [self calcWebViewHeight];
     [self loadHomePage];
-    
-    NSLog(@"bb bg%@", self.toolBar.backgroundImage);
 }
 
 -(void) calcWebViewHeight {
@@ -53,7 +42,7 @@
     float tableHeight = screenHeight - 20 - 44 - 49;
     NSLog(@"webViewHeight:%f screenHeight:%f", tableHeight, screenHeight);
     CGRect rect = self.webView.frame;
-    self.webView.frame = CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, tableHeight);
+    self.webView.frame = CGRectMake(rect.origin.x, rect.origin.y, [[UIScreen mainScreen] bounds].size.width, tableHeight);
     [self.webView layoutIfNeeded];
 }
 

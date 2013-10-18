@@ -42,7 +42,7 @@
     self.imgShake.delegate = self;
 //    [self shakeImage:_imgShake withRepeatCount:ANIM_SHAKE_COUNT];
     [self.view setBackgroundColor:[UIColor colorWithHex:@"#E4E7EB"]];
-    [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"a_02"] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationBar setBackgroundImage:[[UIImage imageNamed:@"a_02"] stretchableImageWithLeftCapWidth:10 topCapHeight:10] forBarMetrics:UIBarMetricsDefault];
     @try {
         _navigationBar.barTintColor = [UIColor blackColor];
     }
