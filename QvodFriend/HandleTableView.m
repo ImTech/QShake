@@ -43,6 +43,11 @@
     recognizer.numberOfTapsRequired = 1;
     recognizer.numberOfTouchesRequired = 1;
     [_imageHandler addGestureRecognizer:recognizer];
+    UIPanGestureRecognizer *panReco = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleImageHandlerPan:)];
+    panReco.maximumNumberOfTouches = 1;
+    panReco.minimumNumberOfTouches = 1;
+    [_imageHandler addGestureRecognizer:panReco];
+    
     _imageHandler.userInteractionEnabled = YES;
     
     _imageHandlerArrow = [[UIImageView alloc] init];
@@ -78,6 +83,7 @@
 - (void)layoutSubviews {
     CGFloat width = self.frame.size.width;
     CGFloat height = self.frame.size.height;
+    NSLog(@"layoutSubviews shake view width:%f", width);
     NSLog(@"HandleTableView layoutSubviews w:%f, h:%f", width, height);
     _tableView.frame = CGRectMake(0, 0, width, height - 27);
     _imageHandler.frame = CGRectMake(0, height - 27, width, 27);
@@ -88,6 +94,26 @@
 {
     if([self.delegate respondsToSelector:@selector(handleClicked)]) {
         [self.delegate handleClicked];
+    }
+}
+
+- (void) handleImageHandlerPan:(UIPanGestureRecognizer*) sender
+{
+//    NSLog(@"handleImageHandlerPan:%@", sender);
+    if (sender.state == UIGestureRecognizerStateChanged) {
+        CGPoint translatedPoint = [sender translationInView:self];
+        if ([self.delegate respondsToSelector:@selector(handleMoving:)]){
+            [self.delegate handleMoving:translatedPoint];
+        }
+    } else if (sender.state == UIGestureRecognizerStateBegan) {
+        if ([self.delegate respondsToSelector:@selector(handleBeginMove)]) {
+            [self.delegate handleBeginMove];
+        }
+    } else if (sender.state == UIGestureRecognizerStateEnded ||
+               sender.state == UIGestureRecognizerStateCancelled) {
+        if ([self.delegate respondsToSelector:@selector(handleEndMove)]) {
+            [self.delegate handleEndMove];
+        }
     }
 }
 

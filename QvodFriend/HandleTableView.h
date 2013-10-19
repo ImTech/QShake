@@ -17,10 +17,13 @@ enum {
 
 @optional
 - (void) handleClicked;
+- (void) handleBeginMove;
+- (void) handleEndMove;
+- (void) handleMoving:(CGPoint) point;
 
 @end
 
-@interface HandleTableView : UIView
+@interface HandleTableView : UIControl
 @property (readonly, strong, nonatomic) UITableView *tableView;
 @property (nonatomic, getter = getDirection, setter = setDirection:) NSUInteger handleDriction;
 @property (nonatomic) id<HandleTableViewDelgate> delegate;

@@ -22,6 +22,7 @@
     BOOL _isLodingData;
     UIImageView *_handleView;
     BOOL _isShowTable;
+    CGPoint _movePoint;
 }
 @property(strong, nonatomic) DataTableContrller *dataTableController;
 @end
@@ -63,6 +64,11 @@
 //    [self setNeedsStatusBarAppearanceUpdate];
     _searchBar.delegate = self;
     _searchBar.searchTextPositionAdjustment = UIOffsetMake(14.f, 0);
+}
+
+- (void) darg
+{
+    NSLog(@"drag");
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
@@ -118,7 +124,7 @@
     _isShowTable = NO;
     [UIView animateWithDuration:0.8
                               delay:0.0
-                            options: UIViewAnimationOptionCurveEaseInOut
+                            options: UIViewAnimationOptionCurveLinear
                          animations:^{
                              _dataTable.transform = CGAffineTransformMakeTranslation(0, 0);
                          }
@@ -140,7 +146,7 @@
     NSLog(@"table height:%f", tableHeight);
     [UIView animateWithDuration:0.8
                           delay:0.0
-                        options: UIViewAnimationOptionCurveEaseInOut
+                        options: UIViewAnimationOptionCurveLinear
                      animations:^{
                          _dataTable.transform = CGAffineTransformMakeTranslation(0, _dataTable.frame.size.height - [_dataTable getHandleHeight]);
                      }
@@ -282,6 +288,44 @@
 - (void)handleClicked
 {
     [self toggleShowTable];
+}
+
+- (void) handleBeginMove {
+    NSLog(@"move begin");
+}
+
+- (void) handleMoving:(CGPoint)point
+{
+    NSLog(@"moving y:%f", point.y);
+    _movePoint = point;
+    CGFloat y = _isShowTable ? point.y + _dataTable.tableView.frame.size.height : point.y;
+    if (y > _dataTable.tableView.frame.size.height) {
+        y = _dataTable.tableView.frame.size.height;
+    }
+    [UIView animateWithDuration:0.8
+                          delay:0.0
+                        options: UIViewAnimationOptionCurveLinear
+                     animations:^{
+                         _dataTable.transform = CGAffineTransformMakeTranslation(0, y);
+                     }
+                     completion: ^(BOOL finished){
+                         if(finished) {
+                             _dataTable.handleDriction = HandleArrowDirectionDown;
+                         }
+                     }
+     ];
+    
+}
+
+- (void) handleEndMove
+{
+    NSLog(@"move end");
+    if (_movePoint.y > _dataTable.frame.size.height / 2) {
+        [self showTable];
+    } else {
+        [self hideTable];
+    }
+    
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle

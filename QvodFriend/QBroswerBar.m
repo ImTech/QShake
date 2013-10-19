@@ -123,6 +123,9 @@
     return  _textFieldUrl.text;
 }
 
+-(void)layoutSubviews {
+    NSLog(@"QB width:%f", self.frame.size.width);
+}
 
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
