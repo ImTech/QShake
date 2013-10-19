@@ -37,7 +37,8 @@
     self.dataTableController.tableView = self.dataTable.tableView;
     self.dataTable.delegate = self;
     _dataTable.tableView.backgroundColor = [UIColor whiteColor];
-    [_dataTable setHandleBackgourndColor:[UIColor colorWithHex:@"#E4E7EB"]];
+//    [_dataTable setHandleBackgourndColor:[UIColor clearColor]];
+    _dataTable.backgroundColor = [UIColor clearColor];
     
     [self.imgShake setImage:[UIImage imageNamed:@"a_05"]];
     self.imgShake.delegate = self;

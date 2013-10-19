@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QvodFriend/ShakeViewController.m"
-            timestampString = "403895839.413942"
+            timestampString = "403896846.000509"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "159"
-            endingLineNumber = "159"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
             landmarkName = "-showTable"
             landmarkType = "5">
          </BreakpointContent>
