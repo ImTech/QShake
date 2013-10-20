@@ -102,16 +102,18 @@
         video_data = [[NSMutableDictionary alloc] initWithContentsOfFile:pathlist];
 //        NSLog(@"+++++%@", [[video_data objectForKey:@"froms"] objectForKey:[NSString stringWithFormat:@"%d", 1]]);
     }
-    
-//    for (int i = 0; i < _datas.count; i++) {
-//        NSMutableDictionary *dictionary = [_datas objectAtIndex:i];
-//        [dictionary setObject:[self randomHead] forKey:@"head"];
-////        NSLog(@"++++,%d", i);
-//        [dictionary setObject:[[video_data objectForKey:@"froms"] objectForKey:[NSString stringWithFormat:@"%d", i]] forKey:@"from"];
-//    }
-//    [self clearNumber];
+    NSLog(@"video_data count %d", [video_data count]);
+    if (_datas.count < 48) {
+    for (int i = 0; i < _datas.count; i++) {
+        NSMutableDictionary *dictionary = [_datas objectAtIndex:i];
+        [dictionary setObject:[self randomHead] forKey:@"head"];
+//        NSLog(@"++++,%d", i);
+        [dictionary setObject:[[video_data objectForKey:@"froms"] objectForKey:[NSString stringWithFormat:@"%d", i]] forKey:@"from"];
+    }
+    }
+    [self clearNumber];
     [self.tableView reloadData];
-//    [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionBottom];
+    [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionBottom];
     [self.tableView setContentOffset:CGPointZero animated:NO];
 }
 
@@ -137,8 +139,8 @@
     if(cell == nil) {
 //        NSLog(@"new cell for index path:%d", indexPath.row);
         cell = [[MyUITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-//        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-//        cell.detailTextLabel.tintColor = [UIColor lightGrayColor];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.detailTextLabel.tintColor = [UIColor lightGrayColor];
         cell.detailTextLabel.font = [cell.detailTextLabel.font fontWithSize:10];
         cell.textLabel.font = [cell.textLabel.font fontWithSize:16];
     }
@@ -148,10 +150,14 @@
         NSLog(@"cell is nil at row:%d", indexPath.row);
         return nil;
     }
-//    cell.imageView.image = [UIImage imageNamed:[[_datas objectAtIndex:indexPath.row] valueForKey:@"head"]];
-    cell.textLabel.text = [[_datas objectAtIndex:indexPath.row] valueForKey:@"title"];
+    cell.imageView.image = [UIImage imageNamed:[[_datas objectAtIndex:indexPath.row] valueForKey:@"head"]];
+    int row = indexPath.row;
+    if (row > [_datas count] - 1) {
+        row = [_datas count] - 1;
+    }
+    cell.textLabel.text = [[_datas objectAtIndex:row] valueForKey:@"title"];
     cell.backgroundColor = indexPath.row % 2 == 0 ? [UIColor colorWithHex:@"#EBEFF0"] : [UIColor colorWithHex:@"#F2F2F2"];
-//    cell.detailTextLabel.text = [[_datas objectAtIndex:indexPath.row] valueForKey:@"from"];
+    cell.detailTextLabel.text = [[_datas objectAtIndex:row] valueForKey:@"from"];
     return cell;
 }
 
