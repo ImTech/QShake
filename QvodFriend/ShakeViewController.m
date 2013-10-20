@@ -65,11 +65,16 @@
 //    [self setNeedsStatusBarAppearanceUpdate];
     _searchBar.delegate = self;
     _searchBar.searchTextPositionAdjustment = UIOffsetMake(14.f, 0);
+    
+    UITapGestureRecognizer *tapper = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
+    tapper.cancelsTouchesInView = FALSE;
+    [self.view addGestureRecognizer:tapper];
 }
 
-- (void) darg
+- (void) handleSingleTap:(UIGestureRecognizer*) sender
 {
-    NSLog(@"drag");
+    NSLog(@"handleSingleTap");
+    [self.view endEditing:YES];
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
@@ -123,7 +128,10 @@
 {
 //    if(YES) return;
     _isShowTable = NO;
-    [UIView animateWithDuration:0.8
+    CGFloat maxDuration = 1.0f;
+    CGFloat duration = _movePoint.y / _dataTable.tableView.frame.size.height * maxDuration;
+    
+    [UIView animateWithDuration: duration
                               delay:0.0
                             options: UIViewAnimationOptionCurveLinear
                          animations:^{
@@ -143,9 +151,10 @@
 //    if(YES) return;
     NSLog(@"showTable");
     _isShowTable = YES;
-    CGFloat tableHeight = _dataTable.frame.size.height;
-    NSLog(@"table height:%f", tableHeight);
-    [UIView animateWithDuration:0.8
+    CGFloat maxDuration = 1.0f;
+    CGFloat duration = (_dataTable.frame.size.height - _movePoint.y) / _dataTable.tableView.frame.size.height * maxDuration;
+    
+    [UIView animateWithDuration: duration
                           delay:0.0
                         options: UIViewAnimationOptionCurveLinear
                      animations:^{
@@ -302,8 +311,10 @@
     CGFloat y = _isShowTable ? point.y + _dataTable.tableView.frame.size.height : point.y;
     if (y > _dataTable.tableView.frame.size.height) {
         y = _dataTable.tableView.frame.size.height;
+    } else if (y < 0) {
+        y = 0;
     }
-    [UIView animateWithDuration:0.8
+    [UIView animateWithDuration:0.0
                           delay:0.0
                         options: UIViewAnimationOptionCurveLinear
                      animations:^{

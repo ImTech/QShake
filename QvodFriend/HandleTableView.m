@@ -77,7 +77,7 @@
 
 - (CGFloat)getHandleHeight
 {
-    return 22;
+    return 27;
 }
 
 - (void)layoutSubviews {
@@ -87,7 +87,7 @@
     NSLog(@"HandleTableView layoutSubviews w:%f, h:%f", width, height);
     _tableView.frame = CGRectMake(0, 0, width, height - 27);
     _imageHandler.frame = CGRectMake(0, height - 27, width, 27);
-    _imageHandlerArrow.frame = CGRectMake(0, 0, 13, 7);
+    _imageHandlerArrow.frame = CGRectMake(0, 0, 13, 10);
     _imageHandlerArrow.center = CGPointMake(_imageHandler.center.x, _imageHandler.center.y + 2);
 }
 - (void) handleButtonClicked:(UIImageView*) imageView
