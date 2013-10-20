@@ -128,9 +128,10 @@
 {
 //    if(YES) return;
     _isShowTable = NO;
-    CGFloat maxDuration = 1.0f;
-    CGFloat duration = _movePoint.y / _dataTable.tableView.frame.size.height * maxDuration;
-    
+    CGFloat maxDuration = 0.8f;
+    CGFloat duration = _dataTable.transform.ty / _dataTable.frame.size.height * maxDuration;
+    if (duration == 0) duration = 0.6f;
+    NSLog(@"hideTable duration:%f", duration);
     [UIView animateWithDuration: duration
                               delay:0.0
                             options: UIViewAnimationOptionCurveLinear
@@ -151,9 +152,9 @@
 //    if(YES) return;
     NSLog(@"showTable");
     _isShowTable = YES;
-    CGFloat maxDuration = 1.0f;
-    CGFloat duration = (_dataTable.frame.size.height - _movePoint.y) / _dataTable.tableView.frame.size.height * maxDuration;
-    
+    CGFloat maxDuration = 0.8f;
+    CGFloat duration = (_dataTable.frame.size.height - _dataTable.transform.ty) / _dataTable.frame.size.height * maxDuration;
+    NSLog(@"showTable duration:%f", duration);
     [UIView animateWithDuration: duration
                           delay:0.0
                         options: UIViewAnimationOptionCurveLinear
@@ -332,7 +333,7 @@
 - (void) handleEndMove
 {
     NSLog(@"move end");
-    if (_movePoint.y > _dataTable.frame.size.height / 2) {
+    if (_movePoint.y > 0) {
         [self showTable];
     } else {
         [self hideTable];

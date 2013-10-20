@@ -35,7 +35,18 @@
     
     [self calcWebViewHeight];
     [self loadHomePage];
+    
+    UITapGestureRecognizer *tapper = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
+    tapper.cancelsTouchesInView = FALSE;
+    [self.webView addGestureRecognizer:tapper];
 }
+
+- (void) handleSingleTap:(UIGestureRecognizer*) sender
+{
+    NSLog(@"handleSingleTap");
+    [self.view endEditing:YES];
+}
+
 
 -(void) calcWebViewHeight {
     float screenHeight = [[UIScreen mainScreen] bounds].size.height;
