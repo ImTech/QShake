@@ -71,10 +71,16 @@
     [self.view addGestureRecognizer:tapper];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    NSLog(@"viewDidAppear");
+    [_imgShake becomeFirstResponder];
+}
+
 - (void) handleSingleTap:(UIGestureRecognizer*) sender
 {
     NSLog(@"handleSingleTap");
     [self.view endEditing:YES];
+    [_imgShake becomeFirstResponder];
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar

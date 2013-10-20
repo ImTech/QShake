@@ -27,7 +27,7 @@
             [self.delegate shakeImageViewShaked:self];
         }
     }
-    
+//
     if ([super respondsToSelector:@selector(motionEnded:withEvent:)]) {
         [super motionEnded:motion withEvent:event];
     }
@@ -36,6 +36,7 @@
 -(BOOL)canBecomeFirstResponder {
     return YES;
 }
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
