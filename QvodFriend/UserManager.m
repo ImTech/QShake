@@ -45,7 +45,7 @@
 - (User *)random
 {
     int max = numberCount;
-    int min = 0;
+    int min = 1;
     int randNum = rand() % (max - min) + min;
 //    NSLog(@"----randNum:%d", randNum);
 //    if ([self checkExists:randNum]) {
