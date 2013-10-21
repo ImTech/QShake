@@ -34,6 +34,8 @@
 		9654A67B17ED1EC3006E60E4 /* a_09@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9654A66F17ED1EC3006E60E4 /* a_09@2x.png */; };
 		9654A67C17ED1EC3006E60E4 /* a_11.png in Resources */ = {isa = PBXBuildFile; fileRef = 9654A67017ED1EC3006E60E4 /* a_11.png */; };
 		9654A67D17ED1EC3006E60E4 /* a_11@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9654A67117ED1EC3006E60E4 /* a_11@2x.png */; };
+		966D3323181581DA00F9963D /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 966D3322181581DA00F9963D /* UserManager.m */; };
+		966D3326181581EC00F9963D /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 966D3325181581EC00F9963D /* User.m */; };
 		967080CF17BBE46E00147FD5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 967080CE17BBE46E00147FD5 /* UIKit.framework */; };
 		967080D117BBE46E00147FD5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 967080D017BBE46E00147FD5 /* Foundation.framework */; };
 		967080D317BBE46E00147FD5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 967080D217BBE46E00147FD5 /* CoreGraphics.framework */; };
@@ -241,6 +243,10 @@
 		9654A66F17ED1EC3006E60E4 /* a_09@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "a_09@2x.png"; sourceTree = "<group>"; };
 		9654A67017ED1EC3006E60E4 /* a_11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = a_11.png; sourceTree = "<group>"; };
 		9654A67117ED1EC3006E60E4 /* a_11@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "a_11@2x.png"; sourceTree = "<group>"; };
+		966D3321181581DA00F9963D /* UserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserManager.h; sourceTree = "<group>"; };
+		966D3322181581DA00F9963D /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
+		966D3324181581EC00F9963D /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		966D3325181581EC00F9963D /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		967080CB17BBE46E00147FD5 /* QShake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QShake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		967080CE17BBE46E00147FD5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		967080D017BBE46E00147FD5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -387,6 +393,10 @@
 				96FD726A180AF99E0002FD00 /* MyUITableViewCell.m */,
 				967347E3181046130008EC46 /* SearchViewController.h */,
 				967347E4181046130008EC46 /* SearchViewController.m */,
+				966D3321181581DA00F9963D /* UserManager.h */,
+				966D3322181581DA00F9963D /* UserManager.m */,
+				966D3324181581EC00F9963D /* User.h */,
+				966D3325181581EC00F9963D /* User.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -897,10 +907,12 @@
 				9612237817DC15F000D27793 /* UIUtil.m in Sources */,
 				96492B0C180A747B00356886 /* HandleTableView.m in Sources */,
 				961C626117DA2A4900982CF7 /* DataTableContrller.m in Sources */,
+				966D3323181581DA00F9963D /* UserManager.m in Sources */,
 				969833FA17EDEA81007FDB02 /* TabViewController.m in Sources */,
 				969833FD17EDF7BC007FDB02 /* BrowserViewController.m in Sources */,
 				967080DF17BBE46E00147FD5 /* AppDelegate.m in Sources */,
 				967080EB17BBE46E00147FD5 /* ShakeViewController.m in Sources */,
+				966D3326181581EC00F9963D /* User.m in Sources */,
 				9612236F17DB9A7700D27793 /* SoundUtil.m in Sources */,
 				9612235D17DB847300D27793 /* QVODHelper.m in Sources */,
 				96F7B6F817BBF6C90098A18E /* ResouceApi.m in Sources */,

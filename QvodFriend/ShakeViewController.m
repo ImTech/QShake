@@ -127,14 +127,14 @@
     // make hide
     _isShowTable = NO;
     CGRect rect = _dataTable.frame;
-   _dataTable.frame = CGRectMake(rect.origin.x, rect.origin.y - rect.size.height + [_dataTable getHandleHeight], rect.size.width, rect.size.height);
+   _dataTable.frame = CGRectMake(rect.origin.x, rect.origin.y - rect.size.height + [_dataTable getHandleHeight] - 4, rect.size.width, rect.size.height);
 }
 
 - (void) hideTable
 {
 //    if(YES) return;
     _isShowTable = NO;
-    CGFloat maxDuration = 0.8f;
+    CGFloat maxDuration = 0.6f;
     CGFloat duration = _dataTable.transform.ty / _dataTable.frame.size.height * maxDuration;
     if (duration == 0) duration = 0.6f;
     NSLog(@"hideTable duration:%f", duration);
@@ -158,7 +158,7 @@
 //    if(YES) return;
     NSLog(@"showTable");
     _isShowTable = YES;
-    CGFloat maxDuration = 0.8f;
+    CGFloat maxDuration = 0.6f;
     CGFloat duration = (_dataTable.frame.size.height - _dataTable.transform.ty) / _dataTable.frame.size.height * maxDuration;
     NSLog(@"showTable duration:%f", duration);
     [UIView animateWithDuration: duration
@@ -299,7 +299,7 @@
 }
 
 -(BOOL)shouldAutorotate {
-    return NO;
+    return YES;
 }
 
 - (void)handleClicked
