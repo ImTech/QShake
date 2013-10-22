@@ -117,7 +117,7 @@
 {
     NSLog(@"url:%@, home:%@", url, self.homeUrl);
     if ([url rangeOfString:self.homeUrl].location != NSNotFound) {
-        url = @"home";
+        url = @"加载中...";
     }
     _textFieldUrl.text = url;
 }

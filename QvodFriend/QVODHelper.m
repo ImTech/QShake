@@ -24,7 +24,16 @@
     return result;
 }
 
-+(BOOL)playWithHash:(NSString *) hash handleNoQvod:(BOOL) handle
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSLog(@"clicked %d,", buttonIndex);
+    if (buttonIndex == 0) {
+        // install qvod
+        [QVODHelper install];
+    }
+}
+
++ (BOOL)playWithHash:(NSString *) hash
 {
     if(hash == nil) {
         return NO;
@@ -32,34 +41,26 @@
     NSURL *url = [NSURL URLWithString:[@"qvodplayer:" stringByAppendingString:[QVODHelper urlEncoded:hash]]];
     NSLog(@"playWithHash url:%@", url);
     BOOL haveQvod = [[UIApplication sharedApplication] openURL:url];
-    if (!haveQvod && handle) {
-        //
-        [UIUtil showAlert:@"安装组件" withMessage:@"还木有安装播放组件，现在安装？" leftButton:@"安装" rightButton:@"取消" delegate:^(UIAlertView  *alertView,NSInteger buttonIndex){
-            NSLog(@"clicked %d,", buttonIndex);
-            if (buttonIndex == 0) {
-                // install qvod
-                [QVODHelper install];
-            }
-        }];
-    }
     return haveQvod;
 }
 
 + (void) install
 {
 //    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps://itunes.com/apps/QVODPLAYER"]];
-    NSString *str = [NSString stringWithFormat:@"http://itunes.apple.com/us/app/id%d", 350962117];
+//    NSString *str = [NSString stringWithFormat:@"http://itunes.apple.com/us/app/id%d", 350962117];
+//    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
+
+    NSString *str = [NSString stringWithFormat:@"http://itunes.apple.com/us/app/id%d", 436957167];
+    BOOL ret = [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
+    NSLog(@"redirect app store:%d", ret);
+}
+
++ (void) rating
+{
+    NSString *str = [NSString stringWithFormat:
+                     @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%d",
+                     436957167 ];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
 }
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if (buttonIndex == 1) {
-        
-    }
-}
-
-
-
 
 @end

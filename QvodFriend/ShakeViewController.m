@@ -13,6 +13,7 @@
 #import "SoundUtil.h"
 #import "UIColor+Hex.h"
 #import "QVODHelper.h"
+#import "UIUtil.h"
 
 #define ANIM_SHAKE_COUNT 5
 #define ANIM_SHAKE_KEY  @"ICON_SHAKE"
@@ -70,6 +71,19 @@
     tapper.cancelsTouchesInView = FALSE;
 //    [self.view addGestureRecognizer:tapper];
     _searchBar.hidden = YES;
+    [self showRating];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0) {
+        [QVODHelper rating];
+    }
+}
+
+- (void) showRating
+{
+    [UIUtil showAlert:@"给个好评呗" withMessage:@"给个五星鼓励吧!" leftButton:@"现在就去" rightButton:@"下次去" delegate:self];
 }
 
 - (void)viewDidAppear:(BOOL)animated {

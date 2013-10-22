@@ -9,7 +9,7 @@
 #import "UIUtil.h"
 
 @implementation UIUtil
-+ (void) showAlert: (NSString* ) title
++ (UIAlertView*) showAlert: (NSString* ) title
          withMessage: (NSString *) message
          leftButton: (NSString *) left
          rightButton: (NSString *) right
@@ -17,5 +17,6 @@
 {
     UIAlertView *alert = [[UIAlertView alloc]initWithTitle:title message:message delegate:delegate cancelButtonTitle:left otherButtonTitles:right, nil];
     [alert show];
+    return alert;
 }
 @end

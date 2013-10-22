@@ -18,16 +18,30 @@
 @implementation DataTableContrller
 {
     NSString* currentHash;
+    UIAlertView *installAlert;
 }
 
 @synthesize datas = _datas;
 
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (alertView == installAlert) {
+        [QVODHelper install];
+        return;
+    }
     if(buttonIndex == 0) {
         //play
-        [QVODHelper playWithHash:currentHash handleNoQvod:YES];
+        BOOL haveQvod = [QVODHelper playWithHash:currentHash];
+        if (!haveQvod) {
+            [self showNoQvod];
+        }
     }
+}
+
+
+- (void) showNoQvod
+{
+      installAlert = [UIUtil showAlert:@"安装组件" withMessage:@"还木有安装播放组件，现在安装？" leftButton:@"安装" rightButton:@"取消" delegate:self];
 }
 
 - (id)initWithStyle:(UITableViewStyle)style

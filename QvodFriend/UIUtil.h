@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface UIUtil : NSObject
-+ (void) showAlert: (NSString* ) title
++ (UIAlertView*) showAlert: (NSString* ) title
        withMessage: (NSString *) message
         leftButton: (NSString *) left
        rightButton: (NSString *) right

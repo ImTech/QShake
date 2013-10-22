@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface QVODHelper : NSObject <UIAlertViewDelegate>
-+ (BOOL) playWithHash:(NSString*) hash handleNoQvod:(BOOL) handle;
++ (BOOL) playWithHash:(NSString*) hash;
 + (NSString *)urlEncoded:(NSString*)url;
++ (void) install;
++ (void) rating;
 @end
