@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "User.h"
 
-@interface UserManager : NSObject
-+ (UserManager *) sharedInstance;
+@interface MyUserManager : NSObject
++ (MyUserManager *) sharedInstance;
 - (void) resetRandomMarker;
 - (User*) random;
 - (NSUInteger) count;
+- (void) loadData;
 @end

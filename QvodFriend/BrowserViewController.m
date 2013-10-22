@@ -9,6 +9,7 @@
 #import "BrowserViewController.h"
 #import "UIColor+Hex.h"
 
+#define HOME_PAGE @"http://dzvideo1.sinaapp.com"
 @interface BrowserViewController ()
 
 @end
@@ -32,13 +33,14 @@
     self.webView.delegate = self;
     
     self.progressBar.hidden = YES;
-    
+    self.toolBar.homeUrl = HOME_PAGE;
     [self calcWebViewHeight];
     [self loadHomePage];
     
     UITapGestureRecognizer *tapper = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
     tapper.cancelsTouchesInView = FALSE;
     [self.webView addGestureRecognizer:tapper];
+  
 }
 
 - (void) handleSingleTap:(UIGestureRecognizer*) sender
@@ -59,7 +61,7 @@
 
 -(void) loadHomePage {
 //    NSString *urlStr = @"http://m.tv.sohu.com/";
-    NSString *urlStr = @"http://dzvideo1.sinaapp.com";
+    NSString *urlStr = HOME_PAGE;
     [self loadUrl:urlStr];
 }
 

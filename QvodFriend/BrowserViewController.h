@@ -14,4 +14,5 @@
 @property (weak, nonatomic) IBOutlet QBroswerBar *toolBar;
 @property (weak, nonatomic) IBOutlet UIProgressView *progressBar;
 
+
 @end

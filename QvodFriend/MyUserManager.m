@@ -6,9 +6,9 @@
 //  Copyright (c) 2013年 douzifly. All rights reserved.
 //
 
-#import "UserManager.h"
+#import "MyUserManager.h"
 #define numberCount 40
-@implementation UserManager
+@implementation MyUserManager
 {
     int numbers[numberCount];
     int numberIndex;
@@ -16,14 +16,13 @@
     NSMutableArray *users;
 }
 
-+ (UserManager *)sharedInstance
++ (MyUserManager *)sharedInstance
 {
-    static UserManager *instance = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        instance = [[UserManager alloc] init];
+    static MyUserManager *instance = nil;
+    if (instance == nil) {
+        instance = [[MyUserManager alloc] init];
         [instance loadData];
-    });
+    }
     return instance;
 }
 

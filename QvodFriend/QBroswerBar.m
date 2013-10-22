@@ -115,6 +115,10 @@
 
 - (void)setUrl:(NSString *)url
 {
+    NSLog(@"url:%@, home:%@", url, self.homeUrl);
+    if ([url rangeOfString:self.homeUrl].location != NSNotFound) {
+        url = @"home";
+    }
     _textFieldUrl.text = url;
 }
 

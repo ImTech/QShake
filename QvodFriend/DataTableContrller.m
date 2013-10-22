@@ -11,7 +11,7 @@
 #import "UIUtil.h"
 #import "UIColor+Hex.h"
 #import "MyUITableViewCell.h"
-#import "UserManager.h"
+#import "MyUserManager.h"
 
 @interface DataTableContrller ()
 @end
@@ -72,13 +72,13 @@
 
 - (void)setDatas:(NSMutableArray *)d{
     _datas = d;
-    [[UserManager sharedInstance] resetRandomMarker];
+    [[MyUserManager sharedInstance] resetRandomMarker];
     for (int i = 0; i < _datas.count; i++) {
         NSMutableDictionary *dictionary = [_datas objectAtIndex:i];
-        if (i >= [[UserManager sharedInstance] count]) {
+        if (i >= [[MyUserManager sharedInstance] count]) {
             break;
         }
-        User* u = [[UserManager sharedInstance] random];
+        User* u = [[MyUserManager sharedInstance] random];
         [dictionary setObject:u.avataPath forKey:@"head"];
         [dictionary setObject:u.name forKey:@"from"];
     }

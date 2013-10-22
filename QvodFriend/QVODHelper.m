@@ -34,9 +34,9 @@
     BOOL haveQvod = [[UIApplication sharedApplication] openURL:url];
     if (!haveQvod && handle) {
         //
-        [UIUtil showAlert:@"安装组件" withMessage:@"还木有安装播放组件，现在安装？" leftButton:@"取消" rightButton:@"安装" delegate:^(UIAlertView  *alertView,NSInteger buttonIndex){
+        [UIUtil showAlert:@"安装组件" withMessage:@"还木有安装播放组件，现在安装？" leftButton:@"安装" rightButton:@"取消" delegate:^(UIAlertView  *alertView,NSInteger buttonIndex){
             NSLog(@"clicked %d,", buttonIndex);
-            if (buttonIndex == 1) {
+            if (buttonIndex == 0) {
                 // install qvod
                 [QVODHelper install];
             }

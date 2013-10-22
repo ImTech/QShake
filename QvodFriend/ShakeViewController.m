@@ -68,7 +68,8 @@
     
     UITapGestureRecognizer *tapper = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
     tapper.cancelsTouchesInView = FALSE;
-    [self.view addGestureRecognizer:tapper];
+//    [self.view addGestureRecognizer:tapper];
+    _searchBar.hidden = YES;
 }
 
 - (void)viewDidAppear:(BOOL)animated {

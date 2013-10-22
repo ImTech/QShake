@@ -17,4 +17,5 @@
 - (UIImage*) getBackgroundImage;
 - (void) setUrl:(NSString *) url;
 - (NSString*) getUrl;
+@property (nonatomic) NSString *homeUrl;
 @end
