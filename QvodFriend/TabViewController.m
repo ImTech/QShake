@@ -40,7 +40,7 @@
 }
 
 - (BOOL)shouldAutorotate {
-    return YES;
+    return NO;
 }
 
 @end

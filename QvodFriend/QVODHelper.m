@@ -44,13 +44,20 @@
     return haveQvod;
 }
 
++ (BOOL)canPlay:(NSString *)hash
+{
+    if(hash == nil) {
+        return NO;
+    }
+    NSURL *url = [NSURL URLWithString:[@"qvodplayer:" stringByAppendingString:[QVODHelper urlEncoded:hash]]];
+    NSLog(@"playWithHash url:%@", url);
+    return [[UIApplication sharedApplication] canOpenURL:url];
+}
+
+
 + (void) install
 {
-//    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps://itunes.com/apps/QVODPLAYER"]];
-//    NSString *str = [NSString stringWithFormat:@"http://itunes.apple.com/us/app/id%d", 350962117];
-//    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
-
-    NSString *str = [NSString stringWithFormat:@"http://itunes.apple.com/us/app/id%d", 436957167];
+    NSString *str = [NSString stringWithFormat:@"http://itunes.apple.com/us/app/id%d", 504776703];
     BOOL ret = [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
     NSLog(@"redirect app store:%d", ret);
 }

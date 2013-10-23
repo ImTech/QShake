@@ -13,4 +13,5 @@
 + (NSString *)urlEncoded:(NSString*)url;
 + (void) install;
 + (void) rating;
++ (BOOL) canPlay:(NSString*) hash;
 @end

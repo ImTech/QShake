@@ -135,4 +135,8 @@
     return UIStatusBarStyleLightContent;
 }
 
+- (BOOL)shouldAutorotate {
+    return NO;
+}
+
 @end

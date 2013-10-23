@@ -19,6 +19,7 @@
 {
     NSString* currentHash;
     UIAlertView *installAlert;
+    UIAlertView *waitTipAlert;
 }
 
 @synthesize datas = _datas;
@@ -28,11 +29,16 @@
     if (alertView == installAlert) {
         [QVODHelper install];
         return;
+    } else if(alertView == waitTipAlert) {
+        [QVODHelper playWithHash:currentHash];
+        return;
     }
     if(buttonIndex == 0) {
         //play
-        BOOL haveQvod = [QVODHelper playWithHash:currentHash];
-        if (!haveQvod) {
+        BOOL haveQvod = [QVODHelper canPlay:currentHash];
+        if (haveQvod) {
+            [self showWaitTip];
+        } else {
             [self showNoQvod];
         }
     }
@@ -42,6 +48,11 @@
 - (void) showNoQvod
 {
       installAlert = [UIUtil showAlert:@"安装组件" withMessage:@"还木有安装播放组件，现在安装？" leftButton:@"安装" rightButton:@"取消" delegate:self];
+}
+
+- (void) showWaitTip
+{
+    waitTipAlert = [UIUtil showAlert:@"" withMessage:@"第一次播放请耐心等待30秒" leftButton:@"我知道了" rightButton:nil delegate:self];
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
