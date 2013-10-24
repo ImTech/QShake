@@ -51,6 +51,7 @@
                 }
             } else {
                 [self showWaitTip];
+                [Setting setFirstPlayTipShowd:YES];
             }
         } else {
             [self showNoQvod];
