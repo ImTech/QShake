@@ -6,16 +6,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "QvodFriend/ShakeViewController.m"
-            timestampString = "404151951.513855"
+            filePath = "QvodFriend/SoundUtil.m"
+            timestampString = "404319463.452384"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
-            landmarkName = "-showTable"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "+isSilence"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

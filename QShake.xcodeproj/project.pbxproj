@@ -167,6 +167,10 @@
 		96E2A52717EF5E02005DD9C2 /* bg_tabbar_indi.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E2A52517EF5E02005DD9C2 /* bg_tabbar_indi.png */; };
 		96E2A52817EF5E02005DD9C2 /* bg_tabbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E2A52617EF5E02005DD9C2 /* bg_tabbar.png */; };
 		96F7B6F817BBF6C90098A18E /* ResouceApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F7B6F717BBF6C90098A18E /* ResouceApi.m */; };
+		96F883AA181967FD0057B1B8 /* UIDevice+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F883A9181967FD0057B1B8 /* UIDevice+Common.m */; };
+		96F883AD18196A940057B1B8 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96F883AC18196A940057B1B8 /* AudioToolbox.framework */; };
+		96F883B018196C070057B1B8 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96F883AC18196A940057B1B8 /* AudioToolbox.framework */; };
+		96F883B71819709D0057B1B8 /* Setting.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F883B61819709D0057B1B8 /* Setting.m */; };
 		96FD720A180AF7290002FD00 /* head_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96FD7209180AF7290002FD00 /* head_1@2x.png */; };
 		96FD723A180AF7880002FD00 /* head_48@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96FD720B180AF7870002FD00 /* head_48@2x.png */; };
 		96FD723B180AF7880002FD00 /* head_33@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96FD720C180AF7870002FD00 /* head_33@2x.png */; };
@@ -302,6 +306,12 @@
 		96E2A52617EF5E02005DD9C2 /* bg_tabbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_tabbar.png; sourceTree = "<group>"; };
 		96F7B6F617BBF6C90098A18E /* ResouceApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResouceApi.h; path = Download/ResouceApi.h; sourceTree = "<group>"; };
 		96F7B6F717BBF6C90098A18E /* ResouceApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResouceApi.m; path = Download/ResouceApi.m; sourceTree = "<group>"; };
+		96F883A8181967FD0057B1B8 /* UIDevice+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIDevice+Common.h"; path = "Common/UIDevice+Common.h"; sourceTree = "<group>"; };
+		96F883A9181967FD0057B1B8 /* UIDevice+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIDevice+Common.m"; path = "Common/UIDevice+Common.m"; sourceTree = "<group>"; };
+		96F883AC18196A940057B1B8 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		96F883AE18196B840057B1B8 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
+		96F883B51819709D0057B1B8 /* Setting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Setting.h; path = Setting/Setting.h; sourceTree = "<group>"; };
+		96F883B61819709D0057B1B8 /* Setting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Setting.m; path = Setting/Setting.m; sourceTree = "<group>"; };
 		96FD7209180AF7290002FD00 /* head_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "head_1@2x.png"; path = "head/head_1@2x.png"; sourceTree = "<group>"; };
 		96FD720B180AF7870002FD00 /* head_48@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "head_48@2x.png"; path = "head/head_48@2x.png"; sourceTree = "<group>"; };
 		96FD720C180AF7870002FD00 /* head_33@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "head_33@2x.png"; path = "head/head_33@2x.png"; sourceTree = "<group>"; };
@@ -360,6 +370,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96F883B018196C070057B1B8 /* AudioToolbox.framework in Frameworks */,
 				9612237117DB9B6700D27793 /* AVFoundation.framework in Frameworks */,
 				9612236417DB903F00D27793 /* QuartzCore.framework in Frameworks */,
 				967080CF17BBE46E00147FD5 /* UIKit.framework in Frameworks */,
@@ -373,6 +384,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96F883AD18196A940057B1B8 /* AudioToolbox.framework in Frameworks */,
 				96734788181040D70008EC46 /* AVFoundation.framework in Frameworks */,
 				96734789181040D70008EC46 /* QuartzCore.framework in Frameworks */,
 				9673478A181040D70008EC46 /* UIKit.framework in Frameworks */,
@@ -503,6 +515,8 @@
 		967080CD17BBE46E00147FD5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				96F883AE18196B840057B1B8 /* AudioUnit.framework */,
+				96F883AC18196A940057B1B8 /* AudioToolbox.framework */,
 				9612237017DB9B6700D27793 /* AVFoundation.framework */,
 				9612236317DB903F00D27793 /* QuartzCore.framework */,
 				967080CE17BBE46E00147FD5 /* UIKit.framework */,
@@ -516,6 +530,8 @@
 		967080D417BBE46E00147FD5 /* QShake */ = {
 			isa = PBXGroup;
 			children = (
+				96F883B4181970890057B1B8 /* Setting */,
+				96F883AB181968310057B1B8 /* Common */,
 				9612236017DB8B9C00D27793 /* Resource */,
 				9612235F17DB875800D27793 /* Utils */,
 				9612235E17DB871E00D27793 /* UI */,
@@ -557,6 +573,24 @@
 				96F7B6F717BBF6C90098A18E /* ResouceApi.m */,
 			);
 			name = Service;
+			sourceTree = "<group>";
+		};
+		96F883AB181968310057B1B8 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				96F883A8181967FD0057B1B8 /* UIDevice+Common.h */,
+				96F883A9181967FD0057B1B8 /* UIDevice+Common.m */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		96F883B4181970890057B1B8 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				96F883B51819709D0057B1B8 /* Setting.h */,
+				96F883B61819709D0057B1B8 /* Setting.m */,
+			);
+			name = Setting;
 			sourceTree = "<group>";
 		};
 		96FD71A2180AF3840002FD00 /* head */ = {
@@ -947,7 +981,9 @@
 				961C626117DA2A4900982CF7 /* DataTableContrller.m in Sources */,
 				966D3323181581DA00F9963D /* MyUserManager.m in Sources */,
 				969833FA17EDEA81007FDB02 /* TabViewController.m in Sources */,
+				96F883AA181967FD0057B1B8 /* UIDevice+Common.m in Sources */,
 				969833FD17EDF7BC007FDB02 /* BrowserViewController.m in Sources */,
+				96F883B71819709D0057B1B8 /* Setting.m in Sources */,
 				967080DF17BBE46E00147FD5 /* AppDelegate.m in Sources */,
 				967080EB17BBE46E00147FD5 /* ShakeViewController.m in Sources */,
 				966D3326181581EC00F9963D /* User.m in Sources */,

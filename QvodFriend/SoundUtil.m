@@ -8,6 +8,8 @@
 
 #import "SoundUtil.h"
 #import <AVFoundation/AVFoundation.h>
+#import "UIDevice+Common.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 static AVAudioPlayer* _player;
 
@@ -30,8 +32,29 @@ static AVAudioPlayer* _player;
     NSLog(@"play sound:%d path:%@", ret, soundUrl);
 }
 
++ (BOOL)isSilence
+{
+#if TARGET_IPHONE_SIMULATOR
+    // return NO in simulator. Code causes crashes for some reason.
+    return NO;
+#endif
+    
+    CFStringRef state;
+    UInt32 propertySize = sizeof(CFStringRef);
+    AudioSessionInitialize(NULL, NULL, NULL, NULL);
+    AudioSessionGetProperty(kAudioSessionProperty_AudioRoute, &propertySize, &state);
+    if(CFStringGetLength(state) > 0)
+        return NO;
+    else
+        return YES;
+}
+
 + (void) playShakeSound:(ShakeSoundStyle) style
 {
+    if ([SoundUtil isSilence]) {
+        NSLog(@"slience");
+        return;
+    }
     NSString *name = nil;
     NSString *ext = @"mp3";
     if (style == ShakeSoundStyleBegin) {

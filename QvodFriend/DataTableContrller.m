@@ -12,6 +12,7 @@
 #import "UIColor+Hex.h"
 #import "MyUITableViewCell.h"
 #import "MyUserManager.h"
+#import "Setting.h"
 
 @interface DataTableContrller ()
 @end
@@ -20,24 +21,37 @@
     NSString* currentHash;
     UIAlertView *installAlert;
     UIAlertView *waitTipAlert;
+    UIAlertView *ratingAlert;
 }
 
 @synthesize datas = _datas;
 
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (alertView == installAlert) {
+    if (alertView == installAlert && buttonIndex == 0) {
         [QVODHelper install];
         return;
-    } else if(alertView == waitTipAlert) {
+    } else if (alertView == waitTipAlert) {
         [QVODHelper playWithHash:currentHash];
+        [Setting increasePlayCount];
         return;
+    } else if (alertView == ratingAlert) {
+        [QVODHelper rating];
     }
     if(buttonIndex == 0) {
         //play
         BOOL haveQvod = [QVODHelper canPlay:currentHash];
         if (haveQvod) {
-            [self showWaitTip];
+            if ([Setting isFirstPlayTipShowd]) {
+                [QVODHelper playWithHash:currentHash];
+                [Setting increasePlayCount];
+                if ([Setting playCount] >= 3 && ![Setting isRatingShowed]) {
+                    [self showRating];
+                    [Setting setRatingShowed:YES];
+                }
+            } else {
+                [self showWaitTip];
+            }
         } else {
             [self showNoQvod];
         }
@@ -53,6 +67,11 @@
 - (void) showWaitTip
 {
     waitTipAlert = [UIUtil showAlert:@"" withMessage:@"第一次播放请耐心等待30秒" leftButton:@"我知道了" rightButton:nil delegate:self];
+}
+
+- (void) showRating
+{
+    ratingAlert = [UIUtil showAlert:@"" withMessage:@"五星好评，更多惊喜等着您" leftButton:@"现在就去" rightButton:nil delegate:self];
 }
 
 - (id)initWithStyle:(UITableViewStyle)style

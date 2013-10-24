@@ -54,10 +54,10 @@
     @finally {
     }
     
-    [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"a_11"] withFinishedUnselectedImage:[UIImage imageNamed:@"a_11"]];
+//    [self.tabBarItem setF`inishedSelectedImage:[UIImage imageNamed:@"a_11"] withFinishedUnselectedImage:[UIImage imageNamed:@"a_11"]];
     [self.tabBarItem setImage:[UIImage imageNamed:@"a_11"]];
    
-    [self.tabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor colorWithHex:@"#929292"], UITextAttributeTextColor, nil] forState:UIControlStateNormal];
+//    [self.tabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor colorWithHex:@"#929292"], UITextAttributeTextColor, nil] forState:UIControlStateNormal];
     
     NSLog(@"tableView height:%@", self.dataTable.tableView);
     
@@ -71,19 +71,6 @@
     tapper.cancelsTouchesInView = FALSE;
 //    [self.view addGestureRecognizer:tapper];
     _searchBar.hidden = YES;
-    [self showRating];
-}
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if (buttonIndex == 0) {
-        [QVODHelper rating];
-    }
-}
-
-- (void) showRating
-{
-    [UIUtil showAlert:@"给个好评呗" withMessage:@"给个五星鼓励吧!" leftButton:@"现在就去" rightButton:@"下次去" delegate:self];
 }
 
 - (void)viewDidAppear:(BOOL)animated {

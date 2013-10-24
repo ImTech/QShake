@@ -19,6 +19,7 @@ enum{
 @interface SoundUtil : NSObject
 {
 }
-+(void) playSound:(NSString*) path;
++ (void) playSound:(NSString*) path;
 + (void) playShakeSound:(ShakeSoundStyle) style;
++ (BOOL) isSilence;
 @end

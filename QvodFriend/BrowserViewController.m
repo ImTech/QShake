@@ -20,9 +20,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"a_09"] withFinishedUnselectedImage:[UIImage imageNamed:@"a_09"]];
+//    [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"a_09"] withFinishedUnselectedImage:[UIImage imageNamed:@"a_09"]];
     [self.tabBarItem setImage:[UIImage imageNamed:@"a_09"]];
-    [self.tabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor colorWithHex:@"#929292"], UITextAttributeTextColor, nil] forState:UIControlStateNormal];
+//    [self.tabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor colorWithHex:@"#929292"], UITextAttributeTextColor, nil] forState:UIControlStateNormal];
     
     [self.view setBackgroundColor:[UIColor colorWithHex:@"#E4E7EB"]];
 //    self.view.backgroundColor = [UIColor colorWithHex:@"#19759c"];
