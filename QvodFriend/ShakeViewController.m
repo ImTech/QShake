@@ -14,6 +14,7 @@
 #import "UIColor+Hex.h"
 #import "QVODHelper.h"
 #import "UIUtil.h"
+#import "Setting.h"
 
 #define ANIM_SHAKE_COUNT 5
 #define ANIM_SHAKE_KEY  @"ICON_SHAKE"
@@ -32,7 +33,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
 	// Do any additional setup after loading the view, typically from a nib.
     self.dataTableController = [[DataTableContrller alloc] init];
     self.dataTableController.tableView = self.dataTable.tableView;
@@ -71,6 +71,25 @@
     tapper.cancelsTouchesInView = FALSE;
 //    [self.view addGestureRecognizer:tapper];
     _searchBar.hidden = YES;
+
+    [self initNaviBar];
+}
+
+- (void) initNaviBar {
+    BOOL isMute = [Setting isMute];
+    NSString *title = isMute ? @"开启声音" : @"静音";
+    UIBarButtonItem *btn = [[UIBarButtonItem alloc] initWithTitle:title style:UIBarButtonItemStyleDone target:self action:@selector(naviItemClick:)];
+    btn.tintColor = [UIColor whiteColor];
+    self.navigationItem.rightBarButtonItem = btn;
+}
+
+- (void) naviItemClick:(UIBarButtonItem*) sender
+{
+    // toggle
+    BOOL isMute = ![Setting isMute];
+    NSString *title = isMute ? @"开启声音" : @"静音";
+    self.navigationItem.rightBarButtonItem.title =title;
+    [Setting setMute:isMute];
 }
 
 - (void)viewDidAppear:(BOOL)animated {

@@ -10,6 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import "UIDevice+Common.h"
 #import <AudioToolbox/AudioToolbox.h>
+#import "Setting.h"
 
 static AVAudioPlayer* _player;
 
@@ -53,6 +54,9 @@ static AVAudioPlayer* _player;
 {
     if ([SoundUtil isSilence]) {
         NSLog(@"slience");
+        return;
+    }
+    if ([Setting isMute]) {
         return;
     }
     NSString *name = nil;
