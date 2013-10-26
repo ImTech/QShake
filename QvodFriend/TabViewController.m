@@ -8,6 +8,7 @@
 
 #import "TabViewController.h"
 #import "UIColor+Hex.h"
+#import "AppDelegate.h"
 
 @interface TabViewController ()
 

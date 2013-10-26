@@ -62,6 +62,7 @@
 //    _textFieldUrl.background = [UIImage imageNamed:@"bgTxtUrl"];
 //    _textFieldUrl.backgroundColor = [UIColor whiteColor];
     _textFieldUrl.borderStyle = UITextBorderStyleRoundedRect;
+    _textFieldUrl.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     _textFieldUrl.text = @"douzifly";
     _textFieldUrl.textColor = [UIColor colorWithHex:@"#6F6F6f"];
     _textFieldUrl.returnKeyType = UIReturnKeyGo;
