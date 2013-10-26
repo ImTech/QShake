@@ -15,6 +15,7 @@
 #import "QVODHelper.h"
 #import "UIUtil.h"
 #import "Setting.h"
+#import "MobClickHelper.h"
 
 #define ANIM_SHAKE_COUNT 5
 #define ANIM_SHAKE_KEY  @"ICON_SHAKE"
@@ -78,8 +79,8 @@
 - (void) initNaviBar {
     BOOL isMute = [Setting isMute];
     NSString *title = isMute ? @"开启声音" : @"静音";
-    UIBarButtonItem *btn = [[UIBarButtonItem alloc] initWithTitle:title style:UIBarButtonItemStyleDone target:self action:@selector(naviItemClick:)];
-    btn.tintColor = [UIColor whiteColor];
+    UIBarButtonItem *btn = [[UIBarButtonItem alloc] initWithTitle:title style:UIBarButtonItemStyleBordered target:self action:@selector(naviItemClick:)];
+    btn.tintColor = [UIColor grayColor];
     self.navigationItem.rightBarButtonItem = btn;
 }
 
@@ -221,6 +222,7 @@
     [self shakeImage:imageView withRepeatCount:NSUIntegerMax];
     [SoundUtil playShakeSound:ShakeSoundStyleBegin];
     [self beginLoadData];
+    [MobClickHelper logShake];
 }
 
 - (void)viewWillDisappear:(BOOL)animated

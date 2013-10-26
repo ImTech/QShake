@@ -166,6 +166,12 @@
 		96E2A52417EF55F3005DD9C2 /* bg_tabbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E2A52217EF55F3005DD9C2 /* bg_tabbar@2x.png */; };
 		96E2A52717EF5E02005DD9C2 /* bg_tabbar_indi.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E2A52517EF5E02005DD9C2 /* bg_tabbar_indi.png */; };
 		96E2A52817EF5E02005DD9C2 /* bg_tabbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E2A52617EF5E02005DD9C2 /* bg_tabbar.png */; };
+		96E33D36181B46C50031484D /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96E33D35181B46C50031484D /* libMobClickLibrary.a */; };
+		96E33D37181B4CCF0031484D /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96E33D35181B46C50031484D /* libMobClickLibrary.a */; };
+		96E33D3B181B4DC70031484D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 96E33D3A181B4DC70031484D /* libz.dylib */; };
+		96E33D3C181B4DCF0031484D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 96E33D3A181B4DC70031484D /* libz.dylib */; };
+		96E33D3F181B50620031484D /* MobClickHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E33D3E181B50620031484D /* MobClickHelper.m */; };
+		96E33D40181B50620031484D /* MobClickHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E33D3E181B50620031484D /* MobClickHelper.m */; };
 		96F7B6F817BBF6C90098A18E /* ResouceApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F7B6F717BBF6C90098A18E /* ResouceApi.m */; };
 		96F883AA181967FD0057B1B8 /* UIDevice+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F883A9181967FD0057B1B8 /* UIDevice+Common.m */; };
 		96F883AD18196A940057B1B8 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96F883AC18196A940057B1B8 /* AudioToolbox.framework */; };
@@ -304,6 +310,11 @@
 		96E2A52217EF55F3005DD9C2 /* bg_tabbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_tabbar@2x.png"; sourceTree = "<group>"; };
 		96E2A52517EF5E02005DD9C2 /* bg_tabbar_indi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_tabbar_indi.png; sourceTree = "<group>"; };
 		96E2A52617EF5E02005DD9C2 /* bg_tabbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_tabbar.png; sourceTree = "<group>"; };
+		96E33D35181B46C50031484D /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMobClickLibrary.a; path = Lib/libMobClickLibrary.a; sourceTree = "<group>"; };
+		96E33D39181B4D880031484D /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MobClick.h; path = 3rdSDK/MobClick.h; sourceTree = "<group>"; };
+		96E33D3A181B4DC70031484D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		96E33D3D181B50620031484D /* MobClickHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MobClickHelper.h; path = 3rdSDK/MobClickHelper.h; sourceTree = "<group>"; };
+		96E33D3E181B50620031484D /* MobClickHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MobClickHelper.m; path = 3rdSDK/MobClickHelper.m; sourceTree = "<group>"; };
 		96F7B6F617BBF6C90098A18E /* ResouceApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResouceApi.h; path = Download/ResouceApi.h; sourceTree = "<group>"; };
 		96F7B6F717BBF6C90098A18E /* ResouceApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResouceApi.m; path = Download/ResouceApi.m; sourceTree = "<group>"; };
 		96F883A8181967FD0057B1B8 /* UIDevice+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIDevice+Common.h"; path = "Common/UIDevice+Common.h"; sourceTree = "<group>"; };
@@ -370,6 +381,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96E33D3B181B4DC70031484D /* libz.dylib in Frameworks */,
+				96E33D37181B4CCF0031484D /* libMobClickLibrary.a in Frameworks */,
 				96F883B018196C070057B1B8 /* AudioToolbox.framework in Frameworks */,
 				9612237117DB9B6700D27793 /* AVFoundation.framework in Frameworks */,
 				9612236417DB903F00D27793 /* QuartzCore.framework in Frameworks */,
@@ -384,6 +397,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96E33D3C181B4DCF0031484D /* libz.dylib in Frameworks */,
+				96E33D36181B46C50031484D /* libMobClickLibrary.a in Frameworks */,
 				96F883AD18196A940057B1B8 /* AudioToolbox.framework in Frameworks */,
 				96734788181040D70008EC46 /* AVFoundation.framework in Frameworks */,
 				96734789181040D70008EC46 /* QuartzCore.framework in Frameworks */,
@@ -515,6 +530,8 @@
 		967080CD17BBE46E00147FD5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				96E33D3A181B4DC70031484D /* libz.dylib */,
+				96E33D35181B46C50031484D /* libMobClickLibrary.a */,
 				96F883AE18196B840057B1B8 /* AudioUnit.framework */,
 				96F883AC18196A940057B1B8 /* AudioToolbox.framework */,
 				9612237017DB9B6700D27793 /* AVFoundation.framework */,
@@ -530,6 +547,7 @@
 		967080D417BBE46E00147FD5 /* QShake */ = {
 			isa = PBXGroup;
 			children = (
+				96E33D38181B4CF30031484D /* 3rdSDK */,
 				96F883B4181970890057B1B8 /* Setting */,
 				96F883AB181968310057B1B8 /* Common */,
 				9612236017DB8B9C00D27793 /* Resource */,
@@ -564,6 +582,16 @@
 			children = (
 			);
 			name = "Resources-iPad";
+			sourceTree = "<group>";
+		};
+		96E33D38181B4CF30031484D /* 3rdSDK */ = {
+			isa = PBXGroup;
+			children = (
+				96E33D39181B4D880031484D /* MobClick.h */,
+				96E33D3D181B50620031484D /* MobClickHelper.h */,
+				96E33D3E181B50620031484D /* MobClickHelper.m */,
+			);
+			name = 3rdSDK;
 			sourceTree = "<group>";
 		};
 		96F7B6F517BBF6A20098A18E /* Service */ = {
@@ -990,6 +1018,7 @@
 				9612236F17DB9A7700D27793 /* SoundUtil.m in Sources */,
 				9612235D17DB847300D27793 /* QVODHelper.m in Sources */,
 				96F7B6F817BBF6C90098A18E /* ResouceApi.m in Sources */,
+				96E33D3F181B50620031484D /* MobClickHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -999,6 +1028,7 @@
 			files = (
 				96A3D2C01816CB2A0055C485 /* User.m in Sources */,
 				96A3D2BF1816CB110055C485 /* MyUserManager.m in Sources */,
+				96E33D40181B50620031484D /* MobClickHelper.m in Sources */,
 				96734777181040D70008EC46 /* main.m in Sources */,
 				96734778181040D70008EC46 /* UITextField+Padding.m in Sources */,
 				96734779181040D70008EC46 /* UIColor+Hex.m in Sources */,
@@ -1106,6 +1136,10 @@
 				GCC_PREFIX_HEADER = "QvodFriend/QShake-Prefix.pch";
 				INFOPLIST_FILE = "QvodFriend/QShake-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/douzifly/dev/workspace/QvodFriend/Lib,
+				);
 				PRODUCT_NAME = QShake;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1123,6 +1157,10 @@
 				GCC_PREFIX_HEADER = "QvodFriend/QShake-Prefix.pch";
 				INFOPLIST_FILE = "QvodFriend/QShake-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/douzifly/dev/workspace/QvodFriend/Lib,
+				);
 				PRODUCT_NAME = QShake;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1140,6 +1178,10 @@
 				GCC_PREFIX_HEADER = "QvodFriend/QShake-Prefix.pch";
 				INFOPLIST_FILE = "QShake copy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/douzifly/dev/workspace/QvodFriend/Lib,
+				);
 				PRODUCT_NAME = "QShake-iPad";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 2;
@@ -1157,6 +1199,10 @@
 				GCC_PREFIX_HEADER = "QvodFriend/QShake-Prefix.pch";
 				INFOPLIST_FILE = "QShake copy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/douzifly/dev/workspace/QvodFriend/Lib,
+				);
 				PRODUCT_NAME = "QShake-iPad";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 2;

@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <AVFoundation/AVFoundation.h>
+#import "MobClick.h"
 
 @implementation AppDelegate
 
@@ -22,6 +23,12 @@
         //Added on 19th Sep 2013
         self.window.bounds = CGRectMake(0, 20, self.window.frame.size.width, self.window.frame.size.height);
     }
+    
+    // Um start
+    NSString *umKEY = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"UmKey"];
+    NSLog(@"UmKey%@", umKEY);
+    [MobClick startWithAppkey:umKEY reportPolicy:REALTIME channelId:@"appstore"];
+    [MobClick setLogEnabled:YES];
     return YES;
 }
 
