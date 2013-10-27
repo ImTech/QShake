@@ -6,9 +6,10 @@
 //  Copyright (c) 2013年 douzifly. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
 #import "QBroswerBar.h"
 #import "UIColor+Hex.h"
-#import "UITextField+Padding.h"
+#import "MyUITextField.h"
 
 @implementation QBroswerBar
 {
@@ -16,6 +17,8 @@
     UITextField *_textFieldUrl;
     UIButton    *_btnBack;
     UIButton    *_btnHome;
+    UIButton    *_btnRefresh;
+    UIButton    *_btnClearText;
 }
 
 - (id) initWithCoder:(NSCoder *)aDecoder
@@ -46,6 +49,14 @@
     [self addSubview:_btnBack];
     [_btnBack addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
     
+    // button refresh
+    _btnRefresh = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_btnRefresh imageView].contentMode = UIViewContentModeScaleAspectFit;
+    [_btnRefresh setImage:[UIImage imageNamed:@"frs"] forState:UIControlStateNormal];
+    _btnRefresh.frame = CGRectMake(0, 0, 40, 40);
+    _btnRefresh.center = CGPointMake(frame.size.width - 50 , 22);
+    [_btnRefresh addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:_btnRefresh];
     
     // button home
     _btnHome = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -57,11 +68,16 @@
     [self addSubview:_btnHome];
     
     // text url
-    _textFieldUrl = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, frame.size.width - 100, 29)];
-    _textFieldUrl.center = CGPointMake(frame.size.width / 2, 22);
+    _textFieldUrl = [[MyUITextField alloc] initWithFrame:CGRectMake(0, 0, frame.size.width - 106, 29)];
+    _textFieldUrl.center = CGPointMake(frame.size.width / 2 - 14, 22);
 //    _textFieldUrl.background = [UIImage imageNamed:@"bgTxtUrl"];
 //    _textFieldUrl.backgroundColor = [UIColor whiteColor];
-    _textFieldUrl.borderStyle = UITextBorderStyleRoundedRect;
+    _textFieldUrl.borderStyle = UITextBorderStyleLine;
+    _textFieldUrl.layer.cornerRadius = 6.0f;
+    _textFieldUrl.layer.borderColor = [[UIColor grayColor] CGColor];
+    _textFieldUrl.layer.borderWidth = 0.6f;
+    _textFieldUrl.layer.masksToBounds = YES;
+    _textFieldUrl.backgroundColor = [UIColor whiteColor];
     _textFieldUrl.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     _textFieldUrl.text = @"douzifly";
     _textFieldUrl.textColor = [UIColor colorWithHex:@"#6F6F6f"];
@@ -72,7 +88,17 @@
     
     [self addSubview:_textFieldUrl];
     
-  
+    
+    // button clearText
+    _btnClearText = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_btnClearText imageView].contentMode = UIViewContentModeScaleAspectFit;
+    [_btnClearText setImage:[UIImage imageNamed:@"clear"] forState:UIControlStateNormal];
+    _btnClearText.frame = CGRectMake(0, 0, 35, 35);
+//      _btnRefresh.center = CGPointMake(frame.size.width - 65 , 22);
+    [_btnClearText addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
+//    [self addSubview:_btnClearText];
+    _textFieldUrl.rightView = _btnClearText;
+    _textFieldUrl.rightViewMode = UITextFieldViewModeWhileEditing;
 }
 
 - (void) buttonClicked:(UIButton *) button
@@ -86,6 +112,12 @@
         if([self.delegate respondsToSelector:@selector(homeClicked)]) {
             [self.delegate homeClicked];
         }
+    } else if(button == _btnRefresh) {
+        if([self.delegate respondsToSelector:@selector(refreshClicked)]) {
+            [self.delegate refreshClicked];
+        }
+    } else if(button == _btnClearText) {
+        _textFieldUrl.text = @"";
     }
 }
 
@@ -128,9 +160,6 @@
     return  _textFieldUrl.text;
 }
 
--(void)layoutSubviews {
-    NSLog(@"QB width:%f", self.frame.size.width);
-}
 
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

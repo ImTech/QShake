@@ -19,7 +19,6 @@
 		961705BE17F1F5C90074E6BB /* bgTxtUrl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 961705BD17F1F5C90074E6BB /* bgTxtUrl@2x.png */; };
 		961705C017F1F7280074E6BB /* bg_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 961705BF17F1F7280074E6BB /* bg_back@2x.png */; };
 		961705C217F1F7DB0074E6BB /* bg_home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 961705C117F1F7DB0074E6BB /* bg_home@2x.png */; };
-		961705C517F1FC190074E6BB /* UITextField+Padding.m in Sources */ = {isa = PBXBuildFile; fileRef = 961705C417F1FC190074E6BB /* UITextField+Padding.m */; };
 		961C626117DA2A4900982CF7 /* DataTableContrller.m in Sources */ = {isa = PBXBuildFile; fileRef = 961C626017DA2A4900982CF7 /* DataTableContrller.m */; };
 		961EF84717DC1F3C00B74015 /* failed.wav in Resources */ = {isa = PBXBuildFile; fileRef = 961EF84617DC1F3C00B74015 /* failed.wav */; };
 		96492B08180A6FDB00356886 /* handle_arrow_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96492B06180A6FDB00356886 /* handle_arrow_down@2x.png */; };
@@ -48,7 +47,6 @@
 		967080E817BBE46E00147FD5 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 967080E617BBE46E00147FD5 /* MainStoryboard.storyboard */; };
 		967080EB17BBE46E00147FD5 /* ShakeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 967080EA17BBE46E00147FD5 /* ShakeViewController.m */; };
 		96734777181040D70008EC46 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 967080DA17BBE46E00147FD5 /* main.m */; };
-		96734778181040D70008EC46 /* UITextField+Padding.m in Sources */ = {isa = PBXBuildFile; fileRef = 961705C417F1FC190074E6BB /* UITextField+Padding.m */; };
 		96734779181040D70008EC46 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 969833FF17EDF98C007FDB02 /* UIColor+Hex.m */; };
 		9673477A181040D70008EC46 /* ShakeImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9612236617DB923D00D27793 /* ShakeImageView.m */; };
 		9673477B181040D70008EC46 /* QBroswerBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9687E24117EFC01200642E2F /* QBroswerBar.m */; };
@@ -160,6 +158,14 @@
 		969A7041181D085100DFEDA8 /* nobell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 969A7039181D085100DFEDA8 /* nobell@2x.png */; };
 		969A7044181D241100DFEDA8 /* MyWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 969A7043181D241100DFEDA8 /* MyWebView.m */; };
 		969A7045181D241100DFEDA8 /* MyWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 969A7043181D241100DFEDA8 /* MyWebView.m */; };
+		969A7048181D2CE300DFEDA8 /* frs.png in Resources */ = {isa = PBXBuildFile; fileRef = 969A7046181D2CE300DFEDA8 /* frs.png */; };
+		969A7049181D2CE300DFEDA8 /* frs.png in Resources */ = {isa = PBXBuildFile; fileRef = 969A7046181D2CE300DFEDA8 /* frs.png */; };
+		969A704A181D2CE300DFEDA8 /* frs@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 969A7047181D2CE300DFEDA8 /* frs@2x.png */; };
+		969A704B181D2CE300DFEDA8 /* frs@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 969A7047181D2CE300DFEDA8 /* frs@2x.png */; };
+		969A704D181D317300DFEDA8 /* clear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 969A704C181D317300DFEDA8 /* clear@2x.png */; };
+		969A704E181D317300DFEDA8 /* clear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 969A704C181D317300DFEDA8 /* clear@2x.png */; };
+		969A7059181D358B00DFEDA8 /* MyUITextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 969A7058181D358B00DFEDA8 /* MyUITextField.m */; };
+		969A705A181D358B00DFEDA8 /* MyUITextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 969A7058181D358B00DFEDA8 /* MyUITextField.m */; };
 		96A3D2BF1816CB110055C485 /* MyUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 966D3322181581DA00F9963D /* MyUserManager.m */; };
 		96A3D2C01816CB2A0055C485 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 966D3325181581EC00F9963D /* User.m */; };
 		96D9C4E01818327D0033016F /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 96D9C4DE1818327D0033016F /* Icon.png */; };
@@ -256,8 +262,6 @@
 		961705BD17F1F5C90074E6BB /* bgTxtUrl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bgTxtUrl@2x.png"; sourceTree = "<group>"; };
 		961705BF17F1F7280074E6BB /* bg_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_back@2x.png"; sourceTree = "<group>"; };
 		961705C117F1F7DB0074E6BB /* bg_home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_home@2x.png"; sourceTree = "<group>"; };
-		961705C317F1FC190074E6BB /* UITextField+Padding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Padding.h"; sourceTree = "<group>"; };
-		961705C417F1FC190074E6BB /* UITextField+Padding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Padding.m"; sourceTree = "<group>"; };
 		961705C617F201000074E6BB /* QBroswerBarDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QBroswerBarDelegate.h; sourceTree = "<group>"; };
 		961C625F17DA2A4900982CF7 /* DataTableContrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataTableContrller.h; sourceTree = "<group>"; };
 		961C626017DA2A4900982CF7 /* DataTableContrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataTableContrller.m; sourceTree = "<group>"; };
@@ -314,6 +318,11 @@
 		969A7039181D085100DFEDA8 /* nobell@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nobell@2x.png"; sourceTree = "<group>"; };
 		969A7042181D241100DFEDA8 /* MyWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyWebView.h; sourceTree = "<group>"; };
 		969A7043181D241100DFEDA8 /* MyWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyWebView.m; sourceTree = "<group>"; };
+		969A7046181D2CE300DFEDA8 /* frs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frs.png; sourceTree = "<group>"; };
+		969A7047181D2CE300DFEDA8 /* frs@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frs@2x.png"; sourceTree = "<group>"; };
+		969A704C181D317300DFEDA8 /* clear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clear@2x.png"; sourceTree = "<group>"; };
+		969A7057181D358B00DFEDA8 /* MyUITextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyUITextField.h; path = ../MyUITextField.h; sourceTree = "<group>"; };
+		969A7058181D358B00DFEDA8 /* MyUITextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyUITextField.m; path = ../MyUITextField.m; sourceTree = "<group>"; };
 		96D9C4DE1818327D0033016F /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		96D9C4DF1818327D0033016F /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		96D9C4E2181832B60033016F /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
@@ -431,6 +440,8 @@
 		9612235E17DB871E00D27793 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				969A7057181D358B00DFEDA8 /* MyUITextField.h */,
+				969A7058181D358B00DFEDA8 /* MyUITextField.m */,
 				9612236817DB930800D27793 /* ShakeImageViewDelegate.h */,
 				967080E617BBE46E00147FD5 /* MainStoryboard.storyboard */,
 				967080E917BBE46E00147FD5 /* ShakeViewController.h */,
@@ -447,8 +458,6 @@
 				969833FF17EDF98C007FDB02 /* UIColor+Hex.m */,
 				9687E24017EFC01200642E2F /* QBroswerBar.h */,
 				9687E24117EFC01200642E2F /* QBroswerBar.m */,
-				961705C317F1FC190074E6BB /* UITextField+Padding.h */,
-				961705C417F1FC190074E6BB /* UITextField+Padding.m */,
 				961705C617F201000074E6BB /* QBroswerBarDelegate.h */,
 				96492B0A180A747B00356886 /* HandleTableView.h */,
 				96492B0B180A747B00356886 /* HandleTableView.m */,
@@ -494,6 +503,9 @@
 			isa = PBXGroup;
 			children = (
 				96D9C4EA181833000033016F /* Icon-60.png */,
+				969A704C181D317300DFEDA8 /* clear@2x.png */,
+				969A7046181D2CE300DFEDA8 /* frs.png */,
+				969A7047181D2CE300DFEDA8 /* frs@2x.png */,
 				969A7036181D085100DFEDA8 /* bell.png */,
 				969A7037181D085100DFEDA8 /* bell@2x.png */,
 				969A7038181D085100DFEDA8 /* nobell.png */,
@@ -785,6 +797,7 @@
 				96FD7255180AF7880002FD00 /* head_30@2x.png in Resources */,
 				96492B08180A6FDB00356886 /* handle_arrow_down@2x.png in Resources */,
 				96492B09180A6FDB00356886 /* handle_body@2x.png in Resources */,
+				969A704D181D317300DFEDA8 /* clear@2x.png in Resources */,
 				96D9C4EC181833000033016F /* Icon-60.png in Resources */,
 				969A703E181D085100DFEDA8 /* nobell.png in Resources */,
 				969A703C181D085100DFEDA8 /* bell@2x.png in Resources */,
@@ -821,6 +834,7 @@
 				96FD7267180AF7880002FD00 /* head_4@2x.png in Resources */,
 				96FD7268180AF7880002FD00 /* head_5@2x.png in Resources */,
 				961EF84717DC1F3C00B74015 /* failed.wav in Resources */,
+				969A704A181D2CE300DFEDA8 /* frs@2x.png in Resources */,
 				96FD7262180AF7880002FD00 /* head_16@2x.png in Resources */,
 				96FD723D180AF7880002FD00 /* head_35@2x.png in Resources */,
 				9654A67817ED1EC3006E60E4 /* a_05.png in Resources */,
@@ -856,6 +870,7 @@
 				96FD7247180AF7880002FD00 /* head_45@2x.png in Resources */,
 				96D9C4E11818327D0033016F /* Icon@2x.png in Resources */,
 				96FD725B180AF7880002FD00 /* head_9@2x.png in Resources */,
+				969A7048181D2CE300DFEDA8 /* frs.png in Resources */,
 				96D9C4E9181832E60033016F /* Icon-76@2x.png in Resources */,
 				96D9C4E5181832B60033016F /* Icon-72@2x.png in Resources */,
 				96FD7250180AF7880002FD00 /* head_25@2x.png in Resources */,
@@ -902,6 +917,7 @@
 				967347A8181040D70008EC46 /* head_20@2x.png in Resources */,
 				967347A9181040D70008EC46 /* Default.png in Resources */,
 				967347AA181040D70008EC46 /* bgTxtUrl@2x.png in Resources */,
+				969A704B181D2CE300DFEDA8 /* frs@2x.png in Resources */,
 				967347AB181040D70008EC46 /* Default@2x.png in Resources */,
 				967347AC181040D70008EC46 /* head_23@2x.png in Resources */,
 				967347AD181040D70008EC46 /* Default-568h@2x.png in Resources */,
@@ -944,6 +960,7 @@
 				967347CD181040D70008EC46 /* head_18@2x.png in Resources */,
 				967347CE181040D70008EC46 /* head_43@2x.png in Resources */,
 				967347CF181040D70008EC46 /* head_2@2x.png in Resources */,
+				969A704E181D317300DFEDA8 /* clear@2x.png in Resources */,
 				967347D0181040D70008EC46 /* head_45@2x.png in Resources */,
 				967347D1181040D70008EC46 /* head_9@2x.png in Resources */,
 				967347D2181040D70008EC46 /* head_25@2x.png in Resources */,
@@ -952,6 +969,7 @@
 				967347D5181040D70008EC46 /* bg_tabbar_indi.png in Resources */,
 				967347D6181040D70008EC46 /* head_37@2x.png in Resources */,
 				967347D7181040D70008EC46 /* head_8@2x.png in Resources */,
+				969A7049181D2CE300DFEDA8 /* frs.png in Resources */,
 				967347D8181040D70008EC46 /* head_46@2x.png in Resources */,
 				967347D9181040D70008EC46 /* head_17@2x.png in Resources */,
 			);
@@ -1028,12 +1046,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				967080DB17BBE46E00147FD5 /* main.m in Sources */,
-				961705C517F1FC190074E6BB /* UITextField+Padding.m in Sources */,
 				9698340017EDF98C007FDB02 /* UIColor+Hex.m in Sources */,
 				9612236717DB923D00D27793 /* ShakeImageView.m in Sources */,
 				9687E24217EFC01200642E2F /* QBroswerBar.m in Sources */,
 				969A7044181D241100DFEDA8 /* MyWebView.m in Sources */,
 				967347E5181046130008EC46 /* SearchViewController.m in Sources */,
+				969A7059181D358B00DFEDA8 /* MyUITextField.m in Sources */,
 				96FD726B180AF99E0002FD00 /* MyUITableViewCell.m in Sources */,
 				9612237817DC15F000D27793 /* UIUtil.m in Sources */,
 				96492B0C180A747B00356886 /* HandleTableView.m in Sources */,
@@ -1061,7 +1079,7 @@
 				96A3D2BF1816CB110055C485 /* MyUserManager.m in Sources */,
 				96E33D40181B50620031484D /* MobClickHelper.m in Sources */,
 				96734777181040D70008EC46 /* main.m in Sources */,
-				96734778181040D70008EC46 /* UITextField+Padding.m in Sources */,
+				969A705A181D358B00DFEDA8 /* MyUITextField.m in Sources */,
 				96734779181040D70008EC46 /* UIColor+Hex.m in Sources */,
 				9673477A181040D70008EC46 /* ShakeImageView.m in Sources */,
 				9673477B181040D70008EC46 /* QBroswerBar.m in Sources */,

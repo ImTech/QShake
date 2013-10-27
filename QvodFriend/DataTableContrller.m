@@ -36,7 +36,10 @@
         [Setting increasePlayCount];
         return;
     } else if (alertView == ratingAlert) {
-        [QVODHelper rating];
+        if (buttonIndex == 0) {
+            [QVODHelper rating];
+            [Setting setRatingShowed:YES];
+        }
     }
     if(buttonIndex == 0) {
         //play
@@ -45,9 +48,8 @@
             if ([Setting isFirstPlayTipShowd]) {
                 [QVODHelper playWithHash:currentHash];
                 [Setting increasePlayCount];
-                if ([Setting playCount] >= 3 && ![Setting isRatingShowed]) {
+                if ([Setting playCount] % 5 == 0 && ![Setting isRatingShowed]) {
                     [self showRating];
-                    [Setting setRatingShowed:YES];
                 }
             } else {
                 [self showWaitTip];
@@ -72,7 +74,7 @@
 
 - (void) showRating
 {
-    ratingAlert = [UIUtil showAlert:@"" withMessage:@"五星好评，更多惊喜等着您" leftButton:@"现在就去" rightButton:nil delegate:self];
+    ratingAlert = [UIUtil showAlert:@"" withMessage:@"五星好评，更多惊喜等着您" leftButton:@"现在就去" rightButton:@"下次去" delegate:self];
 }
 
 - (id)initWithStyle:(UITableViewStyle)style

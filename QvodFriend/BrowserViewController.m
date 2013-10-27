@@ -124,6 +124,11 @@
     [self loadHomePage];
 }
 
+- (void)refreshClicked
+{
+    [self.webView reload];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

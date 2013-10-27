@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @protocol QBroswerBarDelegate <NSObject>
+@optional
 - (void) backClicked;
 - (void) homeClicked;
+- (void) refreshClicked;
 @end
