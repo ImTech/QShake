@@ -158,6 +158,8 @@
 		969A703F181D085100DFEDA8 /* nobell.png in Resources */ = {isa = PBXBuildFile; fileRef = 969A7038181D085100DFEDA8 /* nobell.png */; };
 		969A7040181D085100DFEDA8 /* nobell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 969A7039181D085100DFEDA8 /* nobell@2x.png */; };
 		969A7041181D085100DFEDA8 /* nobell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 969A7039181D085100DFEDA8 /* nobell@2x.png */; };
+		969A7044181D241100DFEDA8 /* MyWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 969A7043181D241100DFEDA8 /* MyWebView.m */; };
+		969A7045181D241100DFEDA8 /* MyWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 969A7043181D241100DFEDA8 /* MyWebView.m */; };
 		96A3D2BF1816CB110055C485 /* MyUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 966D3322181581DA00F9963D /* MyUserManager.m */; };
 		96A3D2C01816CB2A0055C485 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 966D3325181581EC00F9963D /* User.m */; };
 		96D9C4E01818327D0033016F /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 96D9C4DE1818327D0033016F /* Icon.png */; };
@@ -310,6 +312,8 @@
 		969A7037181D085100DFEDA8 /* bell@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bell@2x.png"; sourceTree = "<group>"; };
 		969A7038181D085100DFEDA8 /* nobell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nobell.png; sourceTree = "<group>"; };
 		969A7039181D085100DFEDA8 /* nobell@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nobell@2x.png"; sourceTree = "<group>"; };
+		969A7042181D241100DFEDA8 /* MyWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyWebView.h; sourceTree = "<group>"; };
+		969A7043181D241100DFEDA8 /* MyWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyWebView.m; sourceTree = "<group>"; };
 		96D9C4DE1818327D0033016F /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		96D9C4DF1818327D0033016F /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		96D9C4E2181832B60033016F /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
@@ -456,6 +460,8 @@
 				966D3322181581DA00F9963D /* MyUserManager.m */,
 				966D3324181581EC00F9963D /* User.h */,
 				966D3325181581EC00F9963D /* User.m */,
+				969A7042181D241100DFEDA8 /* MyWebView.h */,
+				969A7043181D241100DFEDA8 /* MyWebView.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -1026,6 +1032,7 @@
 				9698340017EDF98C007FDB02 /* UIColor+Hex.m in Sources */,
 				9612236717DB923D00D27793 /* ShakeImageView.m in Sources */,
 				9687E24217EFC01200642E2F /* QBroswerBar.m in Sources */,
+				969A7044181D241100DFEDA8 /* MyWebView.m in Sources */,
 				967347E5181046130008EC46 /* SearchViewController.m in Sources */,
 				96FD726B180AF99E0002FD00 /* MyUITableViewCell.m in Sources */,
 				9612237817DC15F000D27793 /* UIUtil.m in Sources */,
@@ -1059,6 +1066,7 @@
 				9673477A181040D70008EC46 /* ShakeImageView.m in Sources */,
 				9673477B181040D70008EC46 /* QBroswerBar.m in Sources */,
 				9673477C181040D70008EC46 /* MyUITableViewCell.m in Sources */,
+				969A7045181D241100DFEDA8 /* MyWebView.m in Sources */,
 				9673477D181040D70008EC46 /* UIUtil.m in Sources */,
 				9673477E181040D70008EC46 /* HandleTableView.m in Sources */,
 				9673477F181040D70008EC46 /* DataTableContrller.m in Sources */,

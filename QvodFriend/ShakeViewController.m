@@ -78,7 +78,13 @@
 
 - (void) initNaviBar {
     BOOL isMute = [Setting isMute];
-    UIBarButtonItem *btn = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:self action:@selector(naviItemClick:)];
+//    UIBarButtonItem *btn = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:self action:@selector(naviItemClick:)];
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(0, 0, 40, 40);
+    [button addTarget:self action:@selector(naviItemClick:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *btn = [[UIBarButtonItem alloc] initWithCustomView:button];
+//    btn.tintColor = [UIColor whiteColor];
     self.navigationItem.rightBarButtonItem = btn;
     [self setMuteButton:isMute];
 }
@@ -86,8 +92,9 @@
 - (void) setMuteButton:(BOOL) isMute
 {
     NSString *icon = isMute ? @"nobell" : @"bell";
-    UIBarButtonItem *btn = self.navigationItem.rightBarButtonItem;
-    [btn setImage:[UIImage imageNamed:icon]];
+    UIBarButtonItem *btnItem = self.navigationItem.rightBarButtonItem;
+    UIButton *btn = (UIButton *)btnItem.customView;
+    [btn setImage:[UIImage imageNamed:icon] forState:UIControlStateNormal];
     [Setting setMute:isMute];
 }
 

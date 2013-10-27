@@ -37,15 +37,19 @@
     [self calcWebViewHeight];
     [self loadHomePage];
     
-    UITapGestureRecognizer *tapper = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
+    UIPanGestureRecognizer *tapper = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
     tapper.cancelsTouchesInView = FALSE;
-    [self.webView addGestureRecognizer:tapper];
-  
+    tapper.delegate = self;
+    [self.view addGestureRecognizer:tapper];
 }
 
-- (void) handleSingleTap:(UIGestureRecognizer*) sender
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
 {
-    NSLog(@"handleSingleTap");
+    return YES;
+}
+
+- (void) handlePan:(UIGestureRecognizer*) sender
+{
     [self.view endEditing:YES];
 }
 
@@ -84,19 +88,19 @@
 
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
-    self.progressBar.hidden = NO;
-    self.progressBar.progress = 0;
+//    self.progressBar.hidden = NO;
+//    self.progressBar.progress = 0;
 }
 
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
-    self.progressBar.hidden = YES;
+//    self.progressBar.hidden = YES;
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
-    self.progressBar.hidden = YES;
+//    self.progressBar.hidden = YES;
 }
 
 - (BOOL) textFieldShouldReturn:(UITextField *)textField {
