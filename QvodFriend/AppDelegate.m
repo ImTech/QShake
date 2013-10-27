@@ -11,24 +11,26 @@
 #import "MobClick.h"
 
 @implementation AppDelegate
-
-- (void) layoutWindow:(UIApplication *) application
 {
-    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7) {
-        [application setStatusBarStyle:UIStatusBarStyleLightContent];
-        self.window.clipsToBounds =YES;
-        self.window.frame =  CGRectMake(0,20,self.window.frame.size.width,self.window.frame.size.height-20);
-        
-        //Added on 19th Sep 2013
-        self.window.bounds = CGRectMake(0, 20, self.window.frame.size.width, self.window.frame.size.height);
-    }
+    CGFloat _windowW;
+    CGFloat _windowH;
+}
 
+
+- (void) statusBarHack
+{
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
+        UIView *addStatusBar = [[UIView alloc] init];
+        addStatusBar.frame = CGRectMake(0, 0, self.window.frame.size.width, 20);
+        addStatusBar.backgroundColor = [UIColor blackColor]; //change this to match your navigation bar
+        [self.window.rootViewController.view addSubview:addStatusBar];
+    }
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-//    [self layoutWindow:application];
+    [self statusBarHack];
     
     // Um start
     NSString *umKEY = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"UmKey"];
@@ -61,13 +63,12 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    NSLog(@"applicationDidBecomeActive");
-    [self layoutWindow:application];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
 
 @end

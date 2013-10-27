@@ -150,6 +150,14 @@
 		969833FA17EDEA81007FDB02 /* TabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 969833F917EDEA81007FDB02 /* TabViewController.m */; };
 		969833FD17EDF7BC007FDB02 /* BrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 969833FC17EDF7BC007FDB02 /* BrowserViewController.m */; };
 		9698340017EDF98C007FDB02 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 969833FF17EDF98C007FDB02 /* UIColor+Hex.m */; };
+		969A703A181D085100DFEDA8 /* bell.png in Resources */ = {isa = PBXBuildFile; fileRef = 969A7036181D085100DFEDA8 /* bell.png */; };
+		969A703B181D085100DFEDA8 /* bell.png in Resources */ = {isa = PBXBuildFile; fileRef = 969A7036181D085100DFEDA8 /* bell.png */; };
+		969A703C181D085100DFEDA8 /* bell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 969A7037181D085100DFEDA8 /* bell@2x.png */; };
+		969A703D181D085100DFEDA8 /* bell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 969A7037181D085100DFEDA8 /* bell@2x.png */; };
+		969A703E181D085100DFEDA8 /* nobell.png in Resources */ = {isa = PBXBuildFile; fileRef = 969A7038181D085100DFEDA8 /* nobell.png */; };
+		969A703F181D085100DFEDA8 /* nobell.png in Resources */ = {isa = PBXBuildFile; fileRef = 969A7038181D085100DFEDA8 /* nobell.png */; };
+		969A7040181D085100DFEDA8 /* nobell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 969A7039181D085100DFEDA8 /* nobell@2x.png */; };
+		969A7041181D085100DFEDA8 /* nobell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 969A7039181D085100DFEDA8 /* nobell@2x.png */; };
 		96A3D2BF1816CB110055C485 /* MyUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 966D3322181581DA00F9963D /* MyUserManager.m */; };
 		96A3D2C01816CB2A0055C485 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 966D3325181581EC00F9963D /* User.m */; };
 		96D9C4E01818327D0033016F /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 96D9C4DE1818327D0033016F /* Icon.png */; };
@@ -298,6 +306,10 @@
 		969833FC17EDF7BC007FDB02 /* BrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowserViewController.m; sourceTree = "<group>"; };
 		969833FE17EDF98C007FDB02 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
 		969833FF17EDF98C007FDB02 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
+		969A7036181D085100DFEDA8 /* bell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bell.png; sourceTree = "<group>"; };
+		969A7037181D085100DFEDA8 /* bell@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bell@2x.png"; sourceTree = "<group>"; };
+		969A7038181D085100DFEDA8 /* nobell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nobell.png; sourceTree = "<group>"; };
+		969A7039181D085100DFEDA8 /* nobell@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nobell@2x.png"; sourceTree = "<group>"; };
 		96D9C4DE1818327D0033016F /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		96D9C4DF1818327D0033016F /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		96D9C4E2181832B60033016F /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
@@ -476,6 +488,10 @@
 			isa = PBXGroup;
 			children = (
 				96D9C4EA181833000033016F /* Icon-60.png */,
+				969A7036181D085100DFEDA8 /* bell.png */,
+				969A7037181D085100DFEDA8 /* bell@2x.png */,
+				969A7038181D085100DFEDA8 /* nobell.png */,
+				969A7039181D085100DFEDA8 /* nobell@2x.png */,
 				96D9C4EB181833000033016F /* Icon-60@2x.png */,
 				96D9C4E6181832E60033016F /* Icon-76.png */,
 				96D9C4E7181832E60033016F /* Icon-76@2x.png */,
@@ -764,13 +780,17 @@
 				96492B08180A6FDB00356886 /* handle_arrow_down@2x.png in Resources */,
 				96492B09180A6FDB00356886 /* handle_body@2x.png in Resources */,
 				96D9C4EC181833000033016F /* Icon-60.png in Resources */,
+				969A703E181D085100DFEDA8 /* nobell.png in Resources */,
+				969A703C181D085100DFEDA8 /* bell@2x.png in Resources */,
 				9654A67D17ED1EC3006E60E4 /* a_11@2x.png in Resources */,
 				96FD724D180AF7880002FD00 /* head_22@2x.png in Resources */,
 				96FD7253180AF7880002FD00 /* head_28@2x.png in Resources */,
 				968CF6C4180B6F8300821E76 /* video_data.plist in Resources */,
 				9654A67A17ED1EC3006E60E4 /* a_09.png in Resources */,
 				96D9C4E4181832B60033016F /* Icon-72.png in Resources */,
+				969A7040181D085100DFEDA8 /* nobell@2x.png in Resources */,
 				9654A67617ED1EC3006E60E4 /* a_02.png in Resources */,
+				969A703A181D085100DFEDA8 /* bell.png in Resources */,
 				96492B0E180AB46B00356886 /* handle_arrow_up@2x.png in Resources */,
 				96FD7256180AF7880002FD00 /* head_31@2x.png in Resources */,
 				96FD723C180AF7880002FD00 /* head_34@2x.png in Resources */,
@@ -847,6 +867,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				969A7041181D085100DFEDA8 /* nobell@2x.png in Resources */,
 				9673478F181040D70008EC46 /* head_10@2x.png in Resources */,
 				96734790181040D70008EC46 /* a_02@2x.png in Resources */,
 				96734791181040D70008EC46 /* shake_match.mp3 in Resources */,
@@ -881,6 +902,7 @@
 				967347AE181040D70008EC46 /* head_4@2x.png in Resources */,
 				967347AF181040D70008EC46 /* head_5@2x.png in Resources */,
 				967347B0181040D70008EC46 /* failed.wav in Resources */,
+				969A703D181D085100DFEDA8 /* bell@2x.png in Resources */,
 				967347B1181040D70008EC46 /* head_16@2x.png in Resources */,
 				967347B2181040D70008EC46 /* head_35@2x.png in Resources */,
 				967347B3181040D70008EC46 /* a_05.png in Resources */,
@@ -903,6 +925,8 @@
 				967347C3181040D70008EC46 /* shake_begin.mp3 in Resources */,
 				967347C4181040D70008EC46 /* head_11@2x.png in Resources */,
 				967347C5181040D70008EC46 /* head_33@2x.png in Resources */,
+				969A703F181D085100DFEDA8 /* nobell.png in Resources */,
+				969A703B181D085100DFEDA8 /* bell.png in Resources */,
 				967347C6181040D70008EC46 /* head_39@2x.png in Resources */,
 				967347C7181040D70008EC46 /* head_44@2x.png in Resources */,
 				967347C8181040D70008EC46 /* a_09@2x.png in Resources */,

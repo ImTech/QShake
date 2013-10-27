@@ -78,23 +78,27 @@
 
 - (void) initNaviBar {
     BOOL isMute = [Setting isMute];
-    NSString *title = isMute ? @"开启声音" : @"静音";
-    UIBarButtonItem *btn = [[UIBarButtonItem alloc] initWithTitle:title style:UIBarButtonItemStyleBordered target:self action:@selector(naviItemClick:)];
-    btn.tintColor = [UIColor grayColor];
+    UIBarButtonItem *btn = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:self action:@selector(naviItemClick:)];
     self.navigationItem.rightBarButtonItem = btn;
+    [self setMuteButton:isMute];
+}
+
+- (void) setMuteButton:(BOOL) isMute
+{
+    NSString *icon = isMute ? @"nobell" : @"bell";
+    UIBarButtonItem *btn = self.navigationItem.rightBarButtonItem;
+    [btn setImage:[UIImage imageNamed:icon]];
+    [Setting setMute:isMute];
 }
 
 - (void) naviItemClick:(UIBarButtonItem*) sender
 {
     // toggle
     BOOL isMute = ![Setting isMute];
-    NSString *title = isMute ? @"开启声音" : @"静音";
-    self.navigationItem.rightBarButtonItem.title =title;
-    [Setting setMute:isMute];
+    [self setMuteButton:isMute];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    NSLog(@"viewDidAppear");
     [_imgShake becomeFirstResponder];
 }
 

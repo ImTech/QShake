@@ -44,4 +44,11 @@
     return NO;
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+//    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
+//    [delegate layoutWindow:[UIApplication sharedApplication]];
+}
+
+
 @end
