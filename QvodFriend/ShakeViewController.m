@@ -16,6 +16,7 @@
 #import "UIUtil.h"
 #import "Setting.h"
 #import "MobClickHelper.h"
+#import "IntruduceViewController.h"
 
 #define ANIM_SHAKE_COUNT 5
 #define ANIM_SHAKE_KEY  @"ICON_SHAKE"
@@ -48,7 +49,7 @@
     [self.view setBackgroundColor:[UIColor colorWithHex:@"#E4E7EB"]];
     [self.navigationBar setBackgroundImage:[[UIImage imageNamed:@"a_02"] stretchableImageWithLeftCapWidth:10 topCapHeight:10] forBarMetrics:UIBarMetricsDefault];
     @try {
-        _navigationBar.barTintColor = [UIColor blackColor];
+        self.navigationBar.barTintColor = [UIColor blackColor];
     }
     @catch (NSException *exception) {
     }
@@ -74,6 +75,25 @@
     _searchBar.hidden = YES;
 
     [self initNaviBar];
+    
+    [self checkShowIntruduce];
+}
+
+- (void) checkShowIntruduce
+{
+    if (![Setting showIntruduce]) {
+        NSLog(@"do not show intruduce");
+        return;
+    }
+    NSLog(@"show intruduce");
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    if (sb == nil) {
+        NSLog(@"sb nil");
+    }
+    IntruduceViewController *intruduce = [sb instantiateViewControllerWithIdentifier:@"Intruduce"];
+//    [self.navigationController pushViewController:intruduce animated:YES];
+//    [self presentModalViewController:intruduce animated:YES];
+    [self presentViewController:intruduce animated:YES completion:nil];
 }
 
 - (void) initNaviBar {

@@ -52,6 +52,9 @@
 		969833FA17EDEA81007FDB02 /* TabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 969833F917EDEA81007FDB02 /* TabViewController.m */; };
 		969833FD17EDF7BC007FDB02 /* BrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 969833FC17EDF7BC007FDB02 /* BrowserViewController.m */; };
 		9698340017EDF98C007FDB02 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 969833FF17EDF98C007FDB02 /* UIColor+Hex.m */; };
+		9699FF051827E3E80090BE88 /* IntruduceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9699FF041827E3E80090BE88 /* IntruduceViewController.m */; };
+		9699FF081827F48F0090BE88 /* IntruducePageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9699FF071827F48F0090BE88 /* IntruducePageController.m */; };
+		9699FF0E1827F7B20090BE88 /* IntruduceDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 9699FF0D1827F7B20090BE88 /* IntruduceDataSource.m */; };
 		969A703A181D085100DFEDA8 /* bell.png in Resources */ = {isa = PBXBuildFile; fileRef = 969A7036181D085100DFEDA8 /* bell.png */; };
 		969A703C181D085100DFEDA8 /* bell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 969A7037181D085100DFEDA8 /* bell@2x.png */; };
 		969A703E181D085100DFEDA8 /* nobell.png in Resources */ = {isa = PBXBuildFile; fileRef = 969A7038181D085100DFEDA8 /* nobell.png */; };
@@ -198,6 +201,12 @@
 		969833FC17EDF7BC007FDB02 /* BrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowserViewController.m; sourceTree = "<group>"; };
 		969833FE17EDF98C007FDB02 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
 		969833FF17EDF98C007FDB02 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
+		9699FF031827E3E80090BE88 /* IntruduceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntruduceViewController.h; sourceTree = "<group>"; };
+		9699FF041827E3E80090BE88 /* IntruduceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntruduceViewController.m; sourceTree = "<group>"; };
+		9699FF061827F48F0090BE88 /* IntruducePageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntruducePageController.h; sourceTree = "<group>"; };
+		9699FF071827F48F0090BE88 /* IntruducePageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntruducePageController.m; sourceTree = "<group>"; };
+		9699FF0C1827F7B20090BE88 /* IntruduceDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntruduceDataSource.h; sourceTree = "<group>"; };
+		9699FF0D1827F7B20090BE88 /* IntruduceDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntruduceDataSource.m; sourceTree = "<group>"; };
 		969A7036181D085100DFEDA8 /* bell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bell.png; sourceTree = "<group>"; };
 		969A7037181D085100DFEDA8 /* bell@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bell@2x.png"; sourceTree = "<group>"; };
 		969A7038181D085100DFEDA8 /* nobell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nobell.png; sourceTree = "<group>"; };
@@ -341,6 +350,12 @@
 				966D3325181581EC00F9963D /* User.m */,
 				969A7042181D241100DFEDA8 /* MyWebView.h */,
 				969A7043181D241100DFEDA8 /* MyWebView.m */,
+				9699FF031827E3E80090BE88 /* IntruduceViewController.h */,
+				9699FF041827E3E80090BE88 /* IntruduceViewController.m */,
+				9699FF061827F48F0090BE88 /* IntruducePageController.h */,
+				9699FF071827F48F0090BE88 /* IntruducePageController.m */,
+				9699FF0C1827F7B20090BE88 /* IntruduceDataSource.h */,
+				9699FF0D1827F7B20090BE88 /* IntruduceDataSource.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -774,6 +789,7 @@
 				9698340017EDF98C007FDB02 /* UIColor+Hex.m in Sources */,
 				9612236717DB923D00D27793 /* ShakeImageView.m in Sources */,
 				9687E24217EFC01200642E2F /* QBroswerBar.m in Sources */,
+				9699FF0E1827F7B20090BE88 /* IntruduceDataSource.m in Sources */,
 				969A7044181D241100DFEDA8 /* MyWebView.m in Sources */,
 				967347E5181046130008EC46 /* SearchViewController.m in Sources */,
 				969A7059181D358B00DFEDA8 /* MyUITextField.m in Sources */,
@@ -784,11 +800,13 @@
 				966D3323181581DA00F9963D /* MyUserManager.m in Sources */,
 				969833FA17EDEA81007FDB02 /* TabViewController.m in Sources */,
 				96F883AA181967FD0057B1B8 /* UIDevice+Common.m in Sources */,
+				9699FF051827E3E80090BE88 /* IntruduceViewController.m in Sources */,
 				969833FD17EDF7BC007FDB02 /* BrowserViewController.m in Sources */,
 				96F883B71819709D0057B1B8 /* Setting.m in Sources */,
 				967080DF17BBE46E00147FD5 /* AppDelegate.m in Sources */,
 				967080EB17BBE46E00147FD5 /* ShakeViewController.m in Sources */,
 				966D3326181581EC00F9963D /* User.m in Sources */,
+				9699FF081827F48F0090BE88 /* IntruducePageController.m in Sources */,
 				9612236F17DB9A7700D27793 /* SoundUtil.m in Sources */,
 				9612235D17DB847300D27793 /* QVODHelper.m in Sources */,
 				96F7B6F817BBF6C90098A18E /* ResouceApi.m in Sources */,

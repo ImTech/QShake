@@ -18,4 +18,6 @@
 + (void) setMute:(BOOL) isMute;
 + (BOOL) isFirstPlayTipShowd;
 + (void) setFirstPlayTipShowd:(BOOL) isShowed;
++ (BOOL) showIntruduce;
++ (void) setShowIntruduce:(BOOL) show;
 @end

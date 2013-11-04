@@ -22,7 +22,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ywu-Jk-khh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-260" y="-226"/>
+            <point key="canvasLocation" x="-520" y="-584"/>
         </scene>
         <!--Search View Controller - 搜索-->
         <scene sceneID="rQG-rc-Xly">
@@ -68,7 +68,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="346" y="370"/>
+            <point key="canvasLocation" x="972" y="-702"/>
         </scene>
         <!--Browser View Controller - 浏览-->
         <scene sceneID="Xbb-xS-ui5">
@@ -106,7 +106,38 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r3z-du-hb2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1010" y="-84"/>
+            <point key="canvasLocation" x="-72" y="-4"/>
+        </scene>
+        <!--Intruduce View Controller-->
+        <scene sceneID="zMc-hP-jld">
+            <objects>
+                <viewController storyboardIdentifier="Intruduce" id="gRh-f5-CCR" customClass="IntruduceViewController" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ud4-zK-IJh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="421" y="111"/>
+        </scene>
+        <!--Intruduce Page Controller-->
+        <scene sceneID="iEv-2p-gI8">
+            <objects>
+                <viewController storyboardIdentifier="intruduce_page" id="kwa-O6-Kp0" customClass="IntruducePageController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zDx-nP-9hy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="JnC-uh-anD">
+                                <rect key="frame" x="104" y="281" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L57-1S-SIR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="928" y="48"/>
         </scene>
         <!--Shake View Controller - First-->
         <scene sceneID="11">
@@ -162,7 +193,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="587" y="-316"/>
+            <point key="canvasLocation" x="31" y="-708"/>
         </scene>
     </scenes>
     <resources>

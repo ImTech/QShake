@@ -12,6 +12,7 @@
 #define KEY_IS_RATING_SHOWED @"is_rating_showd"
 #define KEY_IS_MUTE @"is_mute"
 #define KEY_IS_FIRST_PLAY_SHOWD @"is_first_play_showd"
+#define KEY_SHOW_INTRUDUCE @"is_show_intruduce"
 
 @implementation Setting
 + (void)increasePlayCount
@@ -55,4 +56,18 @@
 {
     [[NSUserDefaults standardUserDefaults] setBool:isShowed forKey:KEY_IS_FIRST_PLAY_SHOWD];
 }
+
++ (BOOL)showIntruduce
+{
+    if (![[NSUserDefaults standardUserDefaults] objectIsForcedForKey:KEY_SHOW_INTRUDUCE]) {
+        return YES;
+    }
+    return [[NSUserDefaults standardUserDefaults] boolForKey:KEY_SHOW_INTRUDUCE];
+}
+
++ (void)setShowIntruduce:(BOOL)show
+{
+    [[NSUserDefaults standardUserDefaults] setBool:show forKey:KEY_SHOW_INTRUDUCE];
+}
+        
 @end
