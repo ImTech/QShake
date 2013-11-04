@@ -6,138 +6,63 @@
 	<dict>
 		<key>Pods-AFNetworking.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 		<key>Pods-ISMethodSwizzling.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>4</integer>
-		</dict>
-		<key>Pods-NJKWebViewProgress.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>5</integer>
-		</dict>
-		<key>Pods-SBJson.xcscheme</key>
-		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
-		<key>Pods-UIWebView+Progress.xcscheme</key>
+		<key>Pods-NJKWebViewProgress.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
-			<integer>6</integer>
+			<integer>4</integer>
+		</dict>
+		<key>Pods-SBJson.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>5</integer>
 		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0C8719D710F04DCBBCD910F3</key>
+		<key>2B61604067D34A81932E3E2E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>20D0DD521E404EE6B34F4390</key>
+		<key>4FC60A5039F641DD85CDFB29</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4D0D8CFE919C486E98E0F9A8</key>
+		<key>89B85A9C45CE4C3A8FDA8287</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>501C458400B241B6AC4B61F7</key>
+		<key>A875144DCECC496EBBAA2EC6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6DA04351A9EA40579F29089E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>721D66B112814109ABC8C431</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>87D7417BFD1F49D8BAA201A7</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>92D6BED9FCEC43889EED4091</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>9F2CD124EAE44C7EAD49E079</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A2939E7103334B3992C7713C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A507180FFBC04EE09BBC957B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A59633BDDB5E43A2BB65DE5C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>BCE977EB518544AB8DAC35E6</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C4C8BD33D7B24EA995745562</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D03F152F6D484F049063AAFC</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D12635118F274DD68E665A0B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D565255D9D4E43E385AC5FF2</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D6D043EC8E124F4A9C86D7AA</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E058B7EC4EBC42779949ACB8</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E6EC02B51DF3450B93750C23</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FFE31B7EA4B9456EB616D7F7</key>
+		<key>E8A97E7389E84036877D66DD</key>
 		<dict>
 			<key>primary</key>
 			<true/>

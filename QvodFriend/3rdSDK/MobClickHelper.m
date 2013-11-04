@@ -15,4 +15,18 @@
     [MobClick event:@"shake"];
 }
 
++ (void)logInstallQvod
+{
+    [MobClick event:@"install_qvod"];
+}
+
++ (void)logPlay
+{
+    [MobClick event:@"play"];
+}
+
++ (void) logRating
+{
+    [MobClick event:@"rating"];
+}
 @end

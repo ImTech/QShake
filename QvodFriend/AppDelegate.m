@@ -36,7 +36,7 @@
     NSString *umKEY = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"UmKey"];
     NSLog(@"UmKey%@", umKEY);
     [MobClick startWithAppkey:umKEY reportPolicy:REALTIME channelId:@"appstore"];
-    [MobClick setLogEnabled:YES];
+    [MobClick setLogEnabled:NO];
     return YES;
 }
 

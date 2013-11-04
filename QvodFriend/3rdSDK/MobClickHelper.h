@@ -9,5 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface MobClickHelper : NSObject
-+ (void)logShake;
++ (void) logShake;
++ (void) logPlay;
++ (void) logInstallQvod;
++ (void) logRating;
 @end

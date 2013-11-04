@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "20D0DD521E404EE6B34F4390"
-               BuildableName = "libPods-UIWebView+Progress.a"
-               BlueprintName = "Pods-UIWebView+Progress"
-               ReferencedContainer = "container:Pods.xcodeproj">
+               BlueprintIdentifier = "967080CA17BBE46E00147FD5"
+               BuildableName = "qshake.temp_caseinsensitive_rename.app"
+               BlueprintName = "qshake"
+               ReferencedContainer = "container:QShake.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -29,6 +29,15 @@
       buildConfiguration = "Debug">
       <Testables>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "967080CA17BBE46E00147FD5"
+            BuildableName = "qshake.temp_caseinsensitive_rename.app"
+            BlueprintName = "qshake"
+            ReferencedContainer = "container:QShake.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
@@ -39,6 +48,15 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "967080CA17BBE46E00147FD5"
+            BuildableName = "qshake.temp_caseinsensitive_rename.app"
+            BlueprintName = "qshake"
+            ReferencedContainer = "container:QShake.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -48,6 +66,15 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "967080CA17BBE46E00147FD5"
+            BuildableName = "qshake.temp_caseinsensitive_rename.app"
+            BlueprintName = "qshake"
+            ReferencedContainer = "container:QShake.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

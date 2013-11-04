@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "967080CA17BBE46E00147FD5"
-               BuildableName = "QShake.app"
-               BlueprintName = "QShake"
-               ReferencedContainer = "container:QShake.xcodeproj">
+               BuildableName = "qshake.temp_caseinsensitive_rename.app"
+               BlueprintName = "qshake"
+               ReferencedContainer = "container:qshake.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "967080CA17BBE46E00147FD5"
-            BuildableName = "QShake.app"
-            BlueprintName = "QShake"
-            ReferencedContainer = "container:QShake.xcodeproj">
+            BuildableName = "qshake.temp_caseinsensitive_rename.app"
+            BlueprintName = "qshake"
+            ReferencedContainer = "container:qshake.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -52,9 +52,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "967080CA17BBE46E00147FD5"
-            BuildableName = "QShake.app"
-            BlueprintName = "QShake"
-            ReferencedContainer = "container:QShake.xcodeproj">
+            BuildableName = "qshake.temp_caseinsensitive_rename.app"
+            BlueprintName = "qshake"
+            ReferencedContainer = "container:qshake.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -70,9 +70,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "967080CA17BBE46E00147FD5"
-            BuildableName = "QShake.app"
-            BlueprintName = "QShake"
-            ReferencedContainer = "container:QShake.xcodeproj">
+            BuildableName = "qshake.temp_caseinsensitive_rename.app"
+            BlueprintName = "qshake"
+            ReferencedContainer = "container:qshake.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

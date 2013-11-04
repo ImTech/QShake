@@ -13,6 +13,7 @@
 #import "MyUITableViewCell.h"
 #import "MyUserManager.h"
 #import "Setting.h"
+#import "MobClickHelper.h"
 
 @interface DataTableContrller ()
 @end
@@ -30,14 +31,17 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (alertView == installAlert && buttonIndex == 0) {
         [QVODHelper install];
+        [MobClickHelper logInstallQvod];
         return;
     } else if (alertView == waitTipAlert) {
         [QVODHelper playWithHash:currentHash];
         [Setting increasePlayCount];
+        [MobClickHelper logPlay];
         return;
     } else if (alertView == ratingAlert) {
         if (buttonIndex == 0) {
             [QVODHelper rating];
+            [MobClickHelper logRating];
             [Setting setRatingShowed:YES];
         }
     }
@@ -47,8 +51,10 @@
         if (haveQvod) {
             if ([Setting isFirstPlayTipShowd]) {
                 [QVODHelper playWithHash:currentHash];
+                [MobClickHelper logPlay];
                 [Setting increasePlayCount];
-                if ([Setting playCount] % 5 == 0 && ![Setting isRatingShowed]) {
+                NSInteger playcount = [Setting playCount];
+                if (playcount % 10 == 0 && playcount > 0 && ![Setting isRatingShowed]) {
                     [self showRating];
                 }
             } else {

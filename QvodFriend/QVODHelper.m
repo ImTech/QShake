@@ -66,7 +66,7 @@
 {
     NSString *str = [NSString stringWithFormat:
                      @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%d",
-                     436957167 ];
+                     733557508 ];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
 }
 
