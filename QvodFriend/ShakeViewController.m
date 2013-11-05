@@ -75,8 +75,9 @@
     _searchBar.hidden = YES;
 
     [self initNaviBar];
+    [self beginLoadData:NO];
     
-    [self checkShowIntruduce];
+//    [self checkShowIntruduce];
 }
 
 - (void) checkShowIntruduce
@@ -91,9 +92,8 @@
         NSLog(@"sb nil");
     }
     IntruduceViewController *intruduce = [sb instantiateViewControllerWithIdentifier:@"Intruduce"];
-//    [self.navigationController pushViewController:intruduce animated:YES];
-//    [self presentModalViewController:intruduce animated:YES];
-    [self presentViewController:intruduce animated:YES completion:nil];
+//    [self presentViewController:intruduce animated:YES completion:nil];
+    [self presentModalViewController:intruduce animated:YES];
 }
 
 - (void) initNaviBar {
@@ -252,7 +252,7 @@
     }
     [self shakeImage:imageView withRepeatCount:NSUIntegerMax];
     [SoundUtil playShakeSound:ShakeSoundStyleBegin];
-    [self beginLoadData];
+    [self beginLoadData:YES];
     [MobClickHelper logShake];
 }
 
@@ -311,7 +311,7 @@
 }
 
 
-- (void) beginLoadData
+- (void) beginLoadData:(BOOL) useSound
 {
     _isLodingData = YES;
     [self hideTable];
@@ -319,14 +319,16 @@
         [NSThread sleepForTimeInterval:1];
         _isLodingData = NO;
         [[_imgShake layer] removeAnimationForKey:ANIM_SHAKE_KEY];
-        if(JSON == nil) {
+        if(JSON == nil && useSound) {
             // failed
             [SoundUtil playShakeSound:ShakeSoundStyleFailed];
             return;
         }
         // play sucess music
         [self showTable];
-        [SoundUtil playShakeSound:ShakeSoundStyleEnd];
+        if (useSound) {
+            [SoundUtil playShakeSound:ShakeSoundStyleEnd];
+        }
         SBJsonParser *parser = [[SBJsonParser alloc] init];
         NSMutableArray *array = [parser objectWithString:JSON];
         for(NSMutableDictionary *dict in array) {

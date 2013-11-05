@@ -177,7 +177,7 @@
 		967080CE17BBE46E00147FD5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		967080D017BBE46E00147FD5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		967080D217BBE46E00147FD5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		967080D617BBE46E00147FD5 /* qshake.temp_caseinsensitive_rename-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "qshake.temp_caseinsensitive_rename-Info.plist"; sourceTree = "<group>"; };
+		967080D617BBE46E00147FD5 /* qshake.temp_caseinsensitive_rename-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "qshake.temp_caseinsensitive_rename-Info.plist"; sourceTree = "<group>"; };
 		967080D817BBE46E00147FD5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		967080DA17BBE46E00147FD5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		967080DC17BBE46E00147FD5 /* qshake.temp_caseinsensitive_rename-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "qshake.temp_caseinsensitive_rename-Prefix.pch"; sourceTree = "<group>"; };

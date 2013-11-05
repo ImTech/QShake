@@ -18,31 +18,33 @@
     IntruduceDataSource *_ds;
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
-    self = [super initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
-    if (self) {
-    }
-    return self;
-}
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-        
-    }
-    return self;
-}
+//- (id)initWithCoder:(NSCoder *)aDecoder
+//{
+//    self = [super initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+//    if (self) {
+//        self.view.backgroundColor = [UIColor whiteColor];
+//    }
+//    return self;
+//}
+//
+//- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+//{
+//    self = [super initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+//    if (self) {
+//        // Custom initialization
+//         self.view.backgroundColor = [UIColor whiteColor];
+//    }
+//    return self;
+//}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [self initPages];
-    [self setAppreance];
+    [self setAppreance];    
 }
+
 
 - (void) setAppreance
 {
@@ -56,6 +58,7 @@
 {
     NSLog(@"initPages");
     _ds = [[IntruduceDataSource alloc] init];
+    _ds.intruduceViewController = self;
     [self setViewControllers:[_ds fisrtController] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     self.dataSource = _ds;
 }
@@ -64,6 +67,11 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
 }
 
 @end

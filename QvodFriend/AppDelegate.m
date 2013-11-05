@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <AVFoundation/AVFoundation.h>
 #import "MobClick.h"
+#import "Setting.h"
 
 @implementation AppDelegate
 {
@@ -27,11 +28,28 @@
     }
 }
 
+- (void) chooseFirstViewController
+{
+    self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    NSString *storyid = nil;
+    if ([Setting showIntruduce]) {
+        storyid = @"intro"; // @"tabmain"
+        [Setting setShowIntruduce:NO];
+    } else {
+        storyid = @"tabmain";
+    }
+    UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:storyid];
+    self.window.rootViewController = viewController;
+    [self.window makeKeyAndVisible];
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    [self statusBarHack];
-    
+//    [self statusBarHack];
+    [self chooseFirstViewController];
     // Um start
     NSString *umKEY = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"UmKey"];
     NSLog(@"UmKey%@", umKEY);

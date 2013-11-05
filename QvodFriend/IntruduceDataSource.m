@@ -8,11 +8,11 @@
 
 #import "IntruduceDataSource.h"
 #import "IntruducePageController.h"
+#import "TabViewController.h"
 
 @implementation IntruduceDataSource
 {
     NSMutableArray *_childs;
-    UIPageViewController *_pageViewController;
 }
 
 - (id)init
@@ -40,7 +40,22 @@
 
 - (void)intruducePageControllerButtonClicked:(IntruducePageController *)controller
 {
-    [_pageViewController dismissModalViewControllerAnimated:YES];
+//    [self.intruduceViewController dismissModalViewControllerAnimated:YES];
+    
+    [self showMainView];
+}
+
+- (void) showMainView
+{
+//    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+//    TabViewController *main = [sb instantiateViewControllerWithIdentifier:@"tabcontroller"];
+//    [self.intruduceViewController performSegueWithIdentifier:@"tabsegue" sender:self.intruduceViewController];
+    if ([self.intruduceViewController respondsToSelector:@selector(performSegueWithIdentifier:sender:)]) {
+        [self.intruduceViewController performSegueWithIdentifier:@"main" sender:self];
+    } else {
+        NSLog(@"not support!!");
+    }
+    
 }
 
 - (void) intruducePageControllerViewDidload:(IntruducePageController *)controller
@@ -48,7 +63,7 @@
     if (controller.index != [_childs count] -1) {
         controller.button.hidden = YES;
     } else {
-        [controller.button setTitle:@"知道啦" forState:UIControlStateNormal];
+        [controller.button setTitle:@"开始吧" forState:UIControlStateNormal];
     }
 }
 
@@ -60,7 +75,6 @@
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
 {
     NSLog(@"beofre");
-    _pageViewController = pageViewController;
     NSInteger _index = ((IntruducePageController *)viewController).index;
     if (_index == 0) {
         return nil;

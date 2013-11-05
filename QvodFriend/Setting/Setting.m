@@ -59,15 +59,12 @@
 
 + (BOOL)showIntruduce
 {
-    if (![[NSUserDefaults standardUserDefaults] objectIsForcedForKey:KEY_SHOW_INTRUDUCE]) {
-        return YES;
-    }
-    return [[NSUserDefaults standardUserDefaults] boolForKey:KEY_SHOW_INTRUDUCE];
+    return ![[NSUserDefaults standardUserDefaults] boolForKey:KEY_SHOW_INTRUDUCE];
 }
 
 + (void)setShowIntruduce:(BOOL)show
 {
-    [[NSUserDefaults standardUserDefaults] setBool:show forKey:KEY_SHOW_INTRUDUCE];
+    [[NSUserDefaults standardUserDefaults] setBool:!show forKey:KEY_SHOW_INTRUDUCE];
 }
         
 @end
