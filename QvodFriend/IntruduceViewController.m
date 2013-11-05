@@ -14,12 +14,24 @@
 @end
 
 @implementation IntruduceViewController
+{
+    IntruduceDataSource *_ds;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+    if (self) {
+    }
+    return self;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        
     }
     return self;
 }
@@ -34,10 +46,9 @@
 -(void) initPages
 {
     NSLog(@"initPages");
-    
-    IntruduceDataSource *ds = [[IntruduceDataSource alloc] init];
-    [self setViewControllers:[ds controllers] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
-    self.dataSource = ds;
+    _ds = [[IntruduceDataSource alloc] init];
+    [self setViewControllers:[_ds fisrtController] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+    self.dataSource = _ds;
 }
 
 - (void)didReceiveMemoryWarning

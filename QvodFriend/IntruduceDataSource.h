@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface IntruduceDataSource : NSObject <UIPageViewControllerDataSource>
+@interface IntruduceDataSource : NSObject <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
 
-- (NSArray *) controllers;
+- (NSArray *) fisrtController;
 
 @end

@@ -11,4 +11,5 @@
 @interface IntruducePageController : UIViewController
 
 @property (nonatomic) NSArray* controllers;
+@property (nonatomic) NSUInteger index;
 @end

@@ -11,34 +11,67 @@
 
 @implementation IntruduceDataSource
 {
-    NSMutableArray *_pages;
+    NSMutableArray *_childs;
 }
 
 - (id)init
 {
     self = [super init];
     if (self != nil) {
-        _pages = [[NSMutableArray alloc] init];
+        _childs = [[NSMutableArray alloc] init];
         UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
         IntruducePageController *page = [sb instantiateViewControllerWithIdentifier:@"intruduce_page"];
-        [_pages addObject:page];
+        page.index = 0;
+        [_childs addObject:page];
+        page = [sb instantiateViewControllerWithIdentifier:@"intruduce_page"];
+        page.index = 1;
+        [_childs addObject:page];
+//        page = [sb instantiateViewControllerWithIdentifier:@"intruduce_page"];
+//        [_pages addObject:page];
     }
     return self;
 }
 
-- (NSArray *)controllers
+- (NSArray *)fisrtController
 {
-    return [NSArray arrayWithArray:_pages];
+    return [NSArray arrayWithObjects:[_childs objectAtIndex:0], nil];
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
 {
-    return  [_pages objectAtIndex:0];
+    NSLog(@"beofre");
+    NSInteger _index = ((IntruducePageController *)viewController).index;
+    if (_index == 0) {
+        return nil;
+    }
+    _index --;
+    
+    UIViewController *prev = [_childs objectAtIndex:_index];
+    NSLog(@"current:%@, prev:%@", viewController, prev);
+    return prev;
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
 {
-    return [_pages objectAtIndex:0];
+    NSLog(@"after");
+    NSInteger _index = ((IntruducePageController *)viewController).index;
+    if (_index == [_childs count] - 1) {
+        return nil;
+    }
+    _index ++;
+    UIViewController* next = [_childs objectAtIndex:_index];
+    NSLog(@"current:%@, next:%@", viewController, next);
+    return next;
+}
+
+- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController
+{
+    return [_childs count];
+}
+
+- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController
+{
+    return 0;
 }
 
 @end
