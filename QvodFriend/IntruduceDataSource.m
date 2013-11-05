@@ -12,24 +12,44 @@
 @implementation IntruduceDataSource
 {
     NSMutableArray *_childs;
+    UIPageViewController *_pageViewController;
 }
 
 - (id)init
 {
     self = [super init];
     if (self != nil) {
-        _childs = [[NSMutableArray alloc] init];
-        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-        IntruducePageController *page = [sb instantiateViewControllerWithIdentifier:@"intruduce_page"];
-        page.index = 0;
-        [_childs addObject:page];
-        page = [sb instantiateViewControllerWithIdentifier:@"intruduce_page"];
-        page.index = 1;
-        [_childs addObject:page];
-//        page = [sb instantiateViewControllerWithIdentifier:@"intruduce_page"];
-//        [_pages addObject:page];
+        [self initPages];
     }
     return self;
+}
+
+- (void) initPages
+{
+    _childs = [[NSMutableArray alloc] init];
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    IntruducePageController *page = [sb instantiateViewControllerWithIdentifier:@"intruduce_page"];
+    page.index = 0;
+    page.delegate = self;
+    [_childs addObject:page];
+    page = [sb instantiateViewControllerWithIdentifier:@"intruduce_page"];
+    page.index = 1;
+    page.delegate = self;
+    [_childs addObject:page];
+}
+
+- (void)intruducePageControllerButtonClicked:(IntruducePageController *)controller
+{
+    [_pageViewController dismissModalViewControllerAnimated:YES];
+}
+
+- (void) intruducePageControllerViewDidload:(IntruducePageController *)controller
+{
+    if (controller.index != [_childs count] -1) {
+        controller.button.hidden = YES;
+    } else {
+        [controller.button setTitle:@"知道啦" forState:UIControlStateNormal];
+    }
 }
 
 - (NSArray *)fisrtController
@@ -40,6 +60,7 @@
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
 {
     NSLog(@"beofre");
+    _pageViewController = pageViewController;
     NSInteger _index = ((IntruducePageController *)viewController).index;
     if (_index == 0) {
         return nil;
@@ -47,7 +68,6 @@
     _index --;
     
     UIViewController *prev = [_childs objectAtIndex:_index];
-    NSLog(@"current:%@, prev:%@", viewController, prev);
     return prev;
 }
 

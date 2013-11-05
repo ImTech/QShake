@@ -125,15 +125,24 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="JnC-uh-anD">
-                                <rect key="frame" x="104" y="281" width="46" height="30"/>
+                                <rect key="frame" x="117" y="326" width="86" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="touchUpInside:" destination="kwa-O6-Kp0" eventType="touchUpInside" id="5SD-7J-iQz"/>
+                                </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-60.png" id="Ooh-1L-cnX">
+                                <rect key="frame" x="40" y="125" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="button" destination="JnC-uh-anD" id="BRq-Ca-swk"/>
+                        <outlet property="imageView" destination="Ooh-1L-cnX" id="5Gs-Xj-clx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L57-1S-SIR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -197,6 +206,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Icon-60.png" width="60" height="60"/>
         <image name="a_09.png" width="25" height="26"/>
         <image name="a_11.png" width="25" height="26"/>
     </resources>

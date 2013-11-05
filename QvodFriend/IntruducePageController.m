@@ -27,6 +27,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    if ([self.delegate respondsToSelector:@selector(intruducePageControllerViewDidload:)]) {
+        [self.delegate intruducePageControllerViewDidload:self];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,4 +38,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)touchUpInside:(id)sender {
+    if ([self.delegate respondsToSelector:@selector(intruducePageControllerButtonClicked:)]) {
+        [self.delegate intruducePageControllerButtonClicked:self];
+    }
+}
 @end
