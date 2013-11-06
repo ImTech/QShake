@@ -80,7 +80,7 @@
 
 - (void) showRating
 {
-    ratingAlert = [UIUtil showAlert:@"" withMessage:@"五星好评，更多惊喜等着您" leftButton:@"现在就去" rightButton:@"下次去" delegate:self];
+    ratingAlert = [UIUtil showAlert:@"" withMessage:@"喜欢就支持下我们吧" leftButton:@"现在就去" rightButton:@"下次去" delegate:self];
 }
 
 - (id)initWithStyle:(UITableViewStyle)style

@@ -77,8 +77,9 @@
 //    }
     if (controller.index == 3) {
         // placeholder
-        controller.button.hidden = YES;
+        controller.button.hidden = NO;
         controller.imageView.hidden = YES;
+        [controller.button setTitle:@"开始吧" forState:UIControlStateNormal];
         return;
     }
     

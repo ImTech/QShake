@@ -42,17 +42,22 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [self initPages];
-    [self setAppreance];    
+    [self setAppreance];
 }
-
 
 - (void) setAppreance
 {
-    UIPageControl *pageControl = [UIPageControl appearanceWhenContainedIn:[IntruduceViewController class], nil];
-    pageControl.pageIndicatorTintColor = [UIColor grayColor];
-    pageControl.currentPageIndicatorTintColor = [UIColor redColor];
-    pageControl.backgroundColor = [UIColor whiteColor];
-    [self.view setBackgroundColor:[UIColor whiteColor]];
+    @try {
+        UIPageControl *pageControl = [UIPageControl appearanceWhenContainedIn:[IntruduceViewController class], nil];
+        pageControl.pageIndicatorTintColor = [UIColor grayColor];
+        pageControl.currentPageIndicatorTintColor = [UIColor redColor];
+        pageControl.backgroundColor = [UIColor whiteColor];
+        [self.view setBackgroundColor:[UIColor whiteColor]];    }
+    @catch (NSException *exception) {
+    }
+    @finally {
+    }
+   
 }
 
 -(void) initPages
