@@ -10,7 +10,7 @@
 #import "IntruducePageController.h"
 #import "IntruduceViewController.h"
 
-@interface IntruduceDataSource : NSObject <UIPageViewControllerDataSource, UIPageViewControllerDelegate,
+@interface IntruduceDataSource : NSObject <UIPageViewControllerDataSource,
                                     IntruducePageControllerDelegate>
 
 - (NSArray *) fisrtController;

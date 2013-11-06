@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface IntruduceViewController : UIPageViewController
+@interface IntruduceViewController : UIPageViewController <UIPageViewControllerDelegate>
 
 @end

@@ -36,6 +36,15 @@
     page.index = 1;
     page.delegate = self;
     [_childs addObject:page];
+    page = [sb instantiateViewControllerWithIdentifier:@"intruduce_page"];
+    page.index = 2;
+    page.delegate = self;
+    [_childs addObject:page];
+    // place holder
+    page = [sb instantiateViewControllerWithIdentifier:@"intruduce_page"];
+    page.index = 3;
+    page.delegate = self;
+    [_childs addObject:page];
 }
 
 - (void)intruducePageControllerButtonClicked:(IntruducePageController *)controller
@@ -60,11 +69,21 @@
 
 - (void) intruducePageControllerViewDidload:(IntruducePageController *)controller
 {
-    if (controller.index != [_childs count] -1) {
+    NSString* imageName = [NSString stringWithFormat:@"intro%d", controller.index + 1];
+//    if (controller.index != [_childs count] -1) {
+//        controller.button.hidden = YES;
+//    } else {
+//        [controller.button setTitle:@"开始吧" forState:UIControlStateNormal];
+//    }
+    if (controller.index == 3) {
+        // placeholder
         controller.button.hidden = YES;
-    } else {
-        [controller.button setTitle:@"开始吧" forState:UIControlStateNormal];
+        controller.imageView.hidden = YES;
+        return;
     }
+    
+    controller.button.hidden = YES;
+    controller.imageView.image = [UIImage imageNamed:imageName];
 }
 
 - (NSArray *)fisrtController
@@ -98,14 +117,15 @@
     return next;
 }
 
-- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController
-{
-    return [_childs count];
-}
-
-- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController
-{
-    return 0;
-}
+// for indicator
+//- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController
+//{
+//    return [_childs count];
+//}
+//
+//- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController
+//{
+//    return 0;
+//}
 
 @end

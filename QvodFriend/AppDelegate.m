@@ -40,8 +40,8 @@
     } else {
         storyid = @"tabmain";
     }
-    
-    storyid = @"intro";
+    // for debug
+//    storyid = @"intro";
     UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:storyid];
     self.window.rootViewController = viewController;
     [self.window makeKeyAndVisible];

@@ -62,6 +62,7 @@
     _ds.intruduceViewController = self;
     [self setViewControllers:[_ds fisrtController] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     self.dataSource = _ds;
+    self.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -78,6 +79,29 @@
 - (BOOL)prefersStatusBarHidden
 {
     return YES;
+}
+
+- (void) showMainView
+{
+    //    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    //    TabViewController *main = [sb instantiateViewControllerWithIdentifier:@"tabcontroller"];
+    //    [self.intruduceViewController performSegueWithIdentifier:@"tabsegue" sender:self.intruduceViewController];
+    if ([self respondsToSelector:@selector(performSegueWithIdentifier:sender:)]) {
+        [self performSegueWithIdentifier:@"main" sender:self];
+    } else {
+        NSLog(@"not support!!");
+    }
+    
+}
+
+- (void)pageViewController:(UIPageViewController *)pageViewController willTransitionToViewControllers:(NSArray *)pendingViewControllers
+{
+    IntruducePageController *page = (pendingViewControllers[0]);
+    NSLog(@"------pendingController index:%d", page.index);
+    if (page.index == 3) {
+        // end
+        [self showMainView];
+    }
 }
 
 @end
