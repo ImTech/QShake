@@ -33,23 +33,21 @@
     }
     
     [super layoutSubviews];
-    CGRect rect = self.imageView.frame;
-    rect.size.height = 35;
-    rect.size.width = 35;
-    rect.origin.x = 4;
-    rect.origin.y = 4;
-    self.imageView.frame = rect;
-//    self.imageView.frame = CGRectMake(,0,30,30);
-//    self.imageView.center = CGPointMake(self.imageView.center.x, self.center.y);
-    self.imageView.contentMode = UIViewContentModeScaleAspectFit;
-   
-    CGFloat txtX = rect.origin.x +  rect.size.width + 4;
-    CGRect tmpFrame = self.textLabel.frame;
-    tmpFrame.origin.x = txtX;
-    self.textLabel.frame = tmpFrame;
-    
-    tmpFrame = self.detailTextLabel.frame;
-    tmpFrame.origin.x = txtX;
-    self.detailTextLabel.frame = tmpFrame;
+//    CGRect rect = self.imageView.frame;
+//    rect.size.height = 35;
+//    rect.size.width = 35;
+//    rect.origin.x = 4;
+//    rect.origin.y = 4;
+//    self.imageView.frame = rect;
+//    self.imageView.contentMode = UIViewContentModeScaleAspectFit;
+//   
+//    CGFloat txtX = rect.origin.x +  rect.size.width + 4;
+//    CGRect tmpFrame = self.textLabel.frame;
+//    tmpFrame.origin.x = txtX;
+//    self.textLabel.frame = tmpFrame;
+//    
+//    tmpFrame = self.detailTextLabel.frame;
+//    tmpFrame.origin.x = txtX;
+//    self.detailTextLabel.frame = tmpFrame;
 }
 @end

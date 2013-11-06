@@ -10,5 +10,5 @@
 #import "ShakeImageViewDelegate.h"
 
 @interface ShakeImageView : UIImageView
-@property(nonatomic, assign) id delegate;
+@property(nonatomic, strong) id delegate;
 @end

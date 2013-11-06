@@ -75,8 +75,7 @@
     _searchBar.hidden = YES;
 
     [self initNaviBar];
-    [self beginLoadData:NO];
-    
+    [self loadDataWithSound:NO];
 //    [self checkShowIntruduce];
 }
 
@@ -238,22 +237,29 @@
     }
 }
 
--(void)viewWillAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
     [self.imgShake becomeFirstResponder];
     [super viewWillAppear:animated];
 }
 
--(void) shakeImageViewShaked:(ShakeImageView *)imageView
+- (void) loadDataWithSound:(BOOL) sound
 {
     if(_isLodingData) {
         NSLog(@"loading");
         return;
     }
-    [self shakeImage:imageView withRepeatCount:NSUIntegerMax];
-    [SoundUtil playShakeSound:ShakeSoundStyleBegin];
-    [self beginLoadData:YES];
+    [self shakeImage:self.imgShake withRepeatCount:NSUIntegerMax];
+    if (sound) {
+        [SoundUtil playShakeSound:ShakeSoundStyleBegin];
+    }
+    [self beginLoadData:sound];
     [MobClickHelper logShake];
+}
+
+-(void) shakeImageViewShaked:(ShakeImageView *)imageView
+{
+    [self loadDataWithSound:YES];
 }
 
 - (void)viewWillDisappear:(BOOL)animated

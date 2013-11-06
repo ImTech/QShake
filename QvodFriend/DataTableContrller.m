@@ -54,7 +54,7 @@
                 [MobClickHelper logPlay];
                 [Setting increasePlayCount];
                 NSInteger playcount = [Setting playCount];
-                if (playcount % 10 == 0 && playcount > 0 && ![Setting isRatingShowed]) {
+                if (playcount % 30 == 0 && playcount > 0 && ![Setting isRatingShowed]) {
                     [self showRating];
                 }
             } else {
@@ -159,14 +159,16 @@
     }
     NSString *imageurl = [[_datas objectAtIndex:indexPath.row] valueForKey:@"head"];
     if (imageurl != nil) {
-        cell.imageView.image = [UIImage imageNamed:imageurl];
+        // this is movie icon
+//        cell.imageView.image = [UIImage imageNamed:imageurl];
     }
     cell.textLabel.text = [[_datas objectAtIndex:indexPath.row] valueForKey:@"title"];
     cell.backgroundColor = indexPath.row % 2 == 0 ? [UIColor colorWithHex:@"#EBEFF0"] : [UIColor colorWithHex:@"#F2F2F2"];
     
     NSString *from = [[_datas objectAtIndex:indexPath.row] valueForKey:@"from"];
     if (from != nil) {
-        cell.detailTextLabel.text = from;
+        // this is movie from
+//        cell.detailTextLabel.text = from;
     }
     return cell;
 }

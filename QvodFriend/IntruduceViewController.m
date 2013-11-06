@@ -52,6 +52,7 @@
     pageControl.pageIndicatorTintColor = [UIColor grayColor];
     pageControl.currentPageIndicatorTintColor = [UIColor redColor];
     pageControl.backgroundColor = [UIColor whiteColor];
+    [self.view setBackgroundColor:[UIColor whiteColor]];
 }
 
 -(void) initPages
@@ -72,6 +73,11 @@
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
     return UIStatusBarStyleLightContent;
+}
+
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
 }
 
 @end
