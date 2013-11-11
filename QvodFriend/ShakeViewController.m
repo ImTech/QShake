@@ -79,7 +79,7 @@
     
     // tap shake
     UITapGestureRecognizer *imagetapper = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleImageTap:)];
-    [self.view addGestureRecognizer:imagetapper];
+//    [self.view addGestureRecognizer:imagetapper];
 }
 
 - (void) handleImageTap:(id) sender
