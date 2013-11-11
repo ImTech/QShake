@@ -76,7 +76,16 @@
 
     [self initNaviBar];
     [self loadDataWithSound:NO];
-//    [self checkShowIntruduce];
+    
+    // tap shake
+    UITapGestureRecognizer *imagetapper = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleImageTap:)];
+    [self.view addGestureRecognizer:imagetapper];
+}
+
+- (void) handleImageTap:(id) sender
+{
+    NSLog(@"tap image");
+    [self loadDataWithSound:YES];
 }
 
 - (void) checkShowIntruduce
