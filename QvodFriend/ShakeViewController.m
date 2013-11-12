@@ -40,12 +40,10 @@
     self.dataTableController.tableView = self.dataTable.tableView;
     self.dataTable.delegate = self;
     _dataTable.tableView.backgroundColor = [UIColor whiteColor];
-//    [_dataTable setHandleBackgourndColor:[UIColor clearColor]];
     _dataTable.backgroundColor = [UIColor clearColor];
     
     [self.imgShake setImage:[UIImage imageNamed:@"a_05"]];
     self.imgShake.delegate = self;
-//    [self shakeImage:_imgShake withRepeatCount:ANIM_SHAKE_COUNT];
     [self.view setBackgroundColor:[UIColor colorWithHex:@"#E4E7EB"]];
     [self.navigationBar setBackgroundImage:[[UIImage imageNamed:@"a_02"] stretchableImageWithLeftCapWidth:10 topCapHeight:10] forBarMetrics:UIBarMetricsDefault];
     @try {
@@ -56,22 +54,14 @@
     @finally {
     }
     
-//    [self.tabBarItem setF`inishedSelectedImage:[UIImage imageNamed:@"a_11"] withFinishedUnselectedImage:[UIImage imageNamed:@"a_11"]];
     [self.tabBarItem setImage:[UIImage imageNamed:@"a_11"]];
    
-//    [self.tabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor colorWithHex:@"#929292"], UITextAttributeTextColor, nil] forState:UIControlStateNormal];
-    
     NSLog(@"tableView height:%@", self.dataTable.tableView);
     
     [self calcTableHeight];
     [self calcImagePos];
-//    [self setNeedsStatusBarAppearanceUpdate];
     _searchBar.delegate = self;
     _searchBar.searchTextPositionAdjustment = UIOffsetMake(14.f, 0);
-    
-    UITapGestureRecognizer *tapper = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
-    tapper.cancelsTouchesInView = FALSE;
-//    [self.view addGestureRecognizer:tapper];
     _searchBar.hidden = YES;
 
     [self initNaviBar];
@@ -79,7 +69,8 @@
     
     // tap shake
     UITapGestureRecognizer *imagetapper = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleImageTap:)];
-//    [self.view addGestureRecognizer:imagetapper];
+    self.imgShake.userInteractionEnabled = YES;
+    [self.imgShake addGestureRecognizer:imagetapper];
 }
 
 - (void) handleImageTap:(id) sender
@@ -137,12 +128,6 @@
     [_imgShake becomeFirstResponder];
 }
 
-- (void) handleSingleTap:(UIGestureRecognizer*) sender
-{
-    NSLog(@"handleSingleTap");
-    [self.view endEditing:YES];
-    [_imgShake becomeFirstResponder];
-}
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
