@@ -147,7 +147,7 @@
     if(cell == nil) {
 //        NSLog(@"new cell for index path:%d", indexPath.row);
         cell = [[MyUITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.selectionStyle = UITableViewCellSelectionStyleGray;
         cell.detailTextLabel.font = [cell.detailTextLabel.font fontWithSize:10];
         cell.textLabel.font = [cell.textLabel.font fontWithSize:16];
     }
@@ -164,7 +164,6 @@
     }
     cell.textLabel.text = [[_datas objectAtIndex:indexPath.row] valueForKey:@"title"];
     cell.backgroundColor = indexPath.row % 2 == 0 ? [UIColor colorWithHex:@"#EBEFF0"] : [UIColor colorWithHex:@"#F2F2F2"];
-    
     NSString *from = [[_datas objectAtIndex:indexPath.row] valueForKey:@"from"];
     if (from != nil) {
         // this is movie from
@@ -175,6 +174,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSString* hash = [[_datas objectAtIndex:indexPath.row] valueForKey:@"hash"];
     currentHash = hash;
     [UIUtil showAlert:@"播放" withMessage:hash leftButton:@"播放" rightButton:@"取消" delegate:self];

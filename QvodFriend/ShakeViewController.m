@@ -91,19 +91,16 @@
         NSLog(@"sb nil");
     }
     IntruduceViewController *intruduce = [sb instantiateViewControllerWithIdentifier:@"Intruduce"];
-//    [self presentViewController:intruduce animated:YES completion:nil];
     [self presentModalViewController:intruduce animated:YES];
 }
 
 - (void) initNaviBar {
     BOOL isMute = [Setting isMute];
-//    UIBarButtonItem *btn = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:self action:@selector(naviItemClick:)];
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = CGRectMake(0, 0, 40, 40);
     [button addTarget:self action:@selector(naviItemClick:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *btn = [[UIBarButtonItem alloc] initWithCustomView:button];
-//    btn.tintColor = [UIColor whiteColor];
     self.navigationItem.rightBarButtonItem = btn;
     [self setMuteButton:isMute];
 }
@@ -137,18 +134,6 @@
 
 
 -(void) calcImagePos{
-//    float tableHeight = self.dataTable.frame.size.height;
-//    float tableWidth = self.dataTable.frame.size.width;
-//    float tablex = self.dataTable.frame.origin.x;
-//    float tabley = self.dataTable.frame.origin.y;
-//    CGRect imgRect = self.imgShake.frame;
-//    NSLog(@"tablex:%f, tabley:%f, tableH:%f, tableW:%f", tablex, tabley, tableHeight, tableWidth);
-//    float x = tableWidth / 2 - imgRect.size.width / 2;
-//    float y = tabley + tableHeight / 2 - imgRect.size.height;
-//    NSLog(@"x:%f, y:%f", x, y);
-//    CGRect rect = CGRectMake( x, y, imgRect.size
-//                             .width, imgRect.size.height);
-//    self.imgShake.frame = rect;
     BOOL ios7 = [[UIDevice currentDevice].systemVersion floatValue] >= 7.0;
     if (ios7) {
         _imgShake.center = self.view.center;
@@ -336,7 +321,6 @@
         }
         self.dataTableController.datas = array;
         NSLog(@"reload Data");
-//        [self.dataTableController.tableView reloadData];
     }];
  
 }
