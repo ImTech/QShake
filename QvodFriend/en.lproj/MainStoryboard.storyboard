@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="6W8-ZO-XIp">
     <dependencies>
         <deployment defaultVersion="1280" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
         <!--Tab View Controller-->
@@ -17,8 +17,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     </tabBar>
                     <connections>
-                        <segue destination="rha-9c-JyV" kind="relationship" relationship="viewControllers" id="JgP-wy-Goz"/>
-                        <segue destination="2" kind="relationship" relationship="viewControllers" id="Ena-tx-phF"/>
+                        <segue destination="2" kind="relationship" relationship="viewControllers" id="xnZ-Yi-Yj5"/>
+                        <segue destination="rha-9c-JyV" kind="relationship" relationship="viewControllers" id="GIL-t1-vgN"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ywu-Jk-khh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -71,6 +71,28 @@
             </objects>
             <point key="canvasLocation" x="972" y="-702"/>
         </scene>
+        <!--Banner View Controller-->
+        <scene sceneID="zf5-FN-sWX">
+            <objects>
+                <viewController storyboardIdentifier="banner" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6W8-ZO-XIp" customClass="BannerViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6I9-fJ-6zI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Default.png" id="ozF-kU-gSn">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="0.23720755387118353" green="0.68578343807152187" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="d5M-qZ-OKl"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2A2-M6-QX7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1405" y="-506"/>
+        </scene>
         <!--Browser View Controller - 浏览-->
         <scene sceneID="Xbb-xS-ui5">
             <objects>
@@ -119,7 +141,7 @@
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rSP-Ax-LGg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1145" y="-472"/>
+            <point key="canvasLocation" x="-977" y="-536"/>
         </scene>
         <!--Intruduce Page Controller-->
         <scene sceneID="iEv-2p-gI8">
@@ -212,9 +234,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Default.png" width="320" height="480"/>
         <image name="a_09.png" width="25" height="26"/>
         <image name="a_11.png" width="25" height="26"/>
-        <image name="intro1.png" width="640" height="960"/>
+        <image name="intro1.png" width="320" height="480"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

@@ -33,15 +33,7 @@
     self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-    NSString *storyid = nil;
-    if ([Setting showIntruduce]) {
-        storyid = @"intro"; // @"tabmain"
-        [Setting setShowIntruduce:NO];
-    } else {
-        storyid = @"tabmain";
-    }
-    // for debug
-    storyid = @"intro";
+    NSString *storyid = @"banner";
     UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:storyid];
     self.window.rootViewController = viewController;
     [self.window makeKeyAndVisible];

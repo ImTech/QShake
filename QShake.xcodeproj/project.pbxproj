@@ -79,6 +79,7 @@
 		9699FF0E1827F7B20090BE88 /* IntruduceDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 9699FF0D1827F7B20090BE88 /* IntruduceDataSource.m */; };
 		969A7044181D241100DFEDA8 /* MyWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 969A7043181D241100DFEDA8 /* MyWebView.m */; };
 		969A7059181D358B00DFEDA8 /* MyUITextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 969A7058181D358B00DFEDA8 /* MyUITextField.m */; };
+		96C9123C183AE4F600F8D9BD /* BannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C9123B183AE4F600F8D9BD /* BannerViewController.m */; };
 		96E33D37181B4CCF0031484D /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96E33D35181B46C50031484D /* libMobClickLibrary.a */; };
 		96E33D3B181B4DC70031484D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 96E33D3A181B4DC70031484D /* libz.dylib */; };
 		96E33D3F181B50620031484D /* MobClickHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E33D3E181B50620031484D /* MobClickHelper.m */; };
@@ -236,6 +237,8 @@
 		969A7043181D241100DFEDA8 /* MyWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyWebView.m; sourceTree = "<group>"; };
 		969A7057181D358B00DFEDA8 /* MyUITextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyUITextField.h; path = ../MyUITextField.h; sourceTree = "<group>"; };
 		969A7058181D358B00DFEDA8 /* MyUITextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyUITextField.m; path = ../MyUITextField.m; sourceTree = "<group>"; };
+		96C9123A183AE4F600F8D9BD /* BannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerViewController.h; sourceTree = "<group>"; };
+		96C9123B183AE4F600F8D9BD /* BannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerViewController.m; sourceTree = "<group>"; };
 		96E33D35181B46C50031484D /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMobClickLibrary.a; path = Lib/libMobClickLibrary.a; sourceTree = "<group>"; };
 		96E33D39181B4D880031484D /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MobClick.h; path = 3rdSDK/MobClick.h; sourceTree = "<group>"; };
 		96E33D3A181B4DC70031484D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -362,6 +365,8 @@
 				9699FF071827F48F0090BE88 /* IntruducePageController.m */,
 				9699FF0C1827F7B20090BE88 /* IntruduceDataSource.h */,
 				9699FF0D1827F7B20090BE88 /* IntruduceDataSource.m */,
+				96C9123A183AE4F600F8D9BD /* BannerViewController.h */,
+				96C9123B183AE4F600F8D9BD /* BannerViewController.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -802,6 +807,7 @@
 				9612236717DB923D00D27793 /* ShakeImageView.m in Sources */,
 				9687E24217EFC01200642E2F /* QBroswerBar.m in Sources */,
 				9699FF0E1827F7B20090BE88 /* IntruduceDataSource.m in Sources */,
+				96C9123C183AE4F600F8D9BD /* BannerViewController.m in Sources */,
 				969A7044181D241100DFEDA8 /* MyWebView.m in Sources */,
 				967347E5181046130008EC46 /* SearchViewController.m in Sources */,
 				969A7059181D358B00DFEDA8 /* MyUITextField.m in Sources */,
