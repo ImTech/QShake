@@ -55,7 +55,7 @@
 
 
 - (void) viewDidAppear:(BOOL)animated {
-    [self statusBarHack];
+//    [self statusBarHack];
 }
 
 - (void)didReceiveMemoryWarning
