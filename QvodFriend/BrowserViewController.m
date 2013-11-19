@@ -27,8 +27,8 @@
     [self.view setBackgroundColor:[UIColor colorWithHex:@"#E4E7EB"]];
 //    self.view.backgroundColor = [UIColor colorWithHex:@"#19759c"];
 //    [self.toolBar setBackgroundColor:[UIColor colorWithHex:@"#19759c"]];
-    self.toolBar.backgroundImage = [[UIImage imageNamed:@"a_02"] stretchableImageWithLeftCapWidth:10 topCapHeight:10];
-    _toolBar.backgroundColor = [UIColor blackColor];
+//    self.toolBar.backgroundImage = [[UIImage imageNamed:@"a_02"] stretchableImageWithLeftCapWidth:10 topCapHeight:10];
+    _toolBar.backgroundColor = [UIColor colorWithHex:@"1578a1"];
     self.toolBar.delegate = self;
     self.webView.delegate = self;
     

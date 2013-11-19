@@ -16,7 +16,6 @@
 
 @implementation TabViewController
 {
-    BOOL _hackedStatusbar;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -30,16 +29,13 @@
 
 - (void) statusBarHack
 {
-    if (_hackedStatusbar) return;
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
         UIView *addStatusBar = [[UIView alloc] init];
-        addStatusBar.frame = CGRectMake(0, 0, self.view.window.frame.size.width, 20);
-        addStatusBar.bounds = CGRectMake(0, 0, self.view.window.frame.size.width, 20);
-        addStatusBar.backgroundColor = [UIColor blackColor]; //change this to match your navigation bar
+        addStatusBar.frame = CGRectMake(0, 0, self.view.frame.size.width, 20);
+        addStatusBar.backgroundColor = [UIColor colorWithHex:@"#1578a1"]; //change this to match your navigation bar
         [self.view addSubview:addStatusBar];
         [self.view setNeedsLayout];
         [self.view updateConstraints];
-        _hackedStatusbar = YES;
     }
 }
 
@@ -50,7 +46,7 @@
     // image height 49px
     self.tabBar.backgroundImage = [UIImage imageNamed:@"bg_tabbar"];
     self.tabBar.selectionIndicatorImage = [UIImage imageNamed:@"bg_tabbar_indi"];
-//    [self statusBarHack];
+    [self statusBarHack];
 }
 
 

@@ -45,9 +45,14 @@
     [self.imgShake setImage:[UIImage imageNamed:@"a_05"]];
     self.imgShake.delegate = self;
     [self.view setBackgroundColor:[UIColor colorWithHex:@"#E4E7EB"]];
-    [self.navigationBar setBackgroundImage:[[UIImage imageNamed:@"a_02"] stretchableImageWithLeftCapWidth:10 topCapHeight:10] forBarMetrics:UIBarMetricsDefault];
+//    [self.navigationBar setBackgroundImage:[[UIImage imageNamed:@"a_02"] stretchableImageWithLeftCapWidth:10 topCapHeight:10] forBarMetrics:UIBarMetricsDefault];
+    
+    // ios solid background color
+    [[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setBackgroundColor:[UIColor colorWithHex:@"1578a1"]];
+    // ----
     @try {
-        self.navigationBar.barTintColor = [UIColor blackColor];
+        self.navigationBar.barTintColor = [UIColor colorWithHex:@"1578a1"];
     }
     @catch (NSException *exception) {
     }
