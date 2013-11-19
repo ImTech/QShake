@@ -72,10 +72,10 @@
     _textFieldUrl.center = CGPointMake(frame.size.width / 2 - 14, 22);
 //    _textFieldUrl.background = [UIImage imageNamed:@"bgTxtUrl"];
 //    _textFieldUrl.backgroundColor = [UIColor whiteColor];
-    _textFieldUrl.borderStyle = UITextBorderStyleLine;
-    _textFieldUrl.layer.cornerRadius = 6.0f;
-    _textFieldUrl.layer.borderColor = [[UIColor grayColor] CGColor];
-    _textFieldUrl.layer.borderWidth = 0.6f;
+    _textFieldUrl.borderStyle = UITextBorderStyleNone;
+    _textFieldUrl.layer.cornerRadius = 2.0f;
+//    _textFieldUrl.layer.borderColor = [[UIColor grayColor] CGColor];
+//    _textFieldUrl.layer.borderWidth = 0.6f;
     _textFieldUrl.layer.masksToBounds = YES;
     _textFieldUrl.backgroundColor = [UIColor whiteColor];
     _textFieldUrl.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
