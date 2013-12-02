@@ -10,6 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import "MobClick.h"
 #import "Setting.h"
+#import "YouMiConfig.h"
 
 @implementation AppDelegate
 {
@@ -49,6 +50,9 @@
     NSLog(@"UmKey%@", umKEY);
     [MobClick startWithAppkey:umKEY reportPolicy:REALTIME channelId:@"appstore"];
     [MobClick setLogEnabled:NO];
+    
+    [YouMiConfig setUseInAppStore:YES];
+    [YouMiConfig launchWithAppID:@"acd347ec6f704247" appSecret:@"ff39291b5153ea7b"];
     return YES;
 }
 

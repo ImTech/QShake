@@ -32,4 +32,5 @@ enum {
 - (NSUInteger) getDirection;
 - (CGFloat) getHandleHeight;
 - (void) setHandleBackgourndColor:(UIColor*) color;
+- (void) addBottomView:(UIView *) view;
 @end

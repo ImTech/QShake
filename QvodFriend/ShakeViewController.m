@@ -17,6 +17,7 @@
 #import "Setting.h"
 #import "MobClickHelper.h"
 #import "IntruduceViewController.h"
+#import "YoumiHelper.h"
 
 #define ANIM_SHAKE_COUNT 5
 #define ANIM_SHAKE_KEY  @"ICON_SHAKE"
@@ -70,13 +71,19 @@
     _searchBar.hidden = YES;
 
     [self initNaviBar];
-    [self loadDataWithSound:NO];
+    
     
     // tap shake
     UITapGestureRecognizer *imagetapper = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleImageTap:)];
     self.imgShake.userInteractionEnabled = YES;
     [self.imgShake addGestureRecognizer:imagetapper];
+    
+    [self loadDataWithSound:NO];
+    // load ad view
+    [self.dataTable addBottomView:[YoumiHelper createAdView]];
 }
+
+
 
 - (void) handleImageTap:(id) sender
 {

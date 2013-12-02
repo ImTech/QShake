@@ -70,7 +70,7 @@
 
 - (void) showNoQvod
 {
-      installAlert = [UIUtil showAlert:@"安装组件" withMessage:@"还木有安装播放组件，现在安装？" leftButton:@"安装" rightButton:@"取消" delegate:self];
+      installAlert = [UIUtil showAlert:@"安装播放组件后才可以播放哟" withMessage:@"现在去安装吧？" leftButton:@"安装" rightButton:@"取消" delegate:self];
 }
 
 - (void) showWaitTip

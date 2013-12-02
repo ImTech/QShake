@@ -13,6 +13,7 @@
     NSUInteger _direction;
     UIImageView *_imageHandler;
     UIImageView *_imageHandlerArrow;
+    UIView *_bottomView;
 }
 
 - (id) initWithCoder:(NSCoder *)aDecoder
@@ -80,15 +81,30 @@
     return 34;
 }
 
+- (void) addBottomView:(UIView *) view
+{
+    _bottomView = view;
+    [self addSubview:_bottomView];
+    [self layoutIfNeeded];
+}
+
 - (void)layoutSubviews {
     CGFloat width = self.frame.size.width;
     CGFloat height = self.frame.size.height;
     NSLog(@"layoutSubviews shake view width:%f", width);
     NSLog(@"HandleTableView layoutSubviews w:%f, h:%f", width, height);
-    _tableView.frame = CGRectMake(0, 0, width, height - [self getHandleHeight]);
+    
+    int bottomViewHeight = 0;
+    if (_bottomView != nil) {
+        bottomViewHeight = _bottomView.frame.size.height;
+    }
+    NSLog(@"bottomViewHeight:%d", bottomViewHeight);
+    _tableView.frame = CGRectMake(0, 0, width, height - [self getHandleHeight] - bottomViewHeight);
     _imageHandler.frame = CGRectMake(0, height - [self getHandleHeight], width, [self getHandleHeight]);
     _imageHandlerArrow.frame = CGRectMake(0, 0, 13, 10);
     _imageHandlerArrow.center = CGPointMake(_imageHandler.center.x, _imageHandler.center.y + 2);
+    
+    _bottomView.frame = CGRectMake(0, height - [self getHandleHeight] - bottomViewHeight, width, _bottomView.frame.size.height);
 }
 - (void) handleButtonClicked:(UIImageView*) imageView
 {

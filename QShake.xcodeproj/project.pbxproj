@@ -55,6 +55,11 @@
 		9612237117DB9B6700D27793 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9612237017DB9B6700D27793 /* AVFoundation.framework */; };
 		9612237517DC118800D27793 /* shake_begin.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9612237417DC118800D27793 /* shake_begin.mp3 */; };
 		9612237817DC15F000D27793 /* UIUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 9612237717DC15F000D27793 /* UIUtil.m */; };
+		9617FC22184CF0F700FDD6A1 /* libYouMi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9617FC21184CF0F700FDD6A1 /* libYouMi.a */; };
+		9617FC2C184CF21D00FDD6A1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9617FC2B184CF21D00FDD6A1 /* SystemConfiguration.framework */; };
+		9617FC2E184CF22E00FDD6A1 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9617FC2D184CF22E00FDD6A1 /* CFNetwork.framework */; };
+		9617FC30184CF23E00FDD6A1 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9617FC2F184CF23E00FDD6A1 /* libsqlite3.dylib */; };
+		9617FC33184CF47300FDD6A1 /* YoumiHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9617FC32184CF47300FDD6A1 /* YoumiHelper.m */; };
 		961C626117DA2A4900982CF7 /* DataTableContrller.m in Sources */ = {isa = PBXBuildFile; fileRef = 961C626017DA2A4900982CF7 /* DataTableContrller.m */; };
 		961EF84717DC1F3C00B74015 /* failed.wav in Resources */ = {isa = PBXBuildFile; fileRef = 961EF84617DC1F3C00B74015 /* failed.wav */; };
 		96492B0C180A747B00356886 /* HandleTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96492B0B180A747B00356886 /* HandleTableView.m */; };
@@ -193,6 +198,20 @@
 		9612237617DC15F000D27793 /* UIUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIUtil.h; sourceTree = "<group>"; };
 		9612237717DC15F000D27793 /* UIUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIUtil.m; sourceTree = "<group>"; };
 		961705C617F201000074E6BB /* QBroswerBarDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QBroswerBarDelegate.h; sourceTree = "<group>"; };
+		9617FC21184CF0F700FDD6A1 /* libYouMi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libYouMi.a; path = Lib/libYouMi.a; sourceTree = "<group>"; };
+		9617FC23184CF13300FDD6A1 /* YouMiConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YouMiConfig.h; path = 3rdSDK/YouMiConfig.h; sourceTree = "<group>"; };
+		9617FC24184CF13300FDD6A1 /* YouMiDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YouMiDelegateProtocol.h; path = 3rdSDK/YouMiDelegateProtocol.h; sourceTree = "<group>"; };
+		9617FC25184CF13300FDD6A1 /* YouMiPointsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YouMiPointsManager.h; path = 3rdSDK/YouMiPointsManager.h; sourceTree = "<group>"; };
+		9617FC26184CF13300FDD6A1 /* YouMiView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YouMiView.h; path = 3rdSDK/YouMiView.h; sourceTree = "<group>"; };
+		9617FC27184CF13300FDD6A1 /* YouMiWall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YouMiWall.h; path = 3rdSDK/YouMiWall.h; sourceTree = "<group>"; };
+		9617FC28184CF13300FDD6A1 /* YouMiWallAppModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YouMiWallAppModel.h; path = 3rdSDK/YouMiWallAppModel.h; sourceTree = "<group>"; };
+		9617FC29184CF13300FDD6A1 /* YouMiWallSpot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YouMiWallSpot.h; path = 3rdSDK/YouMiWallSpot.h; sourceTree = "<group>"; };
+		9617FC2A184CF13300FDD6A1 /* YouMiWallSpotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YouMiWallSpotView.h; path = 3rdSDK/YouMiWallSpotView.h; sourceTree = "<group>"; };
+		9617FC2B184CF21D00FDD6A1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		9617FC2D184CF22E00FDD6A1 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		9617FC2F184CF23E00FDD6A1 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		9617FC31184CF47300FDD6A1 /* YoumiHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YoumiHelper.h; path = 3rdSDK/YoumiHelper.h; sourceTree = "<group>"; };
+		9617FC32184CF47300FDD6A1 /* YoumiHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YoumiHelper.m; path = 3rdSDK/YoumiHelper.m; sourceTree = "<group>"; };
 		961C625F17DA2A4900982CF7 /* DataTableContrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataTableContrller.h; sourceTree = "<group>"; };
 		961C626017DA2A4900982CF7 /* DataTableContrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataTableContrller.m; sourceTree = "<group>"; };
 		961EF84617DC1F3C00B74015 /* failed.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = failed.wav; sourceTree = "<group>"; };
@@ -310,6 +329,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9617FC30184CF23E00FDD6A1 /* libsqlite3.dylib in Frameworks */,
+				9617FC2E184CF22E00FDD6A1 /* CFNetwork.framework in Frameworks */,
+				9617FC2C184CF21D00FDD6A1 /* SystemConfiguration.framework in Frameworks */,
+				9617FC22184CF0F700FDD6A1 /* libYouMi.a in Frameworks */,
 				96E33D3B181B4DC70031484D /* libz.dylib in Frameworks */,
 				96E33D37181B4CCF0031484D /* libMobClickLibrary.a in Frameworks */,
 				96F883B018196C070057B1B8 /* AudioToolbox.framework in Frameworks */,
@@ -465,6 +488,10 @@
 		967080CD17BBE46E00147FD5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9617FC2F184CF23E00FDD6A1 /* libsqlite3.dylib */,
+				9617FC2D184CF22E00FDD6A1 /* CFNetwork.framework */,
+				9617FC2B184CF21D00FDD6A1 /* SystemConfiguration.framework */,
+				9617FC21184CF0F700FDD6A1 /* libYouMi.a */,
 				96E33D3A181B4DC70031484D /* libz.dylib */,
 				96E33D35181B46C50031484D /* libMobClickLibrary.a */,
 				96F883AE18196B840057B1B8 /* AudioUnit.framework */,
@@ -519,9 +546,19 @@
 		96E33D38181B4CF30031484D /* 3rdSDK */ = {
 			isa = PBXGroup;
 			children = (
+				9617FC23184CF13300FDD6A1 /* YouMiConfig.h */,
+				9617FC24184CF13300FDD6A1 /* YouMiDelegateProtocol.h */,
+				9617FC25184CF13300FDD6A1 /* YouMiPointsManager.h */,
+				9617FC26184CF13300FDD6A1 /* YouMiView.h */,
+				9617FC27184CF13300FDD6A1 /* YouMiWall.h */,
+				9617FC28184CF13300FDD6A1 /* YouMiWallAppModel.h */,
+				9617FC29184CF13300FDD6A1 /* YouMiWallSpot.h */,
+				9617FC2A184CF13300FDD6A1 /* YouMiWallSpotView.h */,
 				96E33D39181B4D880031484D /* MobClick.h */,
 				96E33D3D181B50620031484D /* MobClickHelper.h */,
 				96E33D3E181B50620031484D /* MobClickHelper.m */,
+				9617FC31184CF47300FDD6A1 /* YoumiHelper.h */,
+				9617FC32184CF47300FDD6A1 /* YoumiHelper.m */,
 			);
 			name = 3rdSDK;
 			sourceTree = "<group>";
@@ -809,6 +846,7 @@
 				9699FF0E1827F7B20090BE88 /* IntruduceDataSource.m in Sources */,
 				96C9123C183AE4F600F8D9BD /* BannerViewController.m in Sources */,
 				969A7044181D241100DFEDA8 /* MyWebView.m in Sources */,
+				9617FC33184CF47300FDD6A1 /* YoumiHelper.m in Sources */,
 				967347E5181046130008EC46 /* SearchViewController.m in Sources */,
 				969A7059181D358B00DFEDA8 /* MyUITextField.m in Sources */,
 				96FD726B180AF99E0002FD00 /* MyUITableViewCell.m in Sources */,
